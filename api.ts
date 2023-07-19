@@ -1952,6 +1952,132 @@ export const AuthApiFactory = function (configuration?: Configuration, basePath?
 };
 
 /**
+ * Request parameters for forgotPassword operation in AuthApi.
+ * @export
+ * @interface AuthApiForgotPasswordRequest
+ */
+export interface AuthApiForgotPasswordRequest {
+    /**
+     * 
+     * @type {AuthForgotPasswordDto}
+     * @memberof AuthApiForgotPassword
+     */
+    readonly authForgotPasswordDto: AuthForgotPasswordDto
+}
+
+/**
+ * Request parameters for login operation in AuthApi.
+ * @export
+ * @interface AuthApiLoginRequest
+ */
+export interface AuthApiLoginRequest {
+    /**
+     * 
+     * @type {AuthEmailLoginDto}
+     * @memberof AuthApiLogin
+     */
+    readonly authEmailLoginDto: AuthEmailLoginDto
+}
+
+/**
+ * Request parameters for loginApple operation in AuthApi.
+ * @export
+ * @interface AuthApiLoginAppleRequest
+ */
+export interface AuthApiLoginAppleRequest {
+    /**
+     * 
+     * @type {AuthAppleLoginDto}
+     * @memberof AuthApiLoginApple
+     */
+    readonly authAppleLoginDto: AuthAppleLoginDto
+}
+
+/**
+ * Request parameters for loginFacebook operation in AuthApi.
+ * @export
+ * @interface AuthApiLoginFacebookRequest
+ */
+export interface AuthApiLoginFacebookRequest {
+    /**
+     * 
+     * @type {AuthFacebookLoginDto}
+     * @memberof AuthApiLoginFacebook
+     */
+    readonly authFacebookLoginDto: AuthFacebookLoginDto
+}
+
+/**
+ * Request parameters for loginGoogle operation in AuthApi.
+ * @export
+ * @interface AuthApiLoginGoogleRequest
+ */
+export interface AuthApiLoginGoogleRequest {
+    /**
+     * 
+     * @type {AuthGoogleLoginDto}
+     * @memberof AuthApiLoginGoogle
+     */
+    readonly authGoogleLoginDto: AuthGoogleLoginDto
+}
+
+/**
+ * Request parameters for loginTwitter operation in AuthApi.
+ * @export
+ * @interface AuthApiLoginTwitterRequest
+ */
+export interface AuthApiLoginTwitterRequest {
+    /**
+     * 
+     * @type {AuthTwitterLoginDto}
+     * @memberof AuthApiLoginTwitter
+     */
+    readonly authTwitterLoginDto: AuthTwitterLoginDto
+}
+
+/**
+ * Request parameters for register operation in AuthApi.
+ * @export
+ * @interface AuthApiRegisterRequest
+ */
+export interface AuthApiRegisterRequest {
+    /**
+     * 
+     * @type {AuthRegisterLoginDto}
+     * @memberof AuthApiRegister
+     */
+    readonly authRegisterLoginDto: AuthRegisterLoginDto
+}
+
+/**
+ * Request parameters for resetPassword operation in AuthApi.
+ * @export
+ * @interface AuthApiResetPasswordRequest
+ */
+export interface AuthApiResetPasswordRequest {
+    /**
+     * 
+     * @type {AuthResetPasswordDto}
+     * @memberof AuthApiResetPassword
+     */
+    readonly authResetPasswordDto: AuthResetPasswordDto
+}
+
+/**
+ * Request parameters for updateCurrentAuth operation in AuthApi.
+ * @export
+ * @interface AuthApiUpdateCurrentAuthRequest
+ */
+export interface AuthApiUpdateCurrentAuthRequest {
+    /**
+     * 
+     * @type {AuthUpdateDto}
+     * @memberof AuthApiUpdateCurrentAuth
+     */
+    readonly authUpdateDto: AuthUpdateDto
+}
+
+/**
  * AuthApi - object-oriented interface
  * @export
  * @class AuthApi
@@ -1983,73 +2109,73 @@ export class AuthApi extends BaseAPI {
     /**
      * 
      * @summary Forgot password
-     * @param {AuthForgotPasswordDto} authForgotPasswordDto 
+     * @param {AuthApiForgotPasswordRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AuthApi
      */
-    public forgotPassword(authForgotPasswordDto: AuthForgotPasswordDto, options?: AxiosRequestConfig) {
-        return AuthApiFp(this.configuration).forgotPassword(authForgotPasswordDto, options).then((request) => request(this.axios, this.basePath));
+    public forgotPassword(requestParameters: AuthApiForgotPasswordRequest, options?: AxiosRequestConfig) {
+        return AuthApiFp(this.configuration).forgotPassword(requestParameters.authForgotPasswordDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get access token
-     * @param {AuthEmailLoginDto} authEmailLoginDto 
+     * @param {AuthApiLoginRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AuthApi
      */
-    public login(authEmailLoginDto: AuthEmailLoginDto, options?: AxiosRequestConfig) {
-        return AuthApiFp(this.configuration).login(authEmailLoginDto, options).then((request) => request(this.axios, this.basePath));
+    public login(requestParameters: AuthApiLoginRequest, options?: AxiosRequestConfig) {
+        return AuthApiFp(this.configuration).login(requestParameters.authEmailLoginDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Apple login
-     * @param {AuthAppleLoginDto} authAppleLoginDto 
+     * @param {AuthApiLoginAppleRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AuthApi
      */
-    public loginApple(authAppleLoginDto: AuthAppleLoginDto, options?: AxiosRequestConfig) {
-        return AuthApiFp(this.configuration).loginApple(authAppleLoginDto, options).then((request) => request(this.axios, this.basePath));
+    public loginApple(requestParameters: AuthApiLoginAppleRequest, options?: AxiosRequestConfig) {
+        return AuthApiFp(this.configuration).loginApple(requestParameters.authAppleLoginDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Facebook login
-     * @param {AuthFacebookLoginDto} authFacebookLoginDto 
+     * @param {AuthApiLoginFacebookRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AuthApi
      */
-    public loginFacebook(authFacebookLoginDto: AuthFacebookLoginDto, options?: AxiosRequestConfig) {
-        return AuthApiFp(this.configuration).loginFacebook(authFacebookLoginDto, options).then((request) => request(this.axios, this.basePath));
+    public loginFacebook(requestParameters: AuthApiLoginFacebookRequest, options?: AxiosRequestConfig) {
+        return AuthApiFp(this.configuration).loginFacebook(requestParameters.authFacebookLoginDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Google login
-     * @param {AuthGoogleLoginDto} authGoogleLoginDto 
+     * @param {AuthApiLoginGoogleRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AuthApi
      */
-    public loginGoogle(authGoogleLoginDto: AuthGoogleLoginDto, options?: AxiosRequestConfig) {
-        return AuthApiFp(this.configuration).loginGoogle(authGoogleLoginDto, options).then((request) => request(this.axios, this.basePath));
+    public loginGoogle(requestParameters: AuthApiLoginGoogleRequest, options?: AxiosRequestConfig) {
+        return AuthApiFp(this.configuration).loginGoogle(requestParameters.authGoogleLoginDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Twitter login
-     * @param {AuthTwitterLoginDto} authTwitterLoginDto 
+     * @param {AuthApiLoginTwitterRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AuthApi
      */
-    public loginTwitter(authTwitterLoginDto: AuthTwitterLoginDto, options?: AxiosRequestConfig) {
-        return AuthApiFp(this.configuration).loginTwitter(authTwitterLoginDto, options).then((request) => request(this.axios, this.basePath));
+    public loginTwitter(requestParameters: AuthApiLoginTwitterRequest, options?: AxiosRequestConfig) {
+        return AuthApiFp(this.configuration).loginTwitter(requestParameters.authTwitterLoginDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -2077,37 +2203,37 @@ export class AuthApi extends BaseAPI {
     /**
      * 
      * @summary Create Auth
-     * @param {AuthRegisterLoginDto} authRegisterLoginDto 
+     * @param {AuthApiRegisterRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AuthApi
      */
-    public register(authRegisterLoginDto: AuthRegisterLoginDto, options?: AxiosRequestConfig) {
-        return AuthApiFp(this.configuration).register(authRegisterLoginDto, options).then((request) => request(this.axios, this.basePath));
+    public register(requestParameters: AuthApiRegisterRequest, options?: AxiosRequestConfig) {
+        return AuthApiFp(this.configuration).register(requestParameters.authRegisterLoginDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Reset password
-     * @param {AuthResetPasswordDto} authResetPasswordDto 
+     * @param {AuthApiResetPasswordRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AuthApi
      */
-    public resetPassword(authResetPasswordDto: AuthResetPasswordDto, options?: AxiosRequestConfig) {
-        return AuthApiFp(this.configuration).resetPassword(authResetPasswordDto, options).then((request) => request(this.axios, this.basePath));
+    public resetPassword(requestParameters: AuthApiResetPasswordRequest, options?: AxiosRequestConfig) {
+        return AuthApiFp(this.configuration).resetPassword(requestParameters.authResetPasswordDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update Auth
-     * @param {AuthUpdateDto} authUpdateDto 
+     * @param {AuthApiUpdateCurrentAuthRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AuthApi
      */
-    public updateCurrentAuth(authUpdateDto: AuthUpdateDto, options?: AxiosRequestConfig) {
-        return AuthApiFp(this.configuration).updateCurrentAuth(authUpdateDto, options).then((request) => request(this.axios, this.basePath));
+    public updateCurrentAuth(requestParameters: AuthApiUpdateCurrentAuthRequest, options?: AxiosRequestConfig) {
+        return AuthApiFp(this.configuration).updateCurrentAuth(requestParameters.authUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -2667,6 +2793,209 @@ export const CatalogsApiFactory = function (configuration?: Configuration, baseP
 };
 
 /**
+ * Request parameters for getCatalog operation in CatalogsApi.
+ * @export
+ * @interface CatalogsApiGetCatalogRequest
+ */
+export interface CatalogsApiGetCatalogRequest {
+    /**
+     * 
+     * @type {number}
+     * @memberof CatalogsApiGetCatalog
+     */
+    readonly page?: number
+
+    /**
+     * 
+     * @type {number}
+     * @memberof CatalogsApiGetCatalog
+     */
+    readonly limit?: number
+
+    /**
+     * 
+     * @type {string}
+     * @memberof CatalogsApiGetCatalog
+     */
+    readonly locationId?: string
+
+    /**
+     * 
+     * @type {boolean}
+     * @memberof CatalogsApiGetCatalog
+     */
+    readonly items?: boolean
+
+    /**
+     * 
+     * @type {boolean}
+     * @memberof CatalogsApiGetCatalog
+     */
+    readonly variations?: boolean
+
+    /**
+     * 
+     * @type {boolean}
+     * @memberof CatalogsApiGetCatalog
+     */
+    readonly modifierLists?: boolean
+
+    /**
+     * 
+     * @type {'merchant' | 'customer'}
+     * @memberof CatalogsApiGetCatalog
+     */
+    readonly actingAs?: 'merchant' | 'customer'
+
+    /**
+     * 
+     * @type {string}
+     * @memberof CatalogsApiGetCatalog
+     */
+    readonly merchantId?: string
+}
+
+/**
+ * Request parameters for getItem operation in CatalogsApi.
+ * @export
+ * @interface CatalogsApiGetItemRequest
+ */
+export interface CatalogsApiGetItemRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof CatalogsApiGetItem
+     */
+    readonly id: string
+
+    /**
+     * 
+     * @type {string}
+     * @memberof CatalogsApiGetItem
+     */
+    readonly locationId?: string
+}
+
+/**
+ * Request parameters for getItemsInCategory operation in CatalogsApi.
+ * @export
+ * @interface CatalogsApiGetItemsInCategoryRequest
+ */
+export interface CatalogsApiGetItemsInCategoryRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof CatalogsApiGetItemsInCategory
+     */
+    readonly id: string
+
+    /**
+     * 
+     * @type {number}
+     * @memberof CatalogsApiGetItemsInCategory
+     */
+    readonly page?: number
+
+    /**
+     * 
+     * @type {number}
+     * @memberof CatalogsApiGetItemsInCategory
+     */
+    readonly limit?: number
+
+    /**
+     * 
+     * @type {string}
+     * @memberof CatalogsApiGetItemsInCategory
+     */
+    readonly locationId?: string
+
+    /**
+     * 
+     * @type {'merchant' | 'customer'}
+     * @memberof CatalogsApiGetItemsInCategory
+     */
+    readonly actingAs?: 'merchant' | 'customer'
+
+    /**
+     * 
+     * @type {string}
+     * @memberof CatalogsApiGetItemsInCategory
+     */
+    readonly merchantId?: string
+}
+
+/**
+ * Request parameters for updateCategories operation in CatalogsApi.
+ * @export
+ * @interface CatalogsApiUpdateCategoriesRequest
+ */
+export interface CatalogsApiUpdateCategoriesRequest {
+    /**
+     * 
+     * @type {Array<CategoryUpdateAllDto>}
+     * @memberof CatalogsApiUpdateCategories
+     */
+    readonly categoryUpdateAllDto: Array<CategoryUpdateAllDto>
+}
+
+/**
+ * Request parameters for updateCategory operation in CatalogsApi.
+ * @export
+ * @interface CatalogsApiUpdateCategoryRequest
+ */
+export interface CatalogsApiUpdateCategoryRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof CatalogsApiUpdateCategory
+     */
+    readonly id: string
+
+    /**
+     * 
+     * @type {CategoryUpdateDto}
+     * @memberof CatalogsApiUpdateCategory
+     */
+    readonly categoryUpdateDto: CategoryUpdateDto
+}
+
+/**
+ * Request parameters for updateItem operation in CatalogsApi.
+ * @export
+ * @interface CatalogsApiUpdateItemRequest
+ */
+export interface CatalogsApiUpdateItemRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof CatalogsApiUpdateItem
+     */
+    readonly id: string
+
+    /**
+     * 
+     * @type {ItemUpdateDto}
+     * @memberof CatalogsApiUpdateItem
+     */
+    readonly itemUpdateDto: ItemUpdateDto
+}
+
+/**
+ * Request parameters for updateItems operation in CatalogsApi.
+ * @export
+ * @interface CatalogsApiUpdateItemsRequest
+ */
+export interface CatalogsApiUpdateItemsRequest {
+    /**
+     * 
+     * @type {Array<ItemUpdateAllDto>}
+     * @memberof CatalogsApiUpdateItems
+     */
+    readonly itemUpdateAllDto: Array<ItemUpdateAllDto>
+}
+
+/**
  * CatalogsApi - object-oriented interface
  * @export
  * @class CatalogsApi
@@ -2676,100 +3005,85 @@ export class CatalogsApi extends BaseAPI {
     /**
      * 
      * @summary Get your Categories with Items, Variations, and ModifierLists
-     * @param {number} [page] 
-     * @param {number} [limit] 
-     * @param {string} [locationId] 
-     * @param {boolean} [items] 
-     * @param {boolean} [variations] 
-     * @param {boolean} [modifierLists] 
-     * @param {'merchant' | 'customer'} [actingAs] 
-     * @param {string} [merchantId] 
+     * @param {CatalogsApiGetCatalogRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CatalogsApi
      */
-    public getCatalog(page?: number, limit?: number, locationId?: string, items?: boolean, variations?: boolean, modifierLists?: boolean, actingAs?: 'merchant' | 'customer', merchantId?: string, options?: AxiosRequestConfig) {
-        return CatalogsApiFp(this.configuration).getCatalog(page, limit, locationId, items, variations, modifierLists, actingAs, merchantId, options).then((request) => request(this.axios, this.basePath));
+    public getCatalog(requestParameters: CatalogsApiGetCatalogRequest = {}, options?: AxiosRequestConfig) {
+        return CatalogsApiFp(this.configuration).getCatalog(requestParameters.page, requestParameters.limit, requestParameters.locationId, requestParameters.items, requestParameters.variations, requestParameters.modifierLists, requestParameters.actingAs, requestParameters.merchantId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get Item with ID
-     * @param {string} id 
-     * @param {string} [locationId] 
+     * @param {CatalogsApiGetItemRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CatalogsApi
      */
-    public getItem(id: string, locationId?: string, options?: AxiosRequestConfig) {
-        return CatalogsApiFp(this.configuration).getItem(id, locationId, options).then((request) => request(this.axios, this.basePath));
+    public getItem(requestParameters: CatalogsApiGetItemRequest, options?: AxiosRequestConfig) {
+        return CatalogsApiFp(this.configuration).getItem(requestParameters.id, requestParameters.locationId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get Items in Category
-     * @param {string} id 
-     * @param {number} [page] 
-     * @param {number} [limit] 
-     * @param {string} [locationId] 
-     * @param {'merchant' | 'customer'} [actingAs] 
-     * @param {string} [merchantId] 
+     * @param {CatalogsApiGetItemsInCategoryRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CatalogsApi
      */
-    public getItemsInCategory(id: string, page?: number, limit?: number, locationId?: string, actingAs?: 'merchant' | 'customer', merchantId?: string, options?: AxiosRequestConfig) {
-        return CatalogsApiFp(this.configuration).getItemsInCategory(id, page, limit, locationId, actingAs, merchantId, options).then((request) => request(this.axios, this.basePath));
+    public getItemsInCategory(requestParameters: CatalogsApiGetItemsInCategoryRequest, options?: AxiosRequestConfig) {
+        return CatalogsApiFp(this.configuration).getItemsInCategory(requestParameters.id, requestParameters.page, requestParameters.limit, requestParameters.locationId, requestParameters.actingAs, requestParameters.merchantId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update multiple Categories
-     * @param {Array<CategoryUpdateAllDto>} categoryUpdateAllDto 
+     * @param {CatalogsApiUpdateCategoriesRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CatalogsApi
      */
-    public updateCategories(categoryUpdateAllDto: Array<CategoryUpdateAllDto>, options?: AxiosRequestConfig) {
-        return CatalogsApiFp(this.configuration).updateCategories(categoryUpdateAllDto, options).then((request) => request(this.axios, this.basePath));
+    public updateCategories(requestParameters: CatalogsApiUpdateCategoriesRequest, options?: AxiosRequestConfig) {
+        return CatalogsApiFp(this.configuration).updateCategories(requestParameters.categoryUpdateAllDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update a Category
-     * @param {string} id 
-     * @param {CategoryUpdateDto} categoryUpdateDto 
+     * @param {CatalogsApiUpdateCategoryRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CatalogsApi
      */
-    public updateCategory(id: string, categoryUpdateDto: CategoryUpdateDto, options?: AxiosRequestConfig) {
-        return CatalogsApiFp(this.configuration).updateCategory(id, categoryUpdateDto, options).then((request) => request(this.axios, this.basePath));
+    public updateCategory(requestParameters: CatalogsApiUpdateCategoryRequest, options?: AxiosRequestConfig) {
+        return CatalogsApiFp(this.configuration).updateCategory(requestParameters.id, requestParameters.categoryUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update an Item
-     * @param {string} id 
-     * @param {ItemUpdateDto} itemUpdateDto 
+     * @param {CatalogsApiUpdateItemRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CatalogsApi
      */
-    public updateItem(id: string, itemUpdateDto: ItemUpdateDto, options?: AxiosRequestConfig) {
-        return CatalogsApiFp(this.configuration).updateItem(id, itemUpdateDto, options).then((request) => request(this.axios, this.basePath));
+    public updateItem(requestParameters: CatalogsApiUpdateItemRequest, options?: AxiosRequestConfig) {
+        return CatalogsApiFp(this.configuration).updateItem(requestParameters.id, requestParameters.itemUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update multiple Items
-     * @param {Array<ItemUpdateAllDto>} itemUpdateAllDto 
+     * @param {CatalogsApiUpdateItemsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CatalogsApi
      */
-    public updateItems(itemUpdateAllDto: Array<ItemUpdateAllDto>, options?: AxiosRequestConfig) {
-        return CatalogsApiFp(this.configuration).updateItems(itemUpdateAllDto, options).then((request) => request(this.axios, this.basePath));
+    public updateItems(requestParameters: CatalogsApiUpdateItemsRequest, options?: AxiosRequestConfig) {
+        return CatalogsApiFp(this.configuration).updateItems(requestParameters.itemUpdateAllDto, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -3057,6 +3371,69 @@ export const ConfigApiFactory = function (configuration?: Configuration, basePat
 };
 
 /**
+ * Request parameters for createConfig operation in ConfigApi.
+ * @export
+ * @interface ConfigApiCreateConfigRequest
+ */
+export interface ConfigApiCreateConfigRequest {
+    /**
+     * 
+     * @type {ConfigUpdateDto}
+     * @memberof ConfigApiCreateConfig
+     */
+    readonly configUpdateDto: ConfigUpdateDto
+}
+
+/**
+ * Request parameters for getConfig operation in ConfigApi.
+ * @export
+ * @interface ConfigApiGetConfigRequest
+ */
+export interface ConfigApiGetConfigRequest {
+    /**
+     * 
+     * @type {'merchant' | 'customer'}
+     * @memberof ConfigApiGetConfig
+     */
+    readonly actingAs?: 'merchant' | 'customer'
+
+    /**
+     * 
+     * @type {string}
+     * @memberof ConfigApiGetConfig
+     */
+    readonly merchantId?: string
+}
+
+/**
+ * Request parameters for updateConfig operation in ConfigApi.
+ * @export
+ * @interface ConfigApiUpdateConfigRequest
+ */
+export interface ConfigApiUpdateConfigRequest {
+    /**
+     * 
+     * @type {ConfigUpdateDto}
+     * @memberof ConfigApiUpdateConfig
+     */
+    readonly configUpdateDto: ConfigUpdateDto
+}
+
+/**
+ * Request parameters for uploadIcon operation in ConfigApi.
+ * @export
+ * @interface ConfigApiUploadIconRequest
+ */
+export interface ConfigApiUploadIconRequest {
+    /**
+     * 
+     * @type {File}
+     * @memberof ConfigApiUploadIcon
+     */
+    readonly file?: File
+}
+
+/**
  * ConfigApi - object-oriented interface
  * @export
  * @class ConfigApi
@@ -3066,50 +3443,49 @@ export class ConfigApi extends BaseAPI {
     /**
      * 
      * @summary Create your Config
-     * @param {ConfigUpdateDto} configUpdateDto 
+     * @param {ConfigApiCreateConfigRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ConfigApi
      */
-    public createConfig(configUpdateDto: ConfigUpdateDto, options?: AxiosRequestConfig) {
-        return ConfigApiFp(this.configuration).createConfig(configUpdateDto, options).then((request) => request(this.axios, this.basePath));
+    public createConfig(requestParameters: ConfigApiCreateConfigRequest, options?: AxiosRequestConfig) {
+        return ConfigApiFp(this.configuration).createConfig(requestParameters.configUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get your Config
-     * @param {'merchant' | 'customer'} [actingAs] 
-     * @param {string} [merchantId] 
+     * @param {ConfigApiGetConfigRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ConfigApi
      */
-    public getConfig(actingAs?: 'merchant' | 'customer', merchantId?: string, options?: AxiosRequestConfig) {
-        return ConfigApiFp(this.configuration).getConfig(actingAs, merchantId, options).then((request) => request(this.axios, this.basePath));
+    public getConfig(requestParameters: ConfigApiGetConfigRequest = {}, options?: AxiosRequestConfig) {
+        return ConfigApiFp(this.configuration).getConfig(requestParameters.actingAs, requestParameters.merchantId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update your Config
-     * @param {ConfigUpdateDto} configUpdateDto 
+     * @param {ConfigApiUpdateConfigRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ConfigApi
      */
-    public updateConfig(configUpdateDto: ConfigUpdateDto, options?: AxiosRequestConfig) {
-        return ConfigApiFp(this.configuration).updateConfig(configUpdateDto, options).then((request) => request(this.axios, this.basePath));
+    public updateConfig(requestParameters: ConfigApiUpdateConfigRequest, options?: AxiosRequestConfig) {
+        return ConfigApiFp(this.configuration).updateConfig(requestParameters.configUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Upload icon
-     * @param {File} [file] 
+     * @param {ConfigApiUploadIconRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ConfigApi
      */
-    public uploadIcon(file?: File, options?: AxiosRequestConfig) {
-        return ConfigApiFp(this.configuration).uploadIcon(file, options).then((request) => request(this.axios, this.basePath));
+    public uploadIcon(requestParameters: ConfigApiUploadIconRequest = {}, options?: AxiosRequestConfig) {
+        return ConfigApiFp(this.configuration).uploadIcon(requestParameters.file, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -3428,6 +3804,104 @@ export const LocationsApiFactory = function (configuration?: Configuration, base
 };
 
 /**
+ * Request parameters for getLocation operation in LocationsApi.
+ * @export
+ * @interface LocationsApiGetLocationRequest
+ */
+export interface LocationsApiGetLocationRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof LocationsApiGetLocation
+     */
+    readonly id: string
+
+    /**
+     * 
+     * @type {'merchant' | 'customer'}
+     * @memberof LocationsApiGetLocation
+     */
+    readonly actingAs: 'merchant' | 'customer'
+
+    /**
+     * 
+     * @type {string}
+     * @memberof LocationsApiGetLocation
+     */
+    readonly merchantId?: string
+}
+
+/**
+ * Request parameters for getLocations operation in LocationsApi.
+ * @export
+ * @interface LocationsApiGetLocationsRequest
+ */
+export interface LocationsApiGetLocationsRequest {
+    /**
+     * 
+     * @type {number}
+     * @memberof LocationsApiGetLocations
+     */
+    readonly page?: number
+
+    /**
+     * 
+     * @type {number}
+     * @memberof LocationsApiGetLocations
+     */
+    readonly limit?: number
+
+    /**
+     * 
+     * @type {'merchant' | 'customer'}
+     * @memberof LocationsApiGetLocations
+     */
+    readonly actingAs?: 'merchant' | 'customer'
+
+    /**
+     * 
+     * @type {string}
+     * @memberof LocationsApiGetLocations
+     */
+    readonly merchantId?: string
+}
+
+/**
+ * Request parameters for updateLocation operation in LocationsApi.
+ * @export
+ * @interface LocationsApiUpdateLocationRequest
+ */
+export interface LocationsApiUpdateLocationRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof LocationsApiUpdateLocation
+     */
+    readonly id: string
+
+    /**
+     * 
+     * @type {LocationUpdateDto}
+     * @memberof LocationsApiUpdateLocation
+     */
+    readonly locationUpdateDto: LocationUpdateDto
+}
+
+/**
+ * Request parameters for updateLocations operation in LocationsApi.
+ * @export
+ * @interface LocationsApiUpdateLocationsRequest
+ */
+export interface LocationsApiUpdateLocationsRequest {
+    /**
+     * 
+     * @type {Array<LocationUpdateAllDto>}
+     * @memberof LocationsApiUpdateLocations
+     */
+    readonly locationUpdateAllDto: Array<LocationUpdateAllDto>
+}
+
+/**
  * LocationsApi - object-oriented interface
  * @export
  * @class LocationsApi
@@ -3437,55 +3911,49 @@ export class LocationsApi extends BaseAPI {
     /**
      * 
      * @summary Get a Location with ID
-     * @param {string} id 
-     * @param {'merchant' | 'customer'} actingAs 
-     * @param {string} [merchantId] 
+     * @param {LocationsApiGetLocationRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof LocationsApi
      */
-    public getLocation(id: string, actingAs: 'merchant' | 'customer', merchantId?: string, options?: AxiosRequestConfig) {
-        return LocationsApiFp(this.configuration).getLocation(id, actingAs, merchantId, options).then((request) => request(this.axios, this.basePath));
+    public getLocation(requestParameters: LocationsApiGetLocationRequest, options?: AxiosRequestConfig) {
+        return LocationsApiFp(this.configuration).getLocation(requestParameters.id, requestParameters.actingAs, requestParameters.merchantId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get all your Locations
-     * @param {number} [page] 
-     * @param {number} [limit] 
-     * @param {'merchant' | 'customer'} [actingAs] 
-     * @param {string} [merchantId] 
+     * @param {LocationsApiGetLocationsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof LocationsApi
      */
-    public getLocations(page?: number, limit?: number, actingAs?: 'merchant' | 'customer', merchantId?: string, options?: AxiosRequestConfig) {
-        return LocationsApiFp(this.configuration).getLocations(page, limit, actingAs, merchantId, options).then((request) => request(this.axios, this.basePath));
+    public getLocations(requestParameters: LocationsApiGetLocationsRequest = {}, options?: AxiosRequestConfig) {
+        return LocationsApiFp(this.configuration).getLocations(requestParameters.page, requestParameters.limit, requestParameters.actingAs, requestParameters.merchantId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update a Location
-     * @param {string} id 
-     * @param {LocationUpdateDto} locationUpdateDto 
+     * @param {LocationsApiUpdateLocationRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof LocationsApi
      */
-    public updateLocation(id: string, locationUpdateDto: LocationUpdateDto, options?: AxiosRequestConfig) {
-        return LocationsApiFp(this.configuration).updateLocation(id, locationUpdateDto, options).then((request) => request(this.axios, this.basePath));
+    public updateLocation(requestParameters: LocationsApiUpdateLocationRequest, options?: AxiosRequestConfig) {
+        return LocationsApiFp(this.configuration).updateLocation(requestParameters.id, requestParameters.locationUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update Locations
-     * @param {Array<LocationUpdateAllDto>} locationUpdateAllDto 
+     * @param {LocationsApiUpdateLocationsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof LocationsApi
      */
-    public updateLocations(locationUpdateAllDto: Array<LocationUpdateAllDto>, options?: AxiosRequestConfig) {
-        return LocationsApiFp(this.configuration).updateLocations(locationUpdateAllDto, options).then((request) => request(this.axios, this.basePath));
+    public updateLocations(requestParameters: LocationsApiUpdateLocationsRequest, options?: AxiosRequestConfig) {
+        return LocationsApiFp(this.configuration).updateLocations(requestParameters.locationUpdateAllDto, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -3916,6 +4384,48 @@ export const MerchantApiFactory = function (configuration?: Configuration, baseP
 };
 
 /**
+ * Request parameters for confirmSquareOauth operation in MerchantApi.
+ * @export
+ * @interface MerchantApiConfirmSquareOauthRequest
+ */
+export interface MerchantApiConfirmSquareOauthRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof MerchantApiConfirmSquareOauth
+     */
+    readonly oauthAccessCode: string
+}
+
+/**
+ * Request parameters for confirmStripeCheckout operation in MerchantApi.
+ * @export
+ * @interface MerchantApiConfirmStripeCheckoutRequest
+ */
+export interface MerchantApiConfirmStripeCheckoutRequest {
+    /**
+     * 
+     * @type {StripeCheckoutDto}
+     * @memberof MerchantApiConfirmStripeCheckout
+     */
+    readonly stripeCheckoutDto: StripeCheckoutDto
+}
+
+/**
+ * Request parameters for startStripeCheckout operation in MerchantApi.
+ * @export
+ * @interface MerchantApiStartStripeCheckoutRequest
+ */
+export interface MerchantApiStartStripeCheckoutRequest {
+    /**
+     * 
+     * @type {StripeCheckoutCreateDto}
+     * @memberof MerchantApiStartStripeCheckout
+     */
+    readonly stripeCheckoutCreateDto: StripeCheckoutCreateDto
+}
+
+/**
  * MerchantApi - object-oriented interface
  * @export
  * @class MerchantApi
@@ -3925,25 +4435,25 @@ export class MerchantApi extends BaseAPI {
     /**
      * 
      * @summary Confirm Square Oauth
-     * @param {string} oauthAccessCode 
+     * @param {MerchantApiConfirmSquareOauthRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MerchantApi
      */
-    public confirmSquareOauth(oauthAccessCode: string, options?: AxiosRequestConfig) {
-        return MerchantApiFp(this.configuration).confirmSquareOauth(oauthAccessCode, options).then((request) => request(this.axios, this.basePath));
+    public confirmSquareOauth(requestParameters: MerchantApiConfirmSquareOauthRequest, options?: AxiosRequestConfig) {
+        return MerchantApiFp(this.configuration).confirmSquareOauth(requestParameters.oauthAccessCode, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Confirm Square checkout
-     * @param {StripeCheckoutDto} stripeCheckoutDto 
+     * @param {MerchantApiConfirmStripeCheckoutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MerchantApi
      */
-    public confirmStripeCheckout(stripeCheckoutDto: StripeCheckoutDto, options?: AxiosRequestConfig) {
-        return MerchantApiFp(this.configuration).confirmStripeCheckout(stripeCheckoutDto, options).then((request) => request(this.axios, this.basePath));
+    public confirmStripeCheckout(requestParameters: MerchantApiConfirmStripeCheckoutRequest, options?: AxiosRequestConfig) {
+        return MerchantApiFp(this.configuration).confirmStripeCheckout(requestParameters.stripeCheckoutDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3971,13 +4481,13 @@ export class MerchantApi extends BaseAPI {
     /**
      * 
      * @summary Start Stripe checkout
-     * @param {StripeCheckoutCreateDto} stripeCheckoutCreateDto 
+     * @param {MerchantApiStartStripeCheckoutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MerchantApi
      */
-    public startStripeCheckout(stripeCheckoutCreateDto: StripeCheckoutCreateDto, options?: AxiosRequestConfig) {
-        return MerchantApiFp(this.configuration).startStripeCheckout(stripeCheckoutCreateDto, options).then((request) => request(this.axios, this.basePath));
+    public startStripeCheckout(requestParameters: MerchantApiStartStripeCheckoutRequest, options?: AxiosRequestConfig) {
+        return MerchantApiFp(this.configuration).startStripeCheckout(requestParameters.stripeCheckoutCreateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -4107,6 +4617,34 @@ export const SquareApiFactory = function (configuration?: Configuration, basePat
 };
 
 /**
+ * Request parameters for squareControllerUploadFile operation in SquareApi.
+ * @export
+ * @interface SquareApiSquareControllerUploadFileRequest
+ */
+export interface SquareApiSquareControllerUploadFileRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof SquareApiSquareControllerUploadFile
+     */
+    readonly idempotencyKey: string
+
+    /**
+     * 
+     * @type {string}
+     * @memberof SquareApiSquareControllerUploadFile
+     */
+    readonly objectId?: string
+
+    /**
+     * 
+     * @type {File}
+     * @memberof SquareApiSquareControllerUploadFile
+     */
+    readonly file?: File
+}
+
+/**
  * SquareApi - object-oriented interface
  * @export
  * @class SquareApi
@@ -4115,15 +4653,13 @@ export const SquareApiFactory = function (configuration?: Configuration, basePat
 export class SquareApi extends BaseAPI {
     /**
      * 
-     * @param {string} idempotencyKey 
-     * @param {string} [objectId] 
-     * @param {File} [file] 
+     * @param {SquareApiSquareControllerUploadFileRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SquareApi
      */
-    public squareControllerUploadFile(idempotencyKey: string, objectId?: string, file?: File, options?: AxiosRequestConfig) {
-        return SquareApiFp(this.configuration).squareControllerUploadFile(idempotencyKey, objectId, file, options).then((request) => request(this.axios, this.basePath));
+    public squareControllerUploadFile(requestParameters: SquareApiSquareControllerUploadFileRequest, options?: AxiosRequestConfig) {
+        return SquareApiFp(this.configuration).squareControllerUploadFile(requestParameters.idempotencyKey, requestParameters.objectId, requestParameters.file, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
