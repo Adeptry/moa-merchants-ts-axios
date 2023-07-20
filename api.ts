@@ -946,6 +946,12 @@ export interface Merchant {
     'id'?: string;
     /**
      * 
+     * @type {User}
+     * @memberof Merchant
+     */
+    'user'?: User;
+    /**
+     * 
      * @type {string}
      * @memberof Merchant
      */
@@ -1201,6 +1207,78 @@ export const AuthApiAxiosParamCreator = function (configuration?: Configuration)
     return {
         /**
          * 
+         * @summary Get access token
+         * @param {AuthEmailLoginDto} authEmailLoginDto 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createSession: async (authEmailLoginDto: AuthEmailLoginDto, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'authEmailLoginDto' is not null or undefined
+            assertParamExists('createSession', 'authEmailLoginDto', authEmailLoginDto)
+            const localVarPath = `/v2/auth/email/login`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(authEmailLoginDto, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Create Auth
+         * @param {AuthRegisterLoginDto} authRegisterLoginDto 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createUser: async (authRegisterLoginDto: AuthRegisterLoginDto, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'authRegisterLoginDto' is not null or undefined
+            assertParamExists('createUser', 'authRegisterLoginDto', authRegisterLoginDto)
+            const localVarPath = `/v2/auth/email/register`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(authRegisterLoginDto, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Get current Auth
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1297,42 +1375,6 @@ export const AuthApiAxiosParamCreator = function (configuration?: Configuration)
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(authForgotPasswordDto, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Get access token
-         * @param {AuthEmailLoginDto} authEmailLoginDto 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        login: async (authEmailLoginDto: AuthEmailLoginDto, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'authEmailLoginDto' is not null or undefined
-            assertParamExists('login', 'authEmailLoginDto', authEmailLoginDto)
-            const localVarPath = `/v2/auth/email/login`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(authEmailLoginDto, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -1553,42 +1595,6 @@ export const AuthApiAxiosParamCreator = function (configuration?: Configuration)
         },
         /**
          * 
-         * @summary Create Auth
-         * @param {AuthRegisterLoginDto} authRegisterLoginDto 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        register: async (authRegisterLoginDto: AuthRegisterLoginDto, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'authRegisterLoginDto' is not null or undefined
-            assertParamExists('register', 'authRegisterLoginDto', authRegisterLoginDto)
-            const localVarPath = `/v2/auth/email/register`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(authRegisterLoginDto, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
          * @summary Reset password
          * @param {AuthResetPasswordDto} authResetPasswordDto 
          * @param {*} [options] Override http request option.
@@ -1675,6 +1681,28 @@ export const AuthApiFp = function(configuration?: Configuration) {
     return {
         /**
          * 
+         * @summary Get access token
+         * @param {AuthEmailLoginDto} authEmailLoginDto 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createSession(authEmailLoginDto: AuthEmailLoginDto, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LoginResponseType>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createSession(authEmailLoginDto, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Create Auth
+         * @param {AuthRegisterLoginDto} authRegisterLoginDto 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createUser(authRegisterLoginDto: AuthRegisterLoginDto, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LoginResponseType>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createUser(authRegisterLoginDto, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
          * @summary Get current Auth
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1702,17 +1730,6 @@ export const AuthApiFp = function(configuration?: Configuration) {
          */
         async forgotPassword(authForgotPasswordDto: AuthForgotPasswordDto, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.forgotPassword(authForgotPasswordDto, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
-         * @summary Get access token
-         * @param {AuthEmailLoginDto} authEmailLoginDto 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async login(authEmailLoginDto: AuthEmailLoginDto, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LoginResponseType>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.login(authEmailLoginDto, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -1781,17 +1798,6 @@ export const AuthApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Create Auth
-         * @param {AuthRegisterLoginDto} authRegisterLoginDto 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async register(authRegisterLoginDto: AuthRegisterLoginDto, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LoginResponseType>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.register(authRegisterLoginDto, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
          * @summary Reset password
          * @param {AuthResetPasswordDto} authResetPasswordDto 
          * @param {*} [options] Override http request option.
@@ -1824,6 +1830,26 @@ export const AuthApiFactory = function (configuration?: Configuration, basePath?
     return {
         /**
          * 
+         * @summary Get access token
+         * @param {AuthEmailLoginDto} authEmailLoginDto 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createSession(authEmailLoginDto: AuthEmailLoginDto, options?: any): AxiosPromise<LoginResponseType> {
+            return localVarFp.createSession(authEmailLoginDto, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Create Auth
+         * @param {AuthRegisterLoginDto} authRegisterLoginDto 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createUser(authRegisterLoginDto: AuthRegisterLoginDto, options?: any): AxiosPromise<LoginResponseType> {
+            return localVarFp.createUser(authRegisterLoginDto, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Get current Auth
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1849,16 +1875,6 @@ export const AuthApiFactory = function (configuration?: Configuration, basePath?
          */
         forgotPassword(authForgotPasswordDto: AuthForgotPasswordDto, options?: any): AxiosPromise<void> {
             return localVarFp.forgotPassword(authForgotPasswordDto, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Get access token
-         * @param {AuthEmailLoginDto} authEmailLoginDto 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        login(authEmailLoginDto: AuthEmailLoginDto, options?: any): AxiosPromise<LoginResponseType> {
-            return localVarFp.login(authEmailLoginDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1920,16 +1936,6 @@ export const AuthApiFactory = function (configuration?: Configuration, basePath?
         },
         /**
          * 
-         * @summary Create Auth
-         * @param {AuthRegisterLoginDto} authRegisterLoginDto 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        register(authRegisterLoginDto: AuthRegisterLoginDto, options?: any): AxiosPromise<LoginResponseType> {
-            return localVarFp.register(authRegisterLoginDto, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @summary Reset password
          * @param {AuthResetPasswordDto} authResetPasswordDto 
          * @param {*} [options] Override http request option.
@@ -1952,6 +1958,34 @@ export const AuthApiFactory = function (configuration?: Configuration, basePath?
 };
 
 /**
+ * Request parameters for createSession operation in AuthApi.
+ * @export
+ * @interface AuthApiCreateSessionRequest
+ */
+export interface AuthApiCreateSessionRequest {
+    /**
+     * 
+     * @type {AuthEmailLoginDto}
+     * @memberof AuthApiCreateSession
+     */
+    readonly authEmailLoginDto: AuthEmailLoginDto
+}
+
+/**
+ * Request parameters for createUser operation in AuthApi.
+ * @export
+ * @interface AuthApiCreateUserRequest
+ */
+export interface AuthApiCreateUserRequest {
+    /**
+     * 
+     * @type {AuthRegisterLoginDto}
+     * @memberof AuthApiCreateUser
+     */
+    readonly authRegisterLoginDto: AuthRegisterLoginDto
+}
+
+/**
  * Request parameters for forgotPassword operation in AuthApi.
  * @export
  * @interface AuthApiForgotPasswordRequest
@@ -1963,20 +1997,6 @@ export interface AuthApiForgotPasswordRequest {
      * @memberof AuthApiForgotPassword
      */
     readonly authForgotPasswordDto: AuthForgotPasswordDto
-}
-
-/**
- * Request parameters for login operation in AuthApi.
- * @export
- * @interface AuthApiLoginRequest
- */
-export interface AuthApiLoginRequest {
-    /**
-     * 
-     * @type {AuthEmailLoginDto}
-     * @memberof AuthApiLogin
-     */
-    readonly authEmailLoginDto: AuthEmailLoginDto
 }
 
 /**
@@ -2036,20 +2056,6 @@ export interface AuthApiLoginTwitterRequest {
 }
 
 /**
- * Request parameters for register operation in AuthApi.
- * @export
- * @interface AuthApiRegisterRequest
- */
-export interface AuthApiRegisterRequest {
-    /**
-     * 
-     * @type {AuthRegisterLoginDto}
-     * @memberof AuthApiRegister
-     */
-    readonly authRegisterLoginDto: AuthRegisterLoginDto
-}
-
-/**
  * Request parameters for resetPassword operation in AuthApi.
  * @export
  * @interface AuthApiResetPasswordRequest
@@ -2086,6 +2092,30 @@ export interface AuthApiUpdateCurrentAuthRequest {
 export class AuthApi extends BaseAPI {
     /**
      * 
+     * @summary Get access token
+     * @param {AuthApiCreateSessionRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AuthApi
+     */
+    public createSession(requestParameters: AuthApiCreateSessionRequest, options?: AxiosRequestConfig) {
+        return AuthApiFp(this.configuration).createSession(requestParameters.authEmailLoginDto, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Create Auth
+     * @param {AuthApiCreateUserRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AuthApi
+     */
+    public createUser(requestParameters: AuthApiCreateUserRequest, options?: AxiosRequestConfig) {
+        return AuthApiFp(this.configuration).createUser(requestParameters.authRegisterLoginDto, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Get current Auth
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -2116,18 +2146,6 @@ export class AuthApi extends BaseAPI {
      */
     public forgotPassword(requestParameters: AuthApiForgotPasswordRequest, options?: AxiosRequestConfig) {
         return AuthApiFp(this.configuration).forgotPassword(requestParameters.authForgotPasswordDto, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Get access token
-     * @param {AuthApiLoginRequest} requestParameters Request parameters.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof AuthApi
-     */
-    public login(requestParameters: AuthApiLoginRequest, options?: AxiosRequestConfig) {
-        return AuthApiFp(this.configuration).login(requestParameters.authEmailLoginDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -2198,18 +2216,6 @@ export class AuthApi extends BaseAPI {
      */
     public refreshToken(options?: AxiosRequestConfig) {
         return AuthApiFp(this.configuration).refreshToken(options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Create Auth
-     * @param {AuthApiRegisterRequest} requestParameters Request parameters.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof AuthApi
-     */
-    public register(requestParameters: AuthApiRegisterRequest, options?: AxiosRequestConfig) {
-        return AuthApiFp(this.configuration).register(requestParameters.authRegisterLoginDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -2373,9 +2379,9 @@ export const CatalogsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getItemsInCategory: async (id: string, page?: number, limit?: number, locationId?: string, actingAs?: 'merchant' | 'customer', merchantId?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getItems: async (id: string, page?: number, limit?: number, locationId?: string, actingAs?: 'merchant' | 'customer', merchantId?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('getItemsInCategory', 'id', id)
+            assertParamExists('getItems', 'id', id)
             const localVarPath = `/v2/categories/{id}/items`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -2644,8 +2650,8 @@ export const CatalogsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getItemsInCategory(id: string, page?: number, limit?: number, locationId?: string, actingAs?: 'merchant' | 'customer', merchantId?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ItemPaginatedResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getItemsInCategory(id, page, limit, locationId, actingAs, merchantId, options);
+        async getItems(id: string, page?: number, limit?: number, locationId?: string, actingAs?: 'merchant' | 'customer', merchantId?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ItemPaginatedResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getItems(id, page, limit, locationId, actingAs, merchantId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -2744,8 +2750,8 @@ export const CatalogsApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getItemsInCategory(id: string, page?: number, limit?: number, locationId?: string, actingAs?: 'merchant' | 'customer', merchantId?: string, options?: any): AxiosPromise<ItemPaginatedResponse> {
-            return localVarFp.getItemsInCategory(id, page, limit, locationId, actingAs, merchantId, options).then((request) => request(axios, basePath));
+        getItems(id: string, page?: number, limit?: number, locationId?: string, actingAs?: 'merchant' | 'customer', merchantId?: string, options?: any): AxiosPromise<ItemPaginatedResponse> {
+            return localVarFp.getItems(id, page, limit, locationId, actingAs, merchantId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2877,50 +2883,50 @@ export interface CatalogsApiGetItemRequest {
 }
 
 /**
- * Request parameters for getItemsInCategory operation in CatalogsApi.
+ * Request parameters for getItems operation in CatalogsApi.
  * @export
- * @interface CatalogsApiGetItemsInCategoryRequest
+ * @interface CatalogsApiGetItemsRequest
  */
-export interface CatalogsApiGetItemsInCategoryRequest {
+export interface CatalogsApiGetItemsRequest {
     /**
      * 
      * @type {string}
-     * @memberof CatalogsApiGetItemsInCategory
+     * @memberof CatalogsApiGetItems
      */
     readonly id: string
 
     /**
      * 
      * @type {number}
-     * @memberof CatalogsApiGetItemsInCategory
+     * @memberof CatalogsApiGetItems
      */
     readonly page?: number
 
     /**
      * 
      * @type {number}
-     * @memberof CatalogsApiGetItemsInCategory
+     * @memberof CatalogsApiGetItems
      */
     readonly limit?: number
 
     /**
      * 
      * @type {string}
-     * @memberof CatalogsApiGetItemsInCategory
+     * @memberof CatalogsApiGetItems
      */
     readonly locationId?: string
 
     /**
      * 
      * @type {'merchant' | 'customer'}
-     * @memberof CatalogsApiGetItemsInCategory
+     * @memberof CatalogsApiGetItems
      */
     readonly actingAs?: 'merchant' | 'customer'
 
     /**
      * 
      * @type {string}
-     * @memberof CatalogsApiGetItemsInCategory
+     * @memberof CatalogsApiGetItems
      */
     readonly merchantId?: string
 }
@@ -3029,13 +3035,13 @@ export class CatalogsApi extends BaseAPI {
     /**
      * 
      * @summary Get Items in Category
-     * @param {CatalogsApiGetItemsInCategoryRequest} requestParameters Request parameters.
+     * @param {CatalogsApiGetItemsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CatalogsApi
      */
-    public getItemsInCategory(requestParameters: CatalogsApiGetItemsInCategoryRequest, options?: AxiosRequestConfig) {
-        return CatalogsApiFp(this.configuration).getItemsInCategory(requestParameters.id, requestParameters.page, requestParameters.limit, requestParameters.locationId, requestParameters.actingAs, requestParameters.merchantId, options).then((request) => request(this.axios, this.basePath));
+    public getItems(requestParameters: CatalogsApiGetItemsRequest, options?: AxiosRequestConfig) {
+        return CatalogsApiFp(this.configuration).getItems(requestParameters.id, requestParameters.page, requestParameters.limit, requestParameters.locationId, requestParameters.actingAs, requestParameters.merchantId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3089,10 +3095,10 @@ export class CatalogsApi extends BaseAPI {
 
 
 /**
- * ConfigApi - axios parameter creator
+ * ConfigsApi - axios parameter creator
  * @export
  */
-export const ConfigApiAxiosParamCreator = function (configuration?: Configuration) {
+export const ConfigsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
          * 
@@ -3265,11 +3271,11 @@ export const ConfigApiAxiosParamCreator = function (configuration?: Configuratio
 };
 
 /**
- * ConfigApi - functional programming interface
+ * ConfigsApi - functional programming interface
  * @export
  */
-export const ConfigApiFp = function(configuration?: Configuration) {
-    const localVarAxiosParamCreator = ConfigApiAxiosParamCreator(configuration)
+export const ConfigsApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = ConfigsApiAxiosParamCreator(configuration)
     return {
         /**
          * 
@@ -3320,11 +3326,11 @@ export const ConfigApiFp = function(configuration?: Configuration) {
 };
 
 /**
- * ConfigApi - factory interface
+ * ConfigsApi - factory interface
  * @export
  */
-export const ConfigApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-    const localVarFp = ConfigApiFp(configuration)
+export const ConfigsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = ConfigsApiFp(configuration)
     return {
         /**
          * 
@@ -3371,121 +3377,121 @@ export const ConfigApiFactory = function (configuration?: Configuration, basePat
 };
 
 /**
- * Request parameters for createConfig operation in ConfigApi.
+ * Request parameters for createConfig operation in ConfigsApi.
  * @export
- * @interface ConfigApiCreateConfigRequest
+ * @interface ConfigsApiCreateConfigRequest
  */
-export interface ConfigApiCreateConfigRequest {
+export interface ConfigsApiCreateConfigRequest {
     /**
      * 
      * @type {ConfigUpdateDto}
-     * @memberof ConfigApiCreateConfig
+     * @memberof ConfigsApiCreateConfig
      */
     readonly configUpdateDto: ConfigUpdateDto
 }
 
 /**
- * Request parameters for getConfig operation in ConfigApi.
+ * Request parameters for getConfig operation in ConfigsApi.
  * @export
- * @interface ConfigApiGetConfigRequest
+ * @interface ConfigsApiGetConfigRequest
  */
-export interface ConfigApiGetConfigRequest {
+export interface ConfigsApiGetConfigRequest {
     /**
      * 
      * @type {'merchant' | 'customer'}
-     * @memberof ConfigApiGetConfig
+     * @memberof ConfigsApiGetConfig
      */
     readonly actingAs?: 'merchant' | 'customer'
 
     /**
      * 
      * @type {string}
-     * @memberof ConfigApiGetConfig
+     * @memberof ConfigsApiGetConfig
      */
     readonly merchantId?: string
 }
 
 /**
- * Request parameters for updateConfig operation in ConfigApi.
+ * Request parameters for updateConfig operation in ConfigsApi.
  * @export
- * @interface ConfigApiUpdateConfigRequest
+ * @interface ConfigsApiUpdateConfigRequest
  */
-export interface ConfigApiUpdateConfigRequest {
+export interface ConfigsApiUpdateConfigRequest {
     /**
      * 
      * @type {ConfigUpdateDto}
-     * @memberof ConfigApiUpdateConfig
+     * @memberof ConfigsApiUpdateConfig
      */
     readonly configUpdateDto: ConfigUpdateDto
 }
 
 /**
- * Request parameters for uploadIcon operation in ConfigApi.
+ * Request parameters for uploadIcon operation in ConfigsApi.
  * @export
- * @interface ConfigApiUploadIconRequest
+ * @interface ConfigsApiUploadIconRequest
  */
-export interface ConfigApiUploadIconRequest {
+export interface ConfigsApiUploadIconRequest {
     /**
      * 
      * @type {File}
-     * @memberof ConfigApiUploadIcon
+     * @memberof ConfigsApiUploadIcon
      */
     readonly file?: File
 }
 
 /**
- * ConfigApi - object-oriented interface
+ * ConfigsApi - object-oriented interface
  * @export
- * @class ConfigApi
+ * @class ConfigsApi
  * @extends {BaseAPI}
  */
-export class ConfigApi extends BaseAPI {
+export class ConfigsApi extends BaseAPI {
     /**
      * 
      * @summary Create your Config
-     * @param {ConfigApiCreateConfigRequest} requestParameters Request parameters.
+     * @param {ConfigsApiCreateConfigRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ConfigApi
+     * @memberof ConfigsApi
      */
-    public createConfig(requestParameters: ConfigApiCreateConfigRequest, options?: AxiosRequestConfig) {
-        return ConfigApiFp(this.configuration).createConfig(requestParameters.configUpdateDto, options).then((request) => request(this.axios, this.basePath));
+    public createConfig(requestParameters: ConfigsApiCreateConfigRequest, options?: AxiosRequestConfig) {
+        return ConfigsApiFp(this.configuration).createConfig(requestParameters.configUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get your Config
-     * @param {ConfigApiGetConfigRequest} requestParameters Request parameters.
+     * @param {ConfigsApiGetConfigRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ConfigApi
+     * @memberof ConfigsApi
      */
-    public getConfig(requestParameters: ConfigApiGetConfigRequest = {}, options?: AxiosRequestConfig) {
-        return ConfigApiFp(this.configuration).getConfig(requestParameters.actingAs, requestParameters.merchantId, options).then((request) => request(this.axios, this.basePath));
+    public getConfig(requestParameters: ConfigsApiGetConfigRequest = {}, options?: AxiosRequestConfig) {
+        return ConfigsApiFp(this.configuration).getConfig(requestParameters.actingAs, requestParameters.merchantId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update your Config
-     * @param {ConfigApiUpdateConfigRequest} requestParameters Request parameters.
+     * @param {ConfigsApiUpdateConfigRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ConfigApi
+     * @memberof ConfigsApi
      */
-    public updateConfig(requestParameters: ConfigApiUpdateConfigRequest, options?: AxiosRequestConfig) {
-        return ConfigApiFp(this.configuration).updateConfig(requestParameters.configUpdateDto, options).then((request) => request(this.axios, this.basePath));
+    public updateConfig(requestParameters: ConfigsApiUpdateConfigRequest, options?: AxiosRequestConfig) {
+        return ConfigsApiFp(this.configuration).updateConfig(requestParameters.configUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Upload icon
-     * @param {ConfigApiUploadIconRequest} requestParameters Request parameters.
+     * @param {ConfigsApiUploadIconRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ConfigApi
+     * @memberof ConfigsApi
      */
-    public uploadIcon(requestParameters: ConfigApiUploadIconRequest = {}, options?: AxiosRequestConfig) {
-        return ConfigApiFp(this.configuration).uploadIcon(requestParameters.file, options).then((request) => request(this.axios, this.basePath));
+    public uploadIcon(requestParameters: ConfigsApiUploadIconRequest = {}, options?: AxiosRequestConfig) {
+        return ConfigsApiFp(this.configuration).uploadIcon(requestParameters.file, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -3959,10 +3965,10 @@ export class LocationsApi extends BaseAPI {
 
 
 /**
- * MerchantApi - axios parameter creator
+ * MerchantsApi - axios parameter creator
  * @export
  */
-export const MerchantApiAxiosParamCreator = function (configuration?: Configuration) {
+export const MerchantsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
          * 
@@ -4085,7 +4091,7 @@ export const MerchantApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyMerchant: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getCurrentMerchant: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/v2/merchants/me`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -4225,11 +4231,11 @@ export const MerchantApiAxiosParamCreator = function (configuration?: Configurat
 };
 
 /**
- * MerchantApi - functional programming interface
+ * MerchantsApi - functional programming interface
  * @export
  */
-export const MerchantApiFp = function(configuration?: Configuration) {
-    const localVarAxiosParamCreator = MerchantApiAxiosParamCreator(configuration)
+export const MerchantsApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = MerchantsApiAxiosParamCreator(configuration)
     return {
         /**
          * 
@@ -4269,8 +4275,8 @@ export const MerchantApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMyMerchant(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Merchant>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getMyMerchant(options);
+        async getCurrentMerchant(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Merchant>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getCurrentMerchant(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -4308,11 +4314,11 @@ export const MerchantApiFp = function(configuration?: Configuration) {
 };
 
 /**
- * MerchantApi - factory interface
+ * MerchantsApi - factory interface
  * @export
  */
-export const MerchantApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-    const localVarFp = MerchantApiFp(configuration)
+export const MerchantsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = MerchantsApiFp(configuration)
     return {
         /**
          * 
@@ -4349,8 +4355,8 @@ export const MerchantApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMyMerchant(options?: any): AxiosPromise<Merchant> {
-            return localVarFp.getMyMerchant(options).then((request) => request(axios, basePath));
+        getCurrentMerchant(options?: any): AxiosPromise<Merchant> {
+            return localVarFp.getCurrentMerchant(options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4384,76 +4390,76 @@ export const MerchantApiFactory = function (configuration?: Configuration, baseP
 };
 
 /**
- * Request parameters for confirmSquareOauth operation in MerchantApi.
+ * Request parameters for confirmSquareOauth operation in MerchantsApi.
  * @export
- * @interface MerchantApiConfirmSquareOauthRequest
+ * @interface MerchantsApiConfirmSquareOauthRequest
  */
-export interface MerchantApiConfirmSquareOauthRequest {
+export interface MerchantsApiConfirmSquareOauthRequest {
     /**
      * 
      * @type {string}
-     * @memberof MerchantApiConfirmSquareOauth
+     * @memberof MerchantsApiConfirmSquareOauth
      */
     readonly oauthAccessCode: string
 }
 
 /**
- * Request parameters for confirmStripeCheckout operation in MerchantApi.
+ * Request parameters for confirmStripeCheckout operation in MerchantsApi.
  * @export
- * @interface MerchantApiConfirmStripeCheckoutRequest
+ * @interface MerchantsApiConfirmStripeCheckoutRequest
  */
-export interface MerchantApiConfirmStripeCheckoutRequest {
+export interface MerchantsApiConfirmStripeCheckoutRequest {
     /**
      * 
      * @type {StripeCheckoutDto}
-     * @memberof MerchantApiConfirmStripeCheckout
+     * @memberof MerchantsApiConfirmStripeCheckout
      */
     readonly stripeCheckoutDto: StripeCheckoutDto
 }
 
 /**
- * Request parameters for startStripeCheckout operation in MerchantApi.
+ * Request parameters for startStripeCheckout operation in MerchantsApi.
  * @export
- * @interface MerchantApiStartStripeCheckoutRequest
+ * @interface MerchantsApiStartStripeCheckoutRequest
  */
-export interface MerchantApiStartStripeCheckoutRequest {
+export interface MerchantsApiStartStripeCheckoutRequest {
     /**
      * 
      * @type {StripeCheckoutCreateDto}
-     * @memberof MerchantApiStartStripeCheckout
+     * @memberof MerchantsApiStartStripeCheckout
      */
     readonly stripeCheckoutCreateDto: StripeCheckoutCreateDto
 }
 
 /**
- * MerchantApi - object-oriented interface
+ * MerchantsApi - object-oriented interface
  * @export
- * @class MerchantApi
+ * @class MerchantsApi
  * @extends {BaseAPI}
  */
-export class MerchantApi extends BaseAPI {
+export class MerchantsApi extends BaseAPI {
     /**
      * 
      * @summary Confirm Square Oauth
-     * @param {MerchantApiConfirmSquareOauthRequest} requestParameters Request parameters.
+     * @param {MerchantsApiConfirmSquareOauthRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MerchantApi
+     * @memberof MerchantsApi
      */
-    public confirmSquareOauth(requestParameters: MerchantApiConfirmSquareOauthRequest, options?: AxiosRequestConfig) {
-        return MerchantApiFp(this.configuration).confirmSquareOauth(requestParameters.oauthAccessCode, options).then((request) => request(this.axios, this.basePath));
+    public confirmSquareOauth(requestParameters: MerchantsApiConfirmSquareOauthRequest, options?: AxiosRequestConfig) {
+        return MerchantsApiFp(this.configuration).confirmSquareOauth(requestParameters.oauthAccessCode, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Confirm Square checkout
-     * @param {MerchantApiConfirmStripeCheckoutRequest} requestParameters Request parameters.
+     * @param {MerchantsApiConfirmStripeCheckoutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MerchantApi
+     * @memberof MerchantsApi
      */
-    public confirmStripeCheckout(requestParameters: MerchantApiConfirmStripeCheckoutRequest, options?: AxiosRequestConfig) {
-        return MerchantApiFp(this.configuration).confirmStripeCheckout(requestParameters.stripeCheckoutDto, options).then((request) => request(this.axios, this.basePath));
+    public confirmStripeCheckout(requestParameters: MerchantsApiConfirmStripeCheckoutRequest, options?: AxiosRequestConfig) {
+        return MerchantsApiFp(this.configuration).confirmStripeCheckout(requestParameters.stripeCheckoutDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -4461,10 +4467,10 @@ export class MerchantApi extends BaseAPI {
      * @summary Create Merchant for current User
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MerchantApi
+     * @memberof MerchantsApi
      */
     public createMerchant(options?: AxiosRequestConfig) {
-        return MerchantApiFp(this.configuration).createMerchant(options).then((request) => request(this.axios, this.basePath));
+        return MerchantsApiFp(this.configuration).createMerchant(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -4472,22 +4478,22 @@ export class MerchantApi extends BaseAPI {
      * @summary Get current Merchant
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MerchantApi
+     * @memberof MerchantsApi
      */
-    public getMyMerchant(options?: AxiosRequestConfig) {
-        return MerchantApiFp(this.configuration).getMyMerchant(options).then((request) => request(this.axios, this.basePath));
+    public getCurrentMerchant(options?: AxiosRequestConfig) {
+        return MerchantsApiFp(this.configuration).getCurrentMerchant(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Start Stripe checkout
-     * @param {MerchantApiStartStripeCheckoutRequest} requestParameters Request parameters.
+     * @param {MerchantsApiStartStripeCheckoutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MerchantApi
+     * @memberof MerchantsApi
      */
-    public startStripeCheckout(requestParameters: MerchantApiStartStripeCheckoutRequest, options?: AxiosRequestConfig) {
-        return MerchantApiFp(this.configuration).startStripeCheckout(requestParameters.stripeCheckoutCreateDto, options).then((request) => request(this.axios, this.basePath));
+    public startStripeCheckout(requestParameters: MerchantsApiStartStripeCheckoutRequest, options?: AxiosRequestConfig) {
+        return MerchantsApiFp(this.configuration).startStripeCheckout(requestParameters.stripeCheckoutCreateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -4495,10 +4501,10 @@ export class MerchantApi extends BaseAPI {
      * @summary Sync your Square Catalog
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MerchantApi
+     * @memberof MerchantsApi
      */
     public syncSquareCatalog(options?: AxiosRequestConfig) {
-        return MerchantApiFp(this.configuration).syncSquareCatalog(options).then((request) => request(this.axios, this.basePath));
+        return MerchantsApiFp(this.configuration).syncSquareCatalog(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -4506,10 +4512,10 @@ export class MerchantApi extends BaseAPI {
      * @summary Sync your Square Locations
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof MerchantApi
+     * @memberof MerchantsApi
      */
     public syncSquareLocations(options?: AxiosRequestConfig) {
-        return MerchantApiFp(this.configuration).syncSquareLocations(options).then((request) => request(this.axios, this.basePath));
+        return MerchantsApiFp(this.configuration).syncSquareLocations(options).then((request) => request(this.axios, this.basePath));
     }
 }
 
