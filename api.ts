@@ -129,6 +129,12 @@ export interface AppConfig {
      * @type {string}
      * @memberof AppConfig
      */
+    'name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AppConfig
+     */
     'seedColor'?: string;
     /**
      * 
@@ -531,6 +537,12 @@ export interface CategoryUpdateDto {
  * @interface ConfigUpdateDto
  */
 export interface ConfigUpdateDto {
+    /**
+     * 
+     * @type {string}
+     * @memberof ConfigUpdateDto
+     */
+    'name': string;
     /**
      * 
      * @type {string}
