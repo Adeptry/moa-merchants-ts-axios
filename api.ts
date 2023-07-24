@@ -142,6 +142,30 @@ export interface AppConfig {
      * @memberof AppConfig
      */
     'fontFamily'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AppConfig
+     */
+    'shortDescription'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AppConfig
+     */
+    'fullDescription'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AppConfig
+     */
+    'keywords'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AppConfig
+     */
+    'url'?: string;
 }
 /**
  * 
