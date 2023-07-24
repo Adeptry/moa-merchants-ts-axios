@@ -579,6 +579,30 @@ export interface ConfigUpdateDto {
      * @memberof ConfigUpdateDto
      */
     'fontFamily': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConfigUpdateDto
+     */
+    'shortDescription': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConfigUpdateDto
+     */
+    'fullDescription': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConfigUpdateDto
+     */
+    'keywords': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConfigUpdateDto
+     */
+    'url': string;
 }
 /**
  * 
