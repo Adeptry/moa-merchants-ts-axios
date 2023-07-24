@@ -14,10 +14,29 @@
 
 
 
-export * from './moa-merchants-api/auth-api';
-export * from './moa-merchants-api/catalogs-api';
-export * from './moa-merchants-api/configs-api';
-export * from './moa-merchants-api/locations-api';
-export * from './moa-merchants-api/merchants-api';
-export * from './moa-merchants-api/square-api';
+/**
+ * 
+ * @export
+ * @interface NestError
+ */
+export interface NestError {
+    /**
+     * 
+     * @type {number}
+     * @memberof NestError
+     */
+    'statusCode': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof NestError
+     */
+    'message': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof NestError
+     */
+    'error': string;
+}
 

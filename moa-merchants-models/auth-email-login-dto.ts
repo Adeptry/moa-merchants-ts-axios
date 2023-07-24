@@ -14,10 +14,23 @@
 
 
 
-export * from './moa-merchants-api/auth-api';
-export * from './moa-merchants-api/catalogs-api';
-export * from './moa-merchants-api/configs-api';
-export * from './moa-merchants-api/locations-api';
-export * from './moa-merchants-api/merchants-api';
-export * from './moa-merchants-api/square-api';
+/**
+ * 
+ * @export
+ * @interface AuthEmailLoginDto
+ */
+export interface AuthEmailLoginDto {
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthEmailLoginDto
+     */
+    'email': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthEmailLoginDto
+     */
+    'password': string;
+}
 

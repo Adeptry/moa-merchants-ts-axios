@@ -14,10 +14,17 @@
 
 
 
-export * from './moa-merchants-api/auth-api';
-export * from './moa-merchants-api/catalogs-api';
-export * from './moa-merchants-api/configs-api';
-export * from './moa-merchants-api/locations-api';
-export * from './moa-merchants-api/merchants-api';
-export * from './moa-merchants-api/square-api';
+/**
+ * 
+ * @export
+ * @interface FileEntity
+ */
+export interface FileEntity {
+    /**
+     * 
+     * @type {string}
+     * @memberof FileEntity
+     */
+    'id': string;
+}
 

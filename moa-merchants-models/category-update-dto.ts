@@ -14,10 +14,23 @@
 
 
 
-export * from './moa-merchants-api/auth-api';
-export * from './moa-merchants-api/catalogs-api';
-export * from './moa-merchants-api/configs-api';
-export * from './moa-merchants-api/locations-api';
-export * from './moa-merchants-api/merchants-api';
-export * from './moa-merchants-api/square-api';
+/**
+ * 
+ * @export
+ * @interface CategoryUpdateDto
+ */
+export interface CategoryUpdateDto {
+    /**
+     * 
+     * @type {number}
+     * @memberof CategoryUpdateDto
+     */
+    'moaOrdinal': number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof CategoryUpdateDto
+     */
+    'moaEnabled': boolean;
+}
 
