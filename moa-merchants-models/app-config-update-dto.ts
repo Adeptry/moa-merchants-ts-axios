@@ -17,50 +17,50 @@
 /**
  * 
  * @export
- * @interface ConfigUpdateDto
+ * @interface AppConfigUpdateDto
  */
-export interface ConfigUpdateDto {
+export interface AppConfigUpdateDto {
     /**
      * 
      * @type {string}
-     * @memberof ConfigUpdateDto
+     * @memberof AppConfigUpdateDto
      */
-    'name': string;
+    'name'?: string;
     /**
      * 
      * @type {string}
-     * @memberof ConfigUpdateDto
+     * @memberof AppConfigUpdateDto
      */
-    'seedColor': string;
+    'seedColor'?: string;
     /**
      * 
      * @type {string}
-     * @memberof ConfigUpdateDto
+     * @memberof AppConfigUpdateDto
      */
-    'fontFamily': string;
+    'fontFamily'?: string;
     /**
      * 
      * @type {string}
-     * @memberof ConfigUpdateDto
+     * @memberof AppConfigUpdateDto
      */
-    'shortDescription': string;
+    'shortDescription'?: string;
     /**
      * 
      * @type {string}
-     * @memberof ConfigUpdateDto
+     * @memberof AppConfigUpdateDto
      */
-    'fullDescription': string;
+    'fullDescription'?: string;
     /**
      * 
      * @type {string}
-     * @memberof ConfigUpdateDto
+     * @memberof AppConfigUpdateDto
      */
-    'keywords': string;
+    'keywords'?: string;
     /**
      * 
      * @type {string}
-     * @memberof ConfigUpdateDto
+     * @memberof AppConfigUpdateDto
      */
-    'url': string;
+    'url'?: string;
 }
 

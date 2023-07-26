@@ -23,7 +23,7 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 // @ts-ignore
 import { AppConfig } from '../moa-merchants-models';
 // @ts-ignore
-import { ConfigUpdateDto } from '../moa-merchants-models';
+import { AppConfigUpdateDto } from '../moa-merchants-models';
 // @ts-ignore
 import { NestError } from '../moa-merchants-models';
 /**
@@ -35,13 +35,13 @@ export const ConfigsApiAxiosParamCreator = function (configuration?: Configurati
         /**
          * 
          * @summary Create your Config
-         * @param {ConfigUpdateDto} configUpdateDto 
+         * @param {AppConfigUpdateDto} appConfigUpdateDto 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createConfig: async (configUpdateDto: ConfigUpdateDto, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'configUpdateDto' is not null or undefined
-            assertParamExists('createConfig', 'configUpdateDto', configUpdateDto)
+        createConfig: async (appConfigUpdateDto: AppConfigUpdateDto, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'appConfigUpdateDto' is not null or undefined
+            assertParamExists('createConfig', 'appConfigUpdateDto', appConfigUpdateDto)
             const localVarPath = `/v2/app-config/me`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -68,7 +68,7 @@ export const ConfigsApiAxiosParamCreator = function (configuration?: Configurati
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(configUpdateDto, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(appConfigUpdateDto, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -125,13 +125,13 @@ export const ConfigsApiAxiosParamCreator = function (configuration?: Configurati
         /**
          * 
          * @summary Update your Config
-         * @param {ConfigUpdateDto} configUpdateDto 
+         * @param {AppConfigUpdateDto} appConfigUpdateDto 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateConfig: async (configUpdateDto: ConfigUpdateDto, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'configUpdateDto' is not null or undefined
-            assertParamExists('updateConfig', 'configUpdateDto', configUpdateDto)
+        updateConfig: async (appConfigUpdateDto: AppConfigUpdateDto, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'appConfigUpdateDto' is not null or undefined
+            assertParamExists('updateConfig', 'appConfigUpdateDto', appConfigUpdateDto)
             const localVarPath = `/v2/app-config/me`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -158,7 +158,7 @@ export const ConfigsApiAxiosParamCreator = function (configuration?: Configurati
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(configUpdateDto, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(appConfigUpdateDto, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -224,12 +224,12 @@ export const ConfigsApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Create your Config
-         * @param {ConfigUpdateDto} configUpdateDto 
+         * @param {AppConfigUpdateDto} appConfigUpdateDto 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createConfig(configUpdateDto: ConfigUpdateDto, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AppConfig>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.createConfig(configUpdateDto, options);
+        async createConfig(appConfigUpdateDto: AppConfigUpdateDto, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AppConfig>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createConfig(appConfigUpdateDto, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -247,12 +247,12 @@ export const ConfigsApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Update your Config
-         * @param {ConfigUpdateDto} configUpdateDto 
+         * @param {AppConfigUpdateDto} appConfigUpdateDto 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateConfig(configUpdateDto: ConfigUpdateDto, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AppConfig>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.updateConfig(configUpdateDto, options);
+        async updateConfig(appConfigUpdateDto: AppConfigUpdateDto, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AppConfig>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateConfig(appConfigUpdateDto, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -279,12 +279,12 @@ export const ConfigsApiFactory = function (configuration?: Configuration, basePa
         /**
          * 
          * @summary Create your Config
-         * @param {ConfigUpdateDto} configUpdateDto 
+         * @param {AppConfigUpdateDto} appConfigUpdateDto 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createConfig(configUpdateDto: ConfigUpdateDto, options?: any): AxiosPromise<AppConfig> {
-            return localVarFp.createConfig(configUpdateDto, options).then((request) => request(axios, basePath));
+        createConfig(appConfigUpdateDto: AppConfigUpdateDto, options?: any): AxiosPromise<AppConfig> {
+            return localVarFp.createConfig(appConfigUpdateDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -300,12 +300,12 @@ export const ConfigsApiFactory = function (configuration?: Configuration, basePa
         /**
          * 
          * @summary Update your Config
-         * @param {ConfigUpdateDto} configUpdateDto 
+         * @param {AppConfigUpdateDto} appConfigUpdateDto 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateConfig(configUpdateDto: ConfigUpdateDto, options?: any): AxiosPromise<AppConfig> {
-            return localVarFp.updateConfig(configUpdateDto, options).then((request) => request(axios, basePath));
+        updateConfig(appConfigUpdateDto: AppConfigUpdateDto, options?: any): AxiosPromise<AppConfig> {
+            return localVarFp.updateConfig(appConfigUpdateDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -328,10 +328,10 @@ export const ConfigsApiFactory = function (configuration?: Configuration, basePa
 export interface ConfigsApiCreateConfigRequest {
     /**
      * 
-     * @type {ConfigUpdateDto}
+     * @type {AppConfigUpdateDto}
      * @memberof ConfigsApiCreateConfig
      */
-    readonly configUpdateDto: ConfigUpdateDto
+    readonly appConfigUpdateDto: AppConfigUpdateDto
 }
 
 /**
@@ -363,10 +363,10 @@ export interface ConfigsApiGetConfigRequest {
 export interface ConfigsApiUpdateConfigRequest {
     /**
      * 
-     * @type {ConfigUpdateDto}
+     * @type {AppConfigUpdateDto}
      * @memberof ConfigsApiUpdateConfig
      */
-    readonly configUpdateDto: ConfigUpdateDto
+    readonly appConfigUpdateDto: AppConfigUpdateDto
 }
 
 /**
@@ -399,7 +399,7 @@ export class ConfigsApi extends BaseAPI {
      * @memberof ConfigsApi
      */
     public createConfig(requestParameters: ConfigsApiCreateConfigRequest, options?: AxiosRequestConfig) {
-        return ConfigsApiFp(this.configuration).createConfig(requestParameters.configUpdateDto, options).then((request) => request(this.axios, this.basePath));
+        return ConfigsApiFp(this.configuration).createConfig(requestParameters.appConfigUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -423,7 +423,7 @@ export class ConfigsApi extends BaseAPI {
      * @memberof ConfigsApi
      */
     public updateConfig(requestParameters: ConfigsApiUpdateConfigRequest, options?: AxiosRequestConfig) {
-        return ConfigsApiFp(this.configuration).updateConfig(requestParameters.configUpdateDto, options).then((request) => request(this.axios, this.basePath));
+        return ConfigsApiFp(this.configuration).updateConfig(requestParameters.appConfigUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
