@@ -25,12 +25,12 @@ export interface ItemUpdateDto {
      * @type {number}
      * @memberof ItemUpdateDto
      */
-    'moaOrdinal': number;
+    'moaOrdinal'?: number;
     /**
      * 
      * @type {boolean}
      * @memberof ItemUpdateDto
      */
-    'moaEnabled': boolean;
+    'moaEnabled'?: boolean;
 }
 

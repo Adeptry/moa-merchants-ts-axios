@@ -31,12 +31,12 @@ export interface LocationUpdateAllDto {
      * @type {number}
      * @memberof LocationUpdateAllDto
      */
-    'moaOrdinal': number;
+    'moaOrdinal'?: number;
     /**
      * 
      * @type {boolean}
      * @memberof LocationUpdateAllDto
      */
-    'moaEnabled': boolean;
+    'moaEnabled'?: boolean;
 }
 

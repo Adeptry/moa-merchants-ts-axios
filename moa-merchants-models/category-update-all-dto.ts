@@ -31,12 +31,12 @@ export interface CategoryUpdateAllDto {
      * @type {number}
      * @memberof CategoryUpdateAllDto
      */
-    'moaOrdinal': number;
+    'moaOrdinal'?: number | null;
     /**
      * 
      * @type {boolean}
      * @memberof CategoryUpdateAllDto
      */
-    'moaEnabled': boolean;
+    'moaEnabled'?: boolean | null;
 }
 

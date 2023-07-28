@@ -25,12 +25,12 @@ export interface LocationUpdateDto {
      * @type {number}
      * @memberof LocationUpdateDto
      */
-    'moaOrdinal': number;
+    'moaOrdinal'?: number;
     /**
      * 
      * @type {boolean}
      * @memberof LocationUpdateDto
      */
-    'moaEnabled': boolean;
+    'moaEnabled'?: boolean;
 }
 
