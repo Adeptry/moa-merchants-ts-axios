@@ -38,6 +38,8 @@ import { ItemUpdateAllDto } from '../moa-merchants-models';
 import { ItemUpdateDto } from '../moa-merchants-models';
 // @ts-ignore
 import { NestError } from '../moa-merchants-models';
+// @ts-ignore
+import { Variation } from '../moa-merchants-models';
 /**
  * CatalogsApi - axios parameter creator
  * @export
@@ -235,6 +237,52 @@ export const CatalogsApiAxiosParamCreator = function (configuration?: Configurat
 
             if (merchantId !== undefined) {
                 localVarQueryParameter['merchantId'] = merchantId;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get Item variations with ID
+         * @param {string} id 
+         * @param {string} [locationId] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getVariationsForItem: async (id: string, locationId?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('getVariationsForItem', 'id', id)
+            const localVarPath = `/v2/items/{id}/variations`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Api-Key required
+            await setApiKeyToObject(localVarHeaderParameter, "Api-Key", configuration)
+
+            // authentication bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (locationId !== undefined) {
+                localVarQueryParameter['locationId'] = locationId;
             }
 
 
@@ -489,6 +537,18 @@ export const CatalogsApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Get Item variations with ID
+         * @param {string} id 
+         * @param {string} [locationId] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getVariationsForItem(id: string, locationId?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Variation>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getVariationsForItem(id, locationId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
          * @summary Update multiple Categories
          * @param {Array<CategoryUpdateAllDto>} categoryUpdateAllDto 
          * @param {*} [options] Override http request option.
@@ -588,6 +648,17 @@ export const CatalogsApiFactory = function (configuration?: Configuration, baseP
          */
         getItemsInCategory(id: string, page?: number, limit?: number, locationId?: string, images?: boolean, variations?: boolean, modifierLists?: boolean, actingAs?: 'merchant' | 'customer', merchantId?: string, options?: any): AxiosPromise<ItemPaginatedResponse> {
             return localVarFp.getItemsInCategory(id, page, limit, locationId, images, variations, modifierLists, actingAs, merchantId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Get Item variations with ID
+         * @param {string} id 
+         * @param {string} [locationId] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getVariationsForItem(id: string, locationId?: string, options?: any): AxiosPromise<Array<Variation>> {
+            return localVarFp.getVariationsForItem(id, locationId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -789,6 +860,27 @@ export interface CatalogsApiGetItemsInCategoryRequest {
 }
 
 /**
+ * Request parameters for getVariationsForItem operation in CatalogsApi.
+ * @export
+ * @interface CatalogsApiGetVariationsForItemRequest
+ */
+export interface CatalogsApiGetVariationsForItemRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof CatalogsApiGetVariationsForItem
+     */
+    readonly id: string
+
+    /**
+     * 
+     * @type {string}
+     * @memberof CatalogsApiGetVariationsForItem
+     */
+    readonly locationId?: string
+}
+
+/**
  * Request parameters for updateCategories operation in CatalogsApi.
  * @export
  * @interface CatalogsApiUpdateCategoriesRequest
@@ -899,6 +991,18 @@ export class CatalogsApi extends BaseAPI {
      */
     public getItemsInCategory(requestParameters: CatalogsApiGetItemsInCategoryRequest, options?: AxiosRequestConfig) {
         return CatalogsApiFp(this.configuration).getItemsInCategory(requestParameters.id, requestParameters.page, requestParameters.limit, requestParameters.locationId, requestParameters.images, requestParameters.variations, requestParameters.modifierLists, requestParameters.actingAs, requestParameters.merchantId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get Item variations with ID
+     * @param {CatalogsApiGetVariationsForItemRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CatalogsApi
+     */
+    public getVariationsForItem(requestParameters: CatalogsApiGetVariationsForItemRequest, options?: AxiosRequestConfig) {
+        return CatalogsApiFp(this.configuration).getVariationsForItem(requestParameters.id, requestParameters.locationId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
