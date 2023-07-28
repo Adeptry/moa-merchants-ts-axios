@@ -46,6 +46,7 @@ moa-merchants-models/nest-error.ts
 moa-merchants-models/stripe-checkout-create-dto.ts
 moa-merchants-models/stripe-checkout-dto.ts
 moa-merchants-models/user.ts
+moa-merchants-models/variation-update-dto.ts
 moa-merchants-models/variation.ts
 package.json
 tsconfig.json

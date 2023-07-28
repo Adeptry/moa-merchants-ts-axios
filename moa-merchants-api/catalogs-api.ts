@@ -40,6 +40,8 @@ import { ItemUpdateDto } from '../moa-merchants-models';
 import { NestError } from '../moa-merchants-models';
 // @ts-ignore
 import { Variation } from '../moa-merchants-models';
+// @ts-ignore
+import { VariationUpdateDto } from '../moa-merchants-models';
 /**
  * CatalogsApi - axios parameter creator
  * @export
@@ -476,6 +478,53 @@ export const CatalogsApiAxiosParamCreator = function (configuration?: Configurat
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Update an Variation
+         * @param {string} id 
+         * @param {VariationUpdateDto} variationUpdateDto 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateVariation: async (id: string, variationUpdateDto: VariationUpdateDto, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('updateVariation', 'id', id)
+            // verify required parameter 'variationUpdateDto' is not null or undefined
+            assertParamExists('updateVariation', 'variationUpdateDto', variationUpdateDto)
+            const localVarPath = `/v2/variations/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Api-Key required
+            await setApiKeyToObject(localVarHeaderParameter, "Api-Key", configuration)
+
+            // authentication bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(variationUpdateDto, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -593,6 +642,18 @@ export const CatalogsApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateItems(itemUpdateAllDto, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
+        /**
+         * 
+         * @summary Update an Variation
+         * @param {string} id 
+         * @param {VariationUpdateDto} variationUpdateDto 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateVariation(id: string, variationUpdateDto: VariationUpdateDto, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Variation>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateVariation(id, variationUpdateDto, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
     }
 };
 
@@ -701,6 +762,17 @@ export const CatalogsApiFactory = function (configuration?: Configuration, baseP
          */
         updateItems(itemUpdateAllDto: Array<ItemUpdateAllDto>, options?: any): AxiosPromise<Array<Item>> {
             return localVarFp.updateItems(itemUpdateAllDto, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Update an Variation
+         * @param {string} id 
+         * @param {VariationUpdateDto} variationUpdateDto 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateVariation(id: string, variationUpdateDto: VariationUpdateDto, options?: any): AxiosPromise<Variation> {
+            return localVarFp.updateVariation(id, variationUpdateDto, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -951,6 +1023,27 @@ export interface CatalogsApiUpdateItemsRequest {
 }
 
 /**
+ * Request parameters for updateVariation operation in CatalogsApi.
+ * @export
+ * @interface CatalogsApiUpdateVariationRequest
+ */
+export interface CatalogsApiUpdateVariationRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof CatalogsApiUpdateVariation
+     */
+    readonly id: string
+
+    /**
+     * 
+     * @type {VariationUpdateDto}
+     * @memberof CatalogsApiUpdateVariation
+     */
+    readonly variationUpdateDto: VariationUpdateDto
+}
+
+/**
  * CatalogsApi - object-oriented interface
  * @export
  * @class CatalogsApi
@@ -1051,5 +1144,17 @@ export class CatalogsApi extends BaseAPI {
      */
     public updateItems(requestParameters: CatalogsApiUpdateItemsRequest, options?: AxiosRequestConfig) {
         return CatalogsApiFp(this.configuration).updateItems(requestParameters.itemUpdateAllDto, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Update an Variation
+     * @param {CatalogsApiUpdateVariationRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CatalogsApi
+     */
+    public updateVariation(requestParameters: CatalogsApiUpdateVariationRequest, options?: AxiosRequestConfig) {
+        return CatalogsApiFp(this.configuration).updateVariation(requestParameters.id, requestParameters.variationUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 }

@@ -31,3 +31,4 @@ export * from './stripe-checkout-create-dto';
 export * from './stripe-checkout-dto';
 export * from './user';
 export * from './variation';
+export * from './variation-update-dto';
