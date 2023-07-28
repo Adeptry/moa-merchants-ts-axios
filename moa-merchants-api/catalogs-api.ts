@@ -174,14 +174,17 @@ export const CatalogsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {string} [locationId] 
+         * @param {boolean} [images] 
+         * @param {boolean} [variations] 
+         * @param {boolean} [modifierLists] 
          * @param {'merchant' | 'customer'} [actingAs] 
          * @param {string} [merchantId] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getItems: async (id: string, page?: number, limit?: number, locationId?: string, actingAs?: 'merchant' | 'customer', merchantId?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getItemsInCategory: async (id: string, page?: number, limit?: number, locationId?: string, images?: boolean, variations?: boolean, modifierLists?: boolean, actingAs?: 'merchant' | 'customer', merchantId?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('getItems', 'id', id)
+            assertParamExists('getItemsInCategory', 'id', id)
             const localVarPath = `/v2/categories/{id}/items`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -212,6 +215,18 @@ export const CatalogsApiAxiosParamCreator = function (configuration?: Configurat
 
             if (locationId !== undefined) {
                 localVarQueryParameter['locationId'] = locationId;
+            }
+
+            if (images !== undefined) {
+                localVarQueryParameter['images'] = images;
+            }
+
+            if (variations !== undefined) {
+                localVarQueryParameter['variations'] = variations;
+            }
+
+            if (modifierLists !== undefined) {
+                localVarQueryParameter['modifierLists'] = modifierLists;
             }
 
             if (actingAs !== undefined) {
@@ -460,13 +475,16 @@ export const CatalogsApiFp = function(configuration?: Configuration) {
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {string} [locationId] 
+         * @param {boolean} [images] 
+         * @param {boolean} [variations] 
+         * @param {boolean} [modifierLists] 
          * @param {'merchant' | 'customer'} [actingAs] 
          * @param {string} [merchantId] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getItems(id: string, page?: number, limit?: number, locationId?: string, actingAs?: 'merchant' | 'customer', merchantId?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ItemPaginatedResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getItems(id, page, limit, locationId, actingAs, merchantId, options);
+        async getItemsInCategory(id: string, page?: number, limit?: number, locationId?: string, images?: boolean, variations?: boolean, modifierLists?: boolean, actingAs?: 'merchant' | 'customer', merchantId?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ItemPaginatedResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getItemsInCategory(id, page, limit, locationId, images, variations, modifierLists, actingAs, merchantId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -560,13 +578,16 @@ export const CatalogsApiFactory = function (configuration?: Configuration, baseP
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {string} [locationId] 
+         * @param {boolean} [images] 
+         * @param {boolean} [variations] 
+         * @param {boolean} [modifierLists] 
          * @param {'merchant' | 'customer'} [actingAs] 
          * @param {string} [merchantId] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getItems(id: string, page?: number, limit?: number, locationId?: string, actingAs?: 'merchant' | 'customer', merchantId?: string, options?: any): AxiosPromise<ItemPaginatedResponse> {
-            return localVarFp.getItems(id, page, limit, locationId, actingAs, merchantId, options).then((request) => request(axios, basePath));
+        getItemsInCategory(id: string, page?: number, limit?: number, locationId?: string, images?: boolean, variations?: boolean, modifierLists?: boolean, actingAs?: 'merchant' | 'customer', merchantId?: string, options?: any): AxiosPromise<ItemPaginatedResponse> {
+            return localVarFp.getItemsInCategory(id, page, limit, locationId, images, variations, modifierLists, actingAs, merchantId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -698,50 +719,71 @@ export interface CatalogsApiGetItemRequest {
 }
 
 /**
- * Request parameters for getItems operation in CatalogsApi.
+ * Request parameters for getItemsInCategory operation in CatalogsApi.
  * @export
- * @interface CatalogsApiGetItemsRequest
+ * @interface CatalogsApiGetItemsInCategoryRequest
  */
-export interface CatalogsApiGetItemsRequest {
+export interface CatalogsApiGetItemsInCategoryRequest {
     /**
      * 
      * @type {string}
-     * @memberof CatalogsApiGetItems
+     * @memberof CatalogsApiGetItemsInCategory
      */
     readonly id: string
 
     /**
      * 
      * @type {number}
-     * @memberof CatalogsApiGetItems
+     * @memberof CatalogsApiGetItemsInCategory
      */
     readonly page?: number
 
     /**
      * 
      * @type {number}
-     * @memberof CatalogsApiGetItems
+     * @memberof CatalogsApiGetItemsInCategory
      */
     readonly limit?: number
 
     /**
      * 
      * @type {string}
-     * @memberof CatalogsApiGetItems
+     * @memberof CatalogsApiGetItemsInCategory
      */
     readonly locationId?: string
 
     /**
      * 
+     * @type {boolean}
+     * @memberof CatalogsApiGetItemsInCategory
+     */
+    readonly images?: boolean
+
+    /**
+     * 
+     * @type {boolean}
+     * @memberof CatalogsApiGetItemsInCategory
+     */
+    readonly variations?: boolean
+
+    /**
+     * 
+     * @type {boolean}
+     * @memberof CatalogsApiGetItemsInCategory
+     */
+    readonly modifierLists?: boolean
+
+    /**
+     * 
      * @type {'merchant' | 'customer'}
-     * @memberof CatalogsApiGetItems
+     * @memberof CatalogsApiGetItemsInCategory
      */
     readonly actingAs?: 'merchant' | 'customer'
 
     /**
      * 
      * @type {string}
-     * @memberof CatalogsApiGetItems
+     * @memberof CatalogsApiGetItemsInCategory
      */
     readonly merchantId?: string
 }
@@ -850,13 +892,13 @@ export class CatalogsApi extends BaseAPI {
     /**
      * 
      * @summary Get Items in Category
-     * @param {CatalogsApiGetItemsRequest} requestParameters Request parameters.
+     * @param {CatalogsApiGetItemsInCategoryRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CatalogsApi
      */
-    public getItems(requestParameters: CatalogsApiGetItemsRequest, options?: AxiosRequestConfig) {
-        return CatalogsApiFp(this.configuration).getItems(requestParameters.id, requestParameters.page, requestParameters.limit, requestParameters.locationId, requestParameters.actingAs, requestParameters.merchantId, options).then((request) => request(this.axios, this.basePath));
+    public getItemsInCategory(requestParameters: CatalogsApiGetItemsInCategoryRequest, options?: AxiosRequestConfig) {
+        return CatalogsApiFp(this.configuration).getItemsInCategory(requestParameters.id, requestParameters.page, requestParameters.limit, requestParameters.locationId, requestParameters.images, requestParameters.variations, requestParameters.modifierLists, requestParameters.actingAs, requestParameters.merchantId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
