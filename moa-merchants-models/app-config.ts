@@ -43,6 +43,18 @@ export interface AppConfig {
      * @type {string}
      * @memberof AppConfig
      */
+    'appearance'?: AppConfigAppearanceEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof AppConfig
+     */
+    'colorMode'?: AppConfigColorModeEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof AppConfig
+     */
     'shortDescription'?: string;
     /**
      * 
@@ -75,4 +87,19 @@ export interface AppConfig {
      */
     'blockingMessage'?: string;
 }
+
+export const AppConfigAppearanceEnum = {
+    Modern: 'MODERN',
+    Classic: 'CLASSIC'
+} as const;
+
+export type AppConfigAppearanceEnum = typeof AppConfigAppearanceEnum[keyof typeof AppConfigAppearanceEnum];
+export const AppConfigColorModeEnum = {
+    System: 'SYSTEM',
+    Light: 'LIGHT',
+    Dark: 'DARK'
+} as const;
+
+export type AppConfigColorModeEnum = typeof AppConfigColorModeEnum[keyof typeof AppConfigColorModeEnum];
+
 

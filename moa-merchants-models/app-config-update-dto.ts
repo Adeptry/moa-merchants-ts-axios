@@ -62,5 +62,32 @@ export interface AppConfigUpdateDto {
      * @memberof AppConfigUpdateDto
      */
     'url'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AppConfigUpdateDto
+     */
+    'appearance': AppConfigUpdateDtoAppearanceEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof AppConfigUpdateDto
+     */
+    'colorMode': AppConfigUpdateDtoColorModeEnum;
 }
+
+export const AppConfigUpdateDtoAppearanceEnum = {
+    Modern: 'MODERN',
+    Classic: 'CLASSIC'
+} as const;
+
+export type AppConfigUpdateDtoAppearanceEnum = typeof AppConfigUpdateDtoAppearanceEnum[keyof typeof AppConfigUpdateDtoAppearanceEnum];
+export const AppConfigUpdateDtoColorModeEnum = {
+    System: 'SYSTEM',
+    Light: 'LIGHT',
+    Dark: 'DARK'
+} as const;
+
+export type AppConfigUpdateDtoColorModeEnum = typeof AppConfigUpdateDtoColorModeEnum[keyof typeof AppConfigUpdateDtoColorModeEnum];
+
 
