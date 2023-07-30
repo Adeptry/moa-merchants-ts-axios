@@ -77,20 +77,15 @@ export interface AppConfigUpdateDto {
 }
 
 export const AppConfigUpdateDtoAppearanceEnum = {
-    Modern: 'MODERN',
-    Classic: 'CLASSIC',
-    _0: '0',
-    _1: '1'
+    Modern: 'modern',
+    Classic: 'classic'
 } as const;
 
 export type AppConfigUpdateDtoAppearanceEnum = typeof AppConfigUpdateDtoAppearanceEnum[keyof typeof AppConfigUpdateDtoAppearanceEnum];
 export const AppConfigUpdateDtoColorModeEnum = {
-    System: 'SYSTEM',
-    Light: 'LIGHT',
-    Dark: 'DARK',
-    _0: '0',
-    _1: '1',
-    _2: '2'
+    System: 'system',
+    Light: 'light',
+    Dark: 'dark'
 } as const;
 
 export type AppConfigUpdateDtoColorModeEnum = typeof AppConfigUpdateDtoColorModeEnum[keyof typeof AppConfigUpdateDtoColorModeEnum];

@@ -1,6 +1,7 @@
 export * from './address';
 export * from './app-config';
 export * from './app-config-update-dto';
+export * from './appearance-enum';
 export * from './auth-apple-login-dto';
 export * from './auth-email-login-dto';
 export * from './auth-forgot-password-dto';
@@ -13,6 +14,7 @@ export * from './category';
 export * from './category-paginated-response';
 export * from './category-update-all-dto';
 export * from './category-update-dto';
+export * from './color-mode-enum';
 export * from './file-entity';
 export * from './item';
 export * from './item-paginated-response';

@@ -13,6 +13,12 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { AppearanceEnum } from './appearance-enum';
+// May contain unused imports in some cases
+// @ts-ignore
+import { ColorModeEnum } from './color-mode-enum';
 
 /**
  * 
@@ -40,16 +46,16 @@ export interface AppConfig {
     'fontFamily'?: string;
     /**
      * 
-     * @type {string}
+     * @type {AppearanceEnum}
      * @memberof AppConfig
      */
-    'appearance'?: AppConfigAppearanceEnum;
+    'appearance'?: AppearanceEnum;
     /**
      * 
-     * @type {string}
+     * @type {ColorModeEnum}
      * @memberof AppConfig
      */
-    'colorMode'?: AppConfigColorModeEnum;
+    'colorMode'?: ColorModeEnum;
     /**
      * 
      * @type {string}
@@ -87,24 +93,4 @@ export interface AppConfig {
      */
     'blockingMessage'?: string;
 }
-
-export const AppConfigAppearanceEnum = {
-    Modern: 'MODERN',
-    Classic: 'CLASSIC',
-    _0: '0',
-    _1: '1'
-} as const;
-
-export type AppConfigAppearanceEnum = typeof AppConfigAppearanceEnum[keyof typeof AppConfigAppearanceEnum];
-export const AppConfigColorModeEnum = {
-    System: 'SYSTEM',
-    Light: 'LIGHT',
-    Dark: 'DARK',
-    _0: '0',
-    _1: '1',
-    _2: '2'
-} as const;
-
-export type AppConfigColorModeEnum = typeof AppConfigColorModeEnum[keyof typeof AppConfigColorModeEnum];
-
 
