@@ -67,13 +67,13 @@ export interface AppConfigUpdateDto {
      * @type {string}
      * @memberof AppConfigUpdateDto
      */
-    'appearance': AppConfigUpdateDtoAppearanceEnum;
+    'appearance'?: AppConfigUpdateDtoAppearanceEnum;
     /**
      * 
      * @type {string}
      * @memberof AppConfigUpdateDto
      */
-    'colorMode': AppConfigUpdateDtoColorModeEnum;
+    'colorMode'?: AppConfigUpdateDtoColorModeEnum;
 }
 
 export const AppConfigUpdateDtoAppearanceEnum = {
