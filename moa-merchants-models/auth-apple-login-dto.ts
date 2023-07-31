@@ -46,11 +46,13 @@ export interface AuthAppleLoginDto {
     'role': AuthAppleLoginDtoRoleEnum;
 }
 
-export const AuthAppleLoginDtoRoleEnum = {
-    Admin: 'admin',
-    User: 'user'
-} as const;
-
-export type AuthAppleLoginDtoRoleEnum = typeof AuthAppleLoginDtoRoleEnum[keyof typeof AuthAppleLoginDtoRoleEnum];
+/**
+    * @export
+    * @enum {string}
+    */
+export enum AuthAppleLoginDtoRoleEnum {
+    Admin = 'admin',
+    User = 'user'
+}
 
 

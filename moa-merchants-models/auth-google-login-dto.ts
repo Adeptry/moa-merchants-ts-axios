@@ -34,11 +34,13 @@ export interface AuthGoogleLoginDto {
     'role': AuthGoogleLoginDtoRoleEnum;
 }
 
-export const AuthGoogleLoginDtoRoleEnum = {
-    Admin: 'admin',
-    User: 'user'
-} as const;
-
-export type AuthGoogleLoginDtoRoleEnum = typeof AuthGoogleLoginDtoRoleEnum[keyof typeof AuthGoogleLoginDtoRoleEnum];
+/**
+    * @export
+    * @enum {string}
+    */
+export enum AuthGoogleLoginDtoRoleEnum {
+    Admin = 'admin',
+    User = 'user'
+}
 
 

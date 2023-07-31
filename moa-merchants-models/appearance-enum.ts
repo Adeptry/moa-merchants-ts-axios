@@ -20,12 +20,10 @@
  * @enum {string}
  */
 
-export const AppearanceEnum = {
-    Modern: 'modern',
-    Classic: 'classic'
-} as const;
-
-export type AppearanceEnum = typeof AppearanceEnum[keyof typeof AppearanceEnum];
+export enum AppearanceEnum {
+    Modern = 'modern',
+    Classic = 'classic'
+}
 
 
 
