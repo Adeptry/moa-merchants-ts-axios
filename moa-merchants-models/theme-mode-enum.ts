@@ -20,11 +20,13 @@
  * @enum {string}
  */
 
-export enum ColorModeEnum {
-    System = 'system',
-    Light = 'light',
-    Dark = 'dark'
-}
+export const ThemeModeEnum = {
+    System: 'system',
+    Light: 'light',
+    Dark: 'dark'
+} as const;
+
+export type ThemeModeEnum = typeof ThemeModeEnum[keyof typeof ThemeModeEnum];
 
 
 

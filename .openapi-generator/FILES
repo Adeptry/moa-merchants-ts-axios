@@ -1,5 +1,6 @@
 .gitignore
 .npmignore
+.openapi-generator-ignore
 README.md
 api.ts
 base.ts
@@ -16,7 +17,6 @@ moa-merchants-api/square-api.ts
 moa-merchants-models/address.ts
 moa-merchants-models/app-config-update-dto.ts
 moa-merchants-models/app-config.ts
-moa-merchants-models/appearance-enum.ts
 moa-merchants-models/auth-apple-login-dto.ts
 moa-merchants-models/auth-email-login-dto.ts
 moa-merchants-models/auth-forgot-password-dto.ts
@@ -29,7 +29,6 @@ moa-merchants-models/category-paginated-response.ts
 moa-merchants-models/category-update-all-dto.ts
 moa-merchants-models/category-update-dto.ts
 moa-merchants-models/category.ts
-moa-merchants-models/color-mode-enum.ts
 moa-merchants-models/file-entity.ts
 moa-merchants-models/index.ts
 moa-merchants-models/item-paginated-response.ts
@@ -47,6 +46,7 @@ moa-merchants-models/modifier.ts
 moa-merchants-models/nest-error.ts
 moa-merchants-models/stripe-checkout-create-dto.ts
 moa-merchants-models/stripe-checkout-dto.ts
+moa-merchants-models/theme-mode-enum.ts
 moa-merchants-models/user.ts
 moa-merchants-models/variation-update-dto.ts
 moa-merchants-models/variation.ts

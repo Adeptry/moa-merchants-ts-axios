@@ -15,10 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AppearanceEnum } from './appearance-enum';
-// May contain unused imports in some cases
-// @ts-ignore
-import { ColorModeEnum } from './color-mode-enum';
+import { ThemeModeEnum } from './theme-mode-enum';
 
 /**
  * 
@@ -46,16 +43,16 @@ export interface AppConfig {
     'fontFamily'?: string;
     /**
      * 
-     * @type {AppearanceEnum}
+     * @type {boolean}
      * @memberof AppConfig
      */
-    'appearance'?: AppearanceEnum;
+    'useMaterial3'?: boolean;
     /**
      * 
-     * @type {ColorModeEnum}
+     * @type {ThemeModeEnum}
      * @memberof AppConfig
      */
-    'colorMode'?: ColorModeEnum;
+    'themeMode'?: ThemeModeEnum;
     /**
      * 
      * @type {string}

@@ -64,10 +64,10 @@ export interface AppConfigUpdateDto {
     'url'?: string;
     /**
      * 
-     * @type {string}
+     * @type {boolean}
      * @memberof AppConfigUpdateDto
      */
-    'appearance'?: AppConfigUpdateDtoAppearanceEnum;
+    'useMaterial3'?: boolean;
     /**
      * 
      * @type {string}
@@ -76,22 +76,12 @@ export interface AppConfigUpdateDto {
     'colorMode'?: AppConfigUpdateDtoColorModeEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum AppConfigUpdateDtoAppearanceEnum {
-    Modern = 'modern',
-    Classic = 'classic'
-}
-/**
-    * @export
-    * @enum {string}
-    */
-export enum AppConfigUpdateDtoColorModeEnum {
-    System = 'system',
-    Light = 'light',
-    Dark = 'dark'
-}
+export const AppConfigUpdateDtoColorModeEnum = {
+    System: 'system',
+    Light: 'light',
+    Dark: 'dark'
+} as const;
+
+export type AppConfigUpdateDtoColorModeEnum = typeof AppConfigUpdateDtoColorModeEnum[keyof typeof AppConfigUpdateDtoColorModeEnum];
 
 
