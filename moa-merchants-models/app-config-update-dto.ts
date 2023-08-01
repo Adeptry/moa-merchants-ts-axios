@@ -73,15 +73,15 @@ export interface AppConfigUpdateDto {
      * @type {string}
      * @memberof AppConfigUpdateDto
      */
-    'colorMode'?: AppConfigUpdateDtoColorModeEnum;
+    'themeMode'?: AppConfigUpdateDtoThemeModeEnum;
 }
 
-export const AppConfigUpdateDtoColorModeEnum = {
+export const AppConfigUpdateDtoThemeModeEnum = {
     System: 'system',
     Light: 'light',
     Dark: 'dark'
 } as const;
 
-export type AppConfigUpdateDtoColorModeEnum = typeof AppConfigUpdateDtoColorModeEnum[keyof typeof AppConfigUpdateDtoColorModeEnum];
+export type AppConfigUpdateDtoThemeModeEnum = typeof AppConfigUpdateDtoThemeModeEnum[keyof typeof AppConfigUpdateDtoThemeModeEnum];
 
 
