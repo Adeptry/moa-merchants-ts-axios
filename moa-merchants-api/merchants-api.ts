@@ -25,6 +25,10 @@ import { Merchant } from '../moa-merchants-models';
 // @ts-ignore
 import { NestError } from '../moa-merchants-models';
 // @ts-ignore
+import { StripeBillingPortalCreateInput } from '../moa-merchants-models';
+// @ts-ignore
+import { StripeBillingPortalCreateOutput } from '../moa-merchants-models';
+// @ts-ignore
 import { StripeCheckoutCreateDto } from '../moa-merchants-models';
 // @ts-ignore
 import { StripeCheckoutDto } from '../moa-merchants-models';
@@ -240,6 +244,49 @@ export const MerchantsApiAxiosParamCreator = function (configuration?: Configura
         },
         /**
          * 
+         * @summary Start create billing session url
+         * @param {StripeBillingPortalCreateInput} stripeBillingPortalCreateInput 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        stripeCreateBillingSessionUrl: async (stripeBillingPortalCreateInput: StripeBillingPortalCreateInput, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'stripeBillingPortalCreateInput' is not null or undefined
+            assertParamExists('stripeCreateBillingSessionUrl', 'stripeBillingPortalCreateInput', stripeBillingPortalCreateInput)
+            const localVarPath = `/v2/merchants/me/stripe/billing-session/create`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Api-Key required
+            await setApiKeyToObject(localVarHeaderParameter, "Api-Key", configuration)
+
+            // authentication bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(stripeBillingPortalCreateInput, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Sync your Square Catalog
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -377,6 +424,17 @@ export const MerchantsApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Start create billing session url
+         * @param {StripeBillingPortalCreateInput} stripeBillingPortalCreateInput 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async stripeCreateBillingSessionUrl(stripeBillingPortalCreateInput: StripeBillingPortalCreateInput, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<StripeBillingPortalCreateOutput>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.stripeCreateBillingSessionUrl(stripeBillingPortalCreateInput, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
          * @summary Sync your Square Catalog
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -455,6 +513,16 @@ export const MerchantsApiFactory = function (configuration?: Configuration, base
         },
         /**
          * 
+         * @summary Start create billing session url
+         * @param {StripeBillingPortalCreateInput} stripeBillingPortalCreateInput 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        stripeCreateBillingSessionUrl(stripeBillingPortalCreateInput: StripeBillingPortalCreateInput, options?: any): AxiosPromise<StripeBillingPortalCreateOutput> {
+            return localVarFp.stripeCreateBillingSessionUrl(stripeBillingPortalCreateInput, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Sync your Square Catalog
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -514,6 +582,20 @@ export interface MerchantsApiStartStripeCheckoutRequest {
      * @memberof MerchantsApiStartStripeCheckout
      */
     readonly stripeCheckoutCreateDto: StripeCheckoutCreateDto
+}
+
+/**
+ * Request parameters for stripeCreateBillingSessionUrl operation in MerchantsApi.
+ * @export
+ * @interface MerchantsApiStripeCreateBillingSessionUrlRequest
+ */
+export interface MerchantsApiStripeCreateBillingSessionUrlRequest {
+    /**
+     * 
+     * @type {StripeBillingPortalCreateInput}
+     * @memberof MerchantsApiStripeCreateBillingSessionUrl
+     */
+    readonly stripeBillingPortalCreateInput: StripeBillingPortalCreateInput
 }
 
 /**
@@ -579,6 +661,18 @@ export class MerchantsApi extends BaseAPI {
      */
     public startStripeCheckout(requestParameters: MerchantsApiStartStripeCheckoutRequest, options?: AxiosRequestConfig) {
         return MerchantsApiFp(this.configuration).startStripeCheckout(requestParameters.stripeCheckoutCreateDto, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Start create billing session url
+     * @param {MerchantsApiStripeCreateBillingSessionUrlRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof MerchantsApi
+     */
+    public stripeCreateBillingSessionUrl(requestParameters: MerchantsApiStripeCreateBillingSessionUrlRequest, options?: AxiosRequestConfig) {
+        return MerchantsApiFp(this.configuration).stripeCreateBillingSessionUrl(requestParameters.stripeBillingPortalCreateInput, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

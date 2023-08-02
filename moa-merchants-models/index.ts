@@ -27,6 +27,8 @@ export * from './merchant';
 export * from './modifier';
 export * from './modifier-list';
 export * from './nest-error';
+export * from './stripe-billing-portal-create-input';
+export * from './stripe-billing-portal-create-output';
 export * from './stripe-checkout-create-dto';
 export * from './stripe-checkout-dto';
 export * from './theme-mode-enum';

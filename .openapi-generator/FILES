@@ -43,6 +43,8 @@ moa-merchants-models/merchant.ts
 moa-merchants-models/modifier-list.ts
 moa-merchants-models/modifier.ts
 moa-merchants-models/nest-error.ts
+moa-merchants-models/stripe-billing-portal-create-input.ts
+moa-merchants-models/stripe-billing-portal-create-output.ts
 moa-merchants-models/stripe-checkout-create-dto.ts
 moa-merchants-models/stripe-checkout-dto.ts
 moa-merchants-models/theme-mode-enum.ts
