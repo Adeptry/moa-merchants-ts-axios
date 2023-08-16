@@ -1,6 +1,6 @@
 {
   "name": "moa-merchants-ts-axios",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "OpenAPI client for moa-merchants-ts-axios",
   "author": "OpenAPI-Generator Contributors",
   "repository": {
@@ -18,11 +18,11 @@
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc --outDir dist/",
+    "build": "tsc ",
     "prepare": "npm run build"
   },
   "dependencies": {
-    "axios": "^0.26.1"
+    "axios": "^0.27.2"
   },
   "devDependencies": {
     "@types/node": "^12.11.5",
