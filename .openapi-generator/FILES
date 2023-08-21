@@ -12,7 +12,6 @@ moa-merchants-api/catalogs-api.ts
 moa-merchants-api/configs-api.ts
 moa-merchants-api/locations-api.ts
 moa-merchants-api/merchants-api.ts
-moa-merchants-api/square-api.ts
 moa-merchants-models/address.ts
 moa-merchants-models/app-config-update-dto.ts
 moa-merchants-models/app-config.ts
