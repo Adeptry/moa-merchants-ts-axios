@@ -17,20 +17,38 @@
 /**
  * 
  * @export
- * @interface AuthEmailLoginDto
+ * @interface CatalogImage
  */
-export interface AuthEmailLoginDto {
+export interface CatalogImage {
     /**
      * 
      * @type {string}
-     * @memberof AuthEmailLoginDto
+     * @memberof CatalogImage
      */
-    'email': string;
+    'id'?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof AuthEmailLoginDto
+     * @memberof CatalogImage
      */
-    'password': string;
+    'squareId'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof CatalogImage
+     */
+    'name'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof CatalogImage
+     */
+    'url'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof CatalogImage
+     */
+    'caption'?: string | null;
 }
 

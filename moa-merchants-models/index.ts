@@ -9,6 +9,7 @@ export * from './auth-register-login-dto';
 export * from './auth-reset-password-dto';
 export * from './auth-update-dto';
 export * from './business-hours-period';
+export * from './catalog-image';
 export * from './category';
 export * from './category-paginated-response';
 export * from './category-update-all-dto';
