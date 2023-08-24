@@ -17,32 +17,32 @@
 /**
  * 
  * @export
- * @interface AuthRegisterLoginDto
+ * @interface PaymentCreateDto
  */
-export interface AuthRegisterLoginDto {
+export interface PaymentCreateDto {
+    /**
+     * The timestamp that represents the start of the pickup window. Must be in RFC 3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\".
+     * @type {string}
+     * @memberof PaymentCreateDto
+     */
+    'pickupAt': string;
     /**
      * 
      * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @memberof PaymentCreateDto
      */
-    'email': string;
+    'paymentSquareId': string;
     /**
      * 
      * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @memberof PaymentCreateDto
      */
-    'password': string;
+    'idempotencyKey': string;
     /**
      * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @type {number}
+     * @memberof PaymentCreateDto
      */
-    'firstName': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
-     */
-    'lastName': string;
+    'orderTipMoney': number;
 }
 

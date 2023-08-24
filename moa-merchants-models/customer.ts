@@ -13,36 +13,27 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { User } from './user';
 
 /**
  * 
  * @export
- * @interface AuthRegisterLoginDto
+ * @interface Customer
  */
-export interface AuthRegisterLoginDto {
+export interface Customer {
     /**
      * 
      * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @memberof Customer
      */
-    'email': string;
+    'id'?: string | null;
     /**
      * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @type {User}
+     * @memberof Customer
      */
-    'password': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
-     */
-    'firstName': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
-     */
-    'lastName': string;
+    'user'?: User | null;
 }
 

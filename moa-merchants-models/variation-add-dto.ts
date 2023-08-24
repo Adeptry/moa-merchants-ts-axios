@@ -17,32 +17,26 @@
 /**
  * 
  * @export
- * @interface AuthRegisterLoginDto
+ * @interface VariationAddDto
  */
-export interface AuthRegisterLoginDto {
+export interface VariationAddDto {
     /**
      * 
      * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @memberof VariationAddDto
      */
-    'email': string;
+    'id': string;
     /**
      * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @type {number}
+     * @memberof VariationAddDto
      */
-    'password': string;
+    'quantity': number;
     /**
      * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @type {Array<string>}
+     * @memberof VariationAddDto
      */
-    'firstName': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
-     */
-    'lastName': string;
+    'modifierIds'?: Array<string> | null;
 }
 

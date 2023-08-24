@@ -13,36 +13,33 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { VariationAddDto } from './variation-add-dto';
 
 /**
  * 
  * @export
- * @interface AuthRegisterLoginDto
+ * @interface OrderCreateDto
  */
-export interface AuthRegisterLoginDto {
+export interface OrderCreateDto {
+    /**
+     * 
+     * @type {Array<VariationAddDto>}
+     * @memberof OrderCreateDto
+     */
+    'variations'?: Array<VariationAddDto> | null;
     /**
      * 
      * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @memberof OrderCreateDto
      */
-    'email': string;
+    'locationId'?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @memberof OrderCreateDto
      */
-    'password': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
-     */
-    'firstName': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
-     */
-    'lastName': string;
+    'idempotencyKey'?: string | null;
 }
 

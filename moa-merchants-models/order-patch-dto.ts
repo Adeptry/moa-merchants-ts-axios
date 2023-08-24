@@ -17,32 +17,14 @@
 /**
  * 
  * @export
- * @interface AuthRegisterLoginDto
+ * @interface OrderPatchDto
  */
-export interface AuthRegisterLoginDto {
+export interface OrderPatchDto {
     /**
      * 
      * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @memberof OrderPatchDto
      */
-    'email': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
-     */
-    'password': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
-     */
-    'firstName': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
-     */
-    'lastName': string;
+    'locationId'?: string | null;
 }
 

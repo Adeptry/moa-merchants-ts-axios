@@ -13,36 +13,33 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { Order } from './order';
 
 /**
  * 
  * @export
- * @interface AuthRegisterLoginDto
+ * @interface OrdersPaginatedReponse
  */
-export interface AuthRegisterLoginDto {
+export interface OrdersPaginatedReponse {
     /**
      * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @type {Array<Order>}
+     * @memberof OrdersPaginatedReponse
      */
-    'email': string;
+    'data'?: Array<Order> | null;
     /**
      * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @type {number}
+     * @memberof OrdersPaginatedReponse
      */
-    'password': string;
+    'pages': number;
     /**
      * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @type {number}
+     * @memberof OrdersPaginatedReponse
      */
-    'firstName': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
-     */
-    'lastName': string;
+    'count': number;
 }
 

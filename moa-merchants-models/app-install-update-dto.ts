@@ -17,32 +17,20 @@
 /**
  * 
  * @export
- * @interface AuthRegisterLoginDto
+ * @interface AppInstallUpdateDto
  */
-export interface AuthRegisterLoginDto {
+export interface AppInstallUpdateDto {
     /**
      * 
      * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @memberof AppInstallUpdateDto
      */
-    'email': string;
+    'firebaseInstallationId': string | null;
     /**
      * 
      * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @memberof AppInstallUpdateDto
      */
-    'password': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
-     */
-    'firstName': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
-     */
-    'lastName': string;
+    'firebaseCloudMessagingToken'?: string | null;
 }
 

@@ -13,36 +13,33 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { Customer } from './customer';
 
 /**
  * 
  * @export
- * @interface AuthRegisterLoginDto
+ * @interface CustomersPaginatedResponse
  */
-export interface AuthRegisterLoginDto {
+export interface CustomersPaginatedResponse {
     /**
      * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @type {Array<Customer>}
+     * @memberof CustomersPaginatedResponse
      */
-    'email': string;
+    'data'?: Array<Customer> | null;
     /**
      * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @type {number}
+     * @memberof CustomersPaginatedResponse
      */
-    'password': string;
+    'pages': number;
     /**
      * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @type {number}
+     * @memberof CustomersPaginatedResponse
      */
-    'firstName': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthRegisterLoginDto
-     */
-    'lastName': string;
+    'count': number;
 }
 

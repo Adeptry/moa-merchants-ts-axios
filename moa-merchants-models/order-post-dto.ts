@@ -13,18 +13,21 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { VariationAddDto } from './variation-add-dto';
 
 /**
  * 
  * @export
- * @interface FileEntity
+ * @interface OrderPostDto
  */
-export interface FileEntity {
+export interface OrderPostDto {
     /**
      * 
-     * @type {string}
-     * @memberof FileEntity
+     * @type {Array<VariationAddDto>}
+     * @memberof OrderPostDto
      */
-    'id': string;
+    'variations'?: Array<VariationAddDto> | null;
 }
 

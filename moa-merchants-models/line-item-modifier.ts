@@ -17,32 +17,44 @@
 /**
  * 
  * @export
- * @interface AuthRegisterLoginDto
+ * @interface LineItemModifier
  */
-export interface AuthRegisterLoginDto {
+export interface LineItemModifier {
     /**
      * 
      * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @memberof LineItemModifier
      */
-    'email': string;
+    'id'?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @memberof LineItemModifier
      */
-    'password': string;
+    'name'?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @memberof LineItemModifier
      */
-    'firstName': string;
+    'quantity'?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof AuthRegisterLoginDto
+     * @memberof LineItemModifier
      */
-    'lastName': string;
+    'currency'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof LineItemModifier
+     */
+    'basePriceAmount'?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof LineItemModifier
+     */
+    'totalPriceAmount'?: number | null;
 }
 
