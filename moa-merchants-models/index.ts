@@ -30,6 +30,7 @@ export * from './location-update-all-dto';
 export * from './location-update-dto';
 export * from './login-response-type';
 export * from './merchant';
+export * from './moa-selection-type';
 export * from './modifier';
 export * from './modifier-list';
 export * from './nest-error';

@@ -1,5 +1,6 @@
 .gitignore
 .npmignore
+.openapi-generator-ignore
 README.md
 api.ts
 base.ts
@@ -47,6 +48,7 @@ moa-merchants-models/location-update-dto.ts
 moa-merchants-models/location.ts
 moa-merchants-models/login-response-type.ts
 moa-merchants-models/merchant.ts
+moa-merchants-models/moa-selection-type.ts
 moa-merchants-models/modifier-list.ts
 moa-merchants-models/modifier.ts
 moa-merchants-models/nest-error.ts
