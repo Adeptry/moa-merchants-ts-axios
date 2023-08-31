@@ -17,20 +17,16 @@
 /**
  * 
  * @export
- * @interface AuthEmailLoginDto
+ * @enum {string}
  */
-export interface AuthEmailLoginDto {
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthEmailLoginDto
-     */
-    'email': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthEmailLoginDto
-     */
-    'password': string;
-}
+
+export const MerchantTierEnum = {
+    Pro: 'pro',
+    Free: 'free',
+    Deleted: 'deleted'
+} as const;
+
+export type MerchantTierEnum = typeof MerchantTierEnum[keyof typeof MerchantTierEnum];
+
+
 

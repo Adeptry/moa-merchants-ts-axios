@@ -30,6 +30,8 @@ export * from './location-update-all-dto';
 export * from './location-update-dto';
 export * from './login-response-type';
 export * from './merchant';
+export * from './merchant-app-store-status-enum';
+export * from './merchant-tier-enum';
 export * from './moa-selection-type';
 export * from './modifier';
 export * from './modifier-list';

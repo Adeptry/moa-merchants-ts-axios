@@ -17,20 +17,15 @@
 /**
  * 
  * @export
- * @interface AuthEmailLoginDto
+ * @enum {string}
  */
-export interface AuthEmailLoginDto {
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthEmailLoginDto
-     */
-    'email': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthEmailLoginDto
-     */
-    'password': string;
-}
+
+export const MerchantAppStoreStatusEnum = {
+    Pending: 'pending',
+    Published: 'published'
+} as const;
+
+export type MerchantAppStoreStatusEnum = typeof MerchantAppStoreStatusEnum[keyof typeof MerchantAppStoreStatusEnum];
+
+
 
