@@ -209,10 +209,17 @@ export const MerchantsApiAxiosParamCreator = function (configuration?: Configura
         /**
          * 
          * @summary Get current Merchant
+         * @param {boolean} user 
+         * @param {boolean} [appConfig] 
+         * @param {boolean} [locations] 
+         * @param {boolean} [androidZipFile] 
+         * @param {boolean} [iosZipFile] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCurrentMerchant: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getCurrentMerchant: async (user: boolean, appConfig?: boolean, locations?: boolean, androidZipFile?: boolean, iosZipFile?: boolean, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'user' is not null or undefined
+            assertParamExists('getCurrentMerchant', 'user', user)
             const localVarPath = `/v2/merchants/me`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -231,6 +238,26 @@ export const MerchantsApiAxiosParamCreator = function (configuration?: Configura
 
             // authentication Api-Key required
             await setApiKeyToObject(localVarHeaderParameter, "Api-Key", configuration)
+
+            if (user !== undefined) {
+                localVarQueryParameter['user'] = user;
+            }
+
+            if (appConfig !== undefined) {
+                localVarQueryParameter['appConfig'] = appConfig;
+            }
+
+            if (locations !== undefined) {
+                localVarQueryParameter['locations'] = locations;
+            }
+
+            if (androidZipFile !== undefined) {
+                localVarQueryParameter['androidZipFile'] = androidZipFile;
+            }
+
+            if (iosZipFile !== undefined) {
+                localVarQueryParameter['iosZipFile'] = iosZipFile;
+            }
 
 
     
@@ -373,11 +400,16 @@ export const MerchantsApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Get current Merchant
+         * @param {boolean} user 
+         * @param {boolean} [appConfig] 
+         * @param {boolean} [locations] 
+         * @param {boolean} [androidZipFile] 
+         * @param {boolean} [iosZipFile] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCurrentMerchant(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Merchant>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getCurrentMerchant(options);
+        async getCurrentMerchant(user: boolean, appConfig?: boolean, locations?: boolean, androidZipFile?: boolean, iosZipFile?: boolean, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Merchant>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getCurrentMerchant(user, appConfig, locations, androidZipFile, iosZipFile, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -452,11 +484,12 @@ export const MerchantsApiFactory = function (configuration?: Configuration, base
         /**
          * 
          * @summary Get current Merchant
+         * @param {MerchantsApiGetCurrentMerchantRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCurrentMerchant(options?: AxiosRequestConfig): AxiosPromise<Merchant> {
-            return localVarFp.getCurrentMerchant(options).then((request) => request(axios, basePath));
+        getCurrentMerchant(requestParameters: MerchantsApiGetCurrentMerchantRequest, options?: AxiosRequestConfig): AxiosPromise<Merchant> {
+            return localVarFp.getCurrentMerchant(requestParameters.user, requestParameters.appConfig, requestParameters.locations, requestParameters.androidZipFile, requestParameters.iosZipFile, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -522,6 +555,48 @@ export interface MerchantsApiCreateStripeCheckoutRequest {
 }
 
 /**
+ * Request parameters for getCurrentMerchant operation in MerchantsApi.
+ * @export
+ * @interface MerchantsApiGetCurrentMerchantRequest
+ */
+export interface MerchantsApiGetCurrentMerchantRequest {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof MerchantsApiGetCurrentMerchant
+     */
+    readonly user: boolean
+
+    /**
+     * 
+     * @type {boolean}
+     * @memberof MerchantsApiGetCurrentMerchant
+     */
+    readonly appConfig?: boolean
+
+    /**
+     * 
+     * @type {boolean}
+     * @memberof MerchantsApiGetCurrentMerchant
+     */
+    readonly locations?: boolean
+
+    /**
+     * 
+     * @type {boolean}
+     * @memberof MerchantsApiGetCurrentMerchant
+     */
+    readonly androidZipFile?: boolean
+
+    /**
+     * 
+     * @type {boolean}
+     * @memberof MerchantsApiGetCurrentMerchant
+     */
+    readonly iosZipFile?: boolean
+}
+
+/**
  * MerchantsApi - object-oriented interface
  * @export
  * @class MerchantsApi
@@ -578,12 +653,13 @@ export class MerchantsApi extends BaseAPI {
     /**
      * 
      * @summary Get current Merchant
+     * @param {MerchantsApiGetCurrentMerchantRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof MerchantsApi
      */
-    public getCurrentMerchant(options?: AxiosRequestConfig) {
-        return MerchantsApiFp(this.configuration).getCurrentMerchant(options).then((request) => request(this.axios, this.basePath));
+    public getCurrentMerchant(requestParameters: MerchantsApiGetCurrentMerchantRequest, options?: AxiosRequestConfig) {
+        return MerchantsApiFp(this.configuration).getCurrentMerchant(requestParameters.user, requestParameters.appConfig, requestParameters.locations, requestParameters.androidZipFile, requestParameters.iosZipFile, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

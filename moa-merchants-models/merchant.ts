@@ -82,16 +82,16 @@ export interface Merchant {
     'catalogId'?: string | null;
     /**
      * 
-     * @type {Array<FileEntity>}
+     * @type {FileEntity}
      * @memberof Merchant
      */
-    'androidZipFile'?: Array<FileEntity> | null;
+    'androidZipFile'?: FileEntity | null;
     /**
      * 
-     * @type {Array<FileEntity>}
+     * @type {FileEntity}
      * @memberof Merchant
      */
-    'iosZipFile'?: Array<FileEntity> | null;
+    'iosZipFile'?: FileEntity | null;
 }
 
 
