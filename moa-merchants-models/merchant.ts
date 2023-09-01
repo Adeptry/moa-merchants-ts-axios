@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { AppConfig } from './app-config';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FileEntity } from './file-entity';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -62,6 +65,12 @@ export interface Merchant {
      * @memberof Merchant
      */
     'user'?: User | null;
+    /**
+     * 
+     * @type {AppConfig}
+     * @memberof Merchant
+     */
+    'appConfig'?: AppConfig | null;
     /**
      * 
      * @type {string}
