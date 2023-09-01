@@ -209,7 +209,7 @@ export const MerchantsApiAxiosParamCreator = function (configuration?: Configura
         /**
          * 
          * @summary Get current Merchant
-         * @param {boolean} user 
+         * @param {boolean} [user] 
          * @param {boolean} [appConfig] 
          * @param {boolean} [locations] 
          * @param {boolean} [androidZipFile] 
@@ -217,9 +217,7 @@ export const MerchantsApiAxiosParamCreator = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCurrentMerchant: async (user: boolean, appConfig?: boolean, locations?: boolean, androidZipFile?: boolean, iosZipFile?: boolean, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'user' is not null or undefined
-            assertParamExists('getCurrentMerchant', 'user', user)
+        getCurrentMerchant: async (user?: boolean, appConfig?: boolean, locations?: boolean, androidZipFile?: boolean, iosZipFile?: boolean, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/v2/merchants/me`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -400,7 +398,7 @@ export const MerchantsApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Get current Merchant
-         * @param {boolean} user 
+         * @param {boolean} [user] 
          * @param {boolean} [appConfig] 
          * @param {boolean} [locations] 
          * @param {boolean} [androidZipFile] 
@@ -408,7 +406,7 @@ export const MerchantsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCurrentMerchant(user: boolean, appConfig?: boolean, locations?: boolean, androidZipFile?: boolean, iosZipFile?: boolean, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Merchant>> {
+        async getCurrentMerchant(user?: boolean, appConfig?: boolean, locations?: boolean, androidZipFile?: boolean, iosZipFile?: boolean, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Merchant>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCurrentMerchant(user, appConfig, locations, androidZipFile, iosZipFile, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -488,7 +486,7 @@ export const MerchantsApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCurrentMerchant(requestParameters: MerchantsApiGetCurrentMerchantRequest, options?: AxiosRequestConfig): AxiosPromise<Merchant> {
+        getCurrentMerchant(requestParameters: MerchantsApiGetCurrentMerchantRequest = {}, options?: AxiosRequestConfig): AxiosPromise<Merchant> {
             return localVarFp.getCurrentMerchant(requestParameters.user, requestParameters.appConfig, requestParameters.locations, requestParameters.androidZipFile, requestParameters.iosZipFile, options).then((request) => request(axios, basePath));
         },
         /**
@@ -565,7 +563,7 @@ export interface MerchantsApiGetCurrentMerchantRequest {
      * @type {boolean}
      * @memberof MerchantsApiGetCurrentMerchant
      */
-    readonly user: boolean
+    readonly user?: boolean
 
     /**
      * 
@@ -658,7 +656,7 @@ export class MerchantsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MerchantsApi
      */
-    public getCurrentMerchant(requestParameters: MerchantsApiGetCurrentMerchantRequest, options?: AxiosRequestConfig) {
+    public getCurrentMerchant(requestParameters: MerchantsApiGetCurrentMerchantRequest = {}, options?: AxiosRequestConfig) {
         return MerchantsApiFp(this.configuration).getCurrentMerchant(requestParameters.user, requestParameters.appConfig, requestParameters.locations, requestParameters.androidZipFile, requestParameters.iosZipFile, options).then((request) => request(this.axios, this.basePath));
     }
 
