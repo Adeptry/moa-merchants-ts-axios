@@ -14,6 +14,7 @@ moa-merchants-api/customers-api.ts
 moa-merchants-api/locations-api.ts
 moa-merchants-api/merchants-api.ts
 moa-merchants-api/orders-api.ts
+moa-merchants-api/users-api.ts
 moa-merchants-models/address.ts
 moa-merchants-models/app-config-update-dto.ts
 moa-merchants-models/app-config.ts
@@ -64,6 +65,7 @@ moa-merchants-models/stripe-billing-portal-create-output.ts
 moa-merchants-models/stripe-checkout-create-dto.ts
 moa-merchants-models/stripe-checkout-dto.ts
 moa-merchants-models/theme-mode-enum.ts
+moa-merchants-models/user-update-dto.ts
 moa-merchants-models/user.ts
 moa-merchants-models/variation-add-dto.ts
 moa-merchants-models/variation-update-dto.ts

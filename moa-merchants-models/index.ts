@@ -48,6 +48,7 @@ export * from './stripe-checkout-create-dto';
 export * from './stripe-checkout-dto';
 export * from './theme-mode-enum';
 export * from './user';
+export * from './user-update-dto';
 export * from './variation';
 export * from './variation-add-dto';
 export * from './variation-update-dto';
