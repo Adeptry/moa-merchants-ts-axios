@@ -56,6 +56,9 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
             // http bearer authentication required
             await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
+            // authentication Api-Key required
+            await setApiKeyToObject(localVarHeaderParameter, "Api-Key", configuration)
+
 
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
@@ -89,6 +92,9 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
             // authentication bearer required
             // http bearer authentication required
             await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            // authentication Api-Key required
+            await setApiKeyToObject(localVarHeaderParameter, "Api-Key", configuration)
 
 
     
@@ -126,6 +132,9 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
             // authentication bearer required
             // http bearer authentication required
             await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            // authentication Api-Key required
+            await setApiKeyToObject(localVarHeaderParameter, "Api-Key", configuration)
 
 
     
