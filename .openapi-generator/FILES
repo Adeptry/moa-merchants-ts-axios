@@ -36,6 +36,7 @@ moa-merchants-models/customer.ts
 moa-merchants-models/customers-paginated-response.ts
 moa-merchants-models/file-entity.ts
 moa-merchants-models/index.ts
+moa-merchants-models/item-modifier-list.ts
 moa-merchants-models/item-paginated-response.ts
 moa-merchants-models/item-update-all-dto.ts
 moa-merchants-models/item-update-dto.ts

@@ -19,6 +19,7 @@ export * from './customer';
 export * from './customers-paginated-response';
 export * from './file-entity';
 export * from './item';
+export * from './item-modifier-list';
 export * from './item-paginated-response';
 export * from './item-update-all-dto';
 export * from './item-update-dto';

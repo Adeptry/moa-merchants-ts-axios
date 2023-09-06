@@ -15,48 +15,52 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { MoaSelectionType } from './moa-selection-type';
+import { Item } from './item';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Modifier } from './modifier';
+import { ModifierList } from './modifier-list';
 
 /**
  * 
  * @export
- * @interface ModifierList
+ * @interface ItemModifierList
  */
-export interface ModifierList {
+export interface ItemModifierList {
     /**
      * 
      * @type {string}
-     * @memberof ModifierList
+     * @memberof ItemModifierList
      */
     'id'?: string | null;
     /**
      * 
-     * @type {string}
-     * @memberof ModifierList
+     * @type {number}
+     * @memberof ItemModifierList
      */
-    'name'?: string | null;
+    'minSelectedModifiers'?: number | null;
     /**
      * 
      * @type {number}
-     * @memberof ModifierList
+     * @memberof ItemModifierList
      */
-    'ordinal'?: number | null;
+    'maxSelectedModifiers'?: number | null;
     /**
      * 
-     * @type {MoaSelectionType}
-     * @memberof ModifierList
+     * @type {boolean}
+     * @memberof ItemModifierList
      */
-    'selectionType'?: MoaSelectionType;
+    'enabled'?: boolean | null;
     /**
      * 
-     * @type {Array<Modifier>}
-     * @memberof ModifierList
+     * @type {Item}
+     * @memberof ItemModifierList
      */
-    'modifiers'?: Array<Modifier> | null;
+    'item'?: Item | null;
+    /**
+     * 
+     * @type {ModifierList}
+     * @memberof ItemModifierList
+     */
+    'modifierList'?: ModifierList | null;
 }
-
-
 
