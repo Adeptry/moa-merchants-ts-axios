@@ -37,12 +37,12 @@ export interface AuthRegisterLoginDto {
      * @type {string}
      * @memberof AuthRegisterLoginDto
      */
-    'firstName': string;
+    'firstName'?: string | null;
     /**
      * 
      * @type {string}
      * @memberof AuthRegisterLoginDto
      */
-    'lastName': string;
+    'lastName'?: string | null;
 }
 
