@@ -37,13 +37,13 @@ export interface User {
      * @type {string}
      * @memberof User
      */
-    'provider': string;
+    'provider'?: UserProviderEnum;
     /**
      * 
      * @type {string}
      * @memberof User
      */
-    'socialId': string | null;
+    'socialId'?: string | null;
     /**
      * 
      * @type {string}
@@ -57,4 +57,15 @@ export interface User {
      */
     'lastName'?: string | null;
 }
+
+export const UserProviderEnum = {
+    Email: 'email',
+    Facebook: 'facebook',
+    Google: 'google',
+    Twitter: 'twitter',
+    Apple: 'apple'
+} as const;
+
+export type UserProviderEnum = typeof UserProviderEnum[keyof typeof UserProviderEnum];
+
 
