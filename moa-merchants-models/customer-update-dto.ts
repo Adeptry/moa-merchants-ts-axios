@@ -17,15 +17,14 @@
 /**
  * 
  * @export
- * @enum {string}
+ * @interface CustomerUpdateDto
  */
-
-export const MerchantAppStoreStatusEnum = {
-    Pending: 'pending',
-    Published: 'published'
-} as const;
-
-export type MerchantAppStoreStatusEnum = typeof MerchantAppStoreStatusEnum[keyof typeof MerchantAppStoreStatusEnum];
-
-
+export interface CustomerUpdateDto {
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomerUpdateDto
+     */
+    'preferredLocationId'?: string | null;
+}
 

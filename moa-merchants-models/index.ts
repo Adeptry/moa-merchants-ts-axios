@@ -16,6 +16,7 @@ export * from './category-paginated-response';
 export * from './category-update-all-dto';
 export * from './category-update-dto';
 export * from './customer';
+export * from './customer-update-dto';
 export * from './customers-paginated-response';
 export * from './file-entity';
 export * from './item';
