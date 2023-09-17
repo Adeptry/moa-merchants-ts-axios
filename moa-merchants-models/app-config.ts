@@ -73,12 +73,6 @@ export interface AppConfig {
      * @type {boolean}
      * @memberof AppConfig
      */
-    'showAds'?: boolean | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof AppConfig
-     */
     'showsAds'?: boolean | null;
     /**
      * 

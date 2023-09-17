@@ -22,6 +22,9 @@ import { MerchantAppStoreStatusEnum } from './merchant-app-store-status-enum';
 // May contain unused imports in some cases
 // @ts-ignore
 import { MerchantTierEnum } from './merchant-tier-enum';
+// May contain unused imports in some cases
+// @ts-ignore
+import { User } from './user';
 
 /**
  * 
@@ -79,10 +82,10 @@ export interface Merchant {
     'tier'?: MerchantTierEnum;
     /**
      * 
-     * @type {object}
+     * @type {User}
      * @memberof Merchant
      */
-    'user'?: object | null;
+    'user'?: User | null;
 }
 
 
