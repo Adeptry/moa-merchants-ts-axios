@@ -17,14 +17,15 @@
 /**
  * 
  * @export
- * @interface VariationUpdateDto
+ * @enum {string}
  */
-export interface VariationUpdateDto {
-    /**
-     * 
-     * @type {boolean}
-     * @memberof VariationUpdateDto
-     */
-    'moaEnabled': boolean;
-}
+
+export const MoaSelectionType = {
+    Single: 'SINGLE',
+    Multiple: 'MULTIPLE'
+} as const;
+
+export type MoaSelectionType = typeof MoaSelectionType[keyof typeof MoaSelectionType];
+
+
 

@@ -53,6 +53,9 @@ moa-merchants-models/login-response-type.ts
 moa-merchants-models/merchant-app-store-status-enum.ts
 moa-merchants-models/merchant-tier-enum.ts
 moa-merchants-models/merchant.ts
+moa-merchants-models/moa-selection-type.ts
+moa-merchants-models/modifier-list.ts
+moa-merchants-models/modifier.ts
 moa-merchants-models/nest-error.ts
 moa-merchants-models/order-create-dto.ts
 moa-merchants-models/order-patch-dto.ts

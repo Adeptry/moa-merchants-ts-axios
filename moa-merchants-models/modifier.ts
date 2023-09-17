@@ -13,39 +13,42 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import { User } from './user';
 
 /**
  * 
  * @export
- * @interface LoginResponseType
+ * @interface Modifier
  */
-export interface LoginResponseType {
+export interface Modifier {
     /**
      * 
      * @type {string}
-     * @memberof LoginResponseType
+     * @memberof Modifier
      */
-    'refreshToken': string;
+    'id'?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof LoginResponseType
+     * @memberof Modifier
      */
-    'token': string;
+    'name'?: string | null;
     /**
      * 
      * @type {number}
-     * @memberof LoginResponseType
+     * @memberof Modifier
      */
-    'tokenExpires': number;
+    'ordinal'?: number | null;
     /**
      * 
-     * @type {User}
-     * @memberof LoginResponseType
+     * @type {number}
+     * @memberof Modifier
      */
-    'user'?: User | null;
+    'priceAmount'?: number | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof Modifier
+     */
+    'priceCurrency'?: string | null;
 }
 

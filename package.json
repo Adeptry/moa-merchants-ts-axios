@@ -1,6 +1,6 @@
 {
   "name": "moa-merchants-ts-axios",
-  "version": "2.0.20",
+  "version": "2.0.21",
   "description": "OpenAPI client for moa-merchants-ts-axios",
   "author": "OpenAPI-Generator Contributors",
   "repository": {

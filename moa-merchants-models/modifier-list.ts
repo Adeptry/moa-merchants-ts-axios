@@ -15,37 +15,48 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { User } from './user';
+import { MoaSelectionType } from './moa-selection-type';
+// May contain unused imports in some cases
+// @ts-ignore
+import { Modifier } from './modifier';
 
 /**
  * 
  * @export
- * @interface LoginResponseType
+ * @interface ModifierList
  */
-export interface LoginResponseType {
+export interface ModifierList {
     /**
      * 
      * @type {string}
-     * @memberof LoginResponseType
+     * @memberof ModifierList
      */
-    'refreshToken': string;
+    'id'?: string | null;
+    /**
+     * 
+     * @type {Array<Modifier>}
+     * @memberof ModifierList
+     */
+    'modifiers'?: Array<Modifier> | null;
     /**
      * 
      * @type {string}
-     * @memberof LoginResponseType
+     * @memberof ModifierList
      */
-    'token': string;
+    'name'?: string | null;
     /**
      * 
      * @type {number}
-     * @memberof LoginResponseType
+     * @memberof ModifierList
      */
-    'tokenExpires': number;
+    'ordinal'?: number | null;
     /**
      * 
-     * @type {User}
-     * @memberof LoginResponseType
+     * @type {MoaSelectionType}
+     * @memberof ModifierList
      */
-    'user'?: User | null;
+    'selectionType'?: MoaSelectionType;
 }
+
+
 
