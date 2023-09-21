@@ -1,5 +1,6 @@
 .gitignore
 .npmignore
+.openapi-generator-ignore
 README.md
 api.ts
 base.ts
@@ -7,9 +8,9 @@ common.ts
 configuration.ts
 git_push.sh
 index.ts
+moa-merchants-api/app-configs-api.ts
 moa-merchants-api/auth-api.ts
 moa-merchants-api/catalogs-api.ts
-moa-merchants-api/configs-api.ts
 moa-merchants-api/customers-api.ts
 moa-merchants-api/locations-api.ts
 moa-merchants-api/merchants-api.ts
@@ -20,6 +21,7 @@ moa-merchants-models/app-config-update-dto.ts
 moa-merchants-models/app-config.ts
 moa-merchants-models/app-install-update-dto.ts
 moa-merchants-models/auth-apple-login-dto.ts
+moa-merchants-models/auth-confirm-email-dto.ts
 moa-merchants-models/auth-email-login-dto.ts
 moa-merchants-models/auth-forgot-password-dto.ts
 moa-merchants-models/auth-google-login-dto.ts
@@ -62,7 +64,7 @@ moa-merchants-models/order-post-dto.ts
 moa-merchants-models/order.ts
 moa-merchants-models/orders-paginated-reponse.ts
 moa-merchants-models/payment-create-dto.ts
-moa-merchants-models/stripe-billing-portal-create-input.ts
+moa-merchants-models/square-confirm-oauth-dto.ts
 moa-merchants-models/stripe-billing-portal-create-output.ts
 moa-merchants-models/stripe-checkout-create-dto.ts
 moa-merchants-models/stripe-checkout-dto.ts

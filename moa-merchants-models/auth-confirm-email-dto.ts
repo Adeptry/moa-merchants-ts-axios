@@ -17,16 +17,14 @@
 /**
  * 
  * @export
- * @enum {string}
+ * @interface AuthConfirmEmailDto
  */
-
-export const MerchantTierEnum = {
-    Pro: 'pro',
-    Free: 'free',
-    Deleted: 'deleted'
-} as const;
-
-export type MerchantTierEnum = typeof MerchantTierEnum[keyof typeof MerchantTierEnum];
-
-
+export interface AuthConfirmEmailDto {
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthConfirmEmailDto
+     */
+    'hash': string;
+}
 
