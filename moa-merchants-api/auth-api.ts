@@ -281,52 +281,6 @@ export const AuthApiAxiosParamCreator = function (configuration?: Configuration)
         },
         /**
          * 
-         * @summary Forgot password
-         * @param {AuthForgotPasswordDto} authForgotPasswordDto 
-         * @param {any} [xCustomLang] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        postForgotPassword: async (authForgotPasswordDto: AuthForgotPasswordDto, xCustomLang?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'authForgotPasswordDto' is not null or undefined
-            assertParamExists('postForgotPassword', 'authForgotPasswordDto', authForgotPasswordDto)
-            const localVarPath = `/v2/auth/password/forgot`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Api-Key required
-            await setApiKeyToObject(localVarHeaderParameter, "Api-Key", configuration)
-
-            if (xCustomLang != null) {
-                localVarHeaderParameter['x-custom-lang'] = typeof xCustomLang === 'string'
-                    ? xCustomLang
-                    : JSON.stringify(xCustomLang);
-            }
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(authForgotPasswordDto, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
          * @summary Apple login
          * @param {AuthAppleLoginDto} authAppleLoginDto 
          * @param {any} [xCustomLang] 
@@ -411,6 +365,52 @@ export const AuthApiAxiosParamCreator = function (configuration?: Configuration)
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(authGoogleLoginDto, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Forgot password
+         * @param {AuthForgotPasswordDto} authForgotPasswordDto 
+         * @param {any} [xCustomLang] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        postPasswordForgot: async (authForgotPasswordDto: AuthForgotPasswordDto, xCustomLang?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'authForgotPasswordDto' is not null or undefined
+            assertParamExists('postPasswordForgot', 'authForgotPasswordDto', authForgotPasswordDto)
+            const localVarPath = `/v2/auth/password/forgot`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Api-Key required
+            await setApiKeyToObject(localVarHeaderParameter, "Api-Key", configuration)
+
+            if (xCustomLang != null) {
+                localVarHeaderParameter['x-custom-lang'] = typeof xCustomLang === 'string'
+                    ? xCustomLang
+                    : JSON.stringify(xCustomLang);
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(authForgotPasswordDto, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -578,18 +578,6 @@ export const AuthApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Forgot password
-         * @param {AuthForgotPasswordDto} authForgotPasswordDto 
-         * @param {any} [xCustomLang] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async postForgotPassword(authForgotPasswordDto: AuthForgotPasswordDto, xCustomLang?: any, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.postForgotPassword(authForgotPasswordDto, xCustomLang, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
          * @summary Apple login
          * @param {AuthAppleLoginDto} authAppleLoginDto 
          * @param {any} [xCustomLang] 
@@ -610,6 +598,18 @@ export const AuthApiFp = function(configuration?: Configuration) {
          */
         async postLoginGoogle(authGoogleLoginDto: AuthGoogleLoginDto, xCustomLang?: any, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LoginResponseType>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.postLoginGoogle(authGoogleLoginDto, xCustomLang, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Forgot password
+         * @param {AuthForgotPasswordDto} authForgotPasswordDto 
+         * @param {any} [xCustomLang] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async postPasswordForgot(authForgotPasswordDto: AuthForgotPasswordDto, xCustomLang?: any, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.postPasswordForgot(authForgotPasswordDto, xCustomLang, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -697,16 +697,6 @@ export const AuthApiFactory = function (configuration?: Configuration, basePath?
         },
         /**
          * 
-         * @summary Forgot password
-         * @param {AuthApiPostForgotPasswordRequest} requestParameters Request parameters.
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        postForgotPassword(requestParameters: AuthApiPostForgotPasswordRequest, options?: AxiosRequestConfig): AxiosPromise<void> {
-            return localVarFp.postForgotPassword(requestParameters.authForgotPasswordDto, requestParameters.xCustomLang, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @summary Apple login
          * @param {AuthApiPostLoginAppleRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
@@ -724,6 +714,16 @@ export const AuthApiFactory = function (configuration?: Configuration, basePath?
          */
         postLoginGoogle(requestParameters: AuthApiPostLoginGoogleRequest, options?: AxiosRequestConfig): AxiosPromise<LoginResponseType> {
             return localVarFp.postLoginGoogle(requestParameters.authGoogleLoginDto, requestParameters.xCustomLang, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Forgot password
+         * @param {AuthApiPostPasswordForgotRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        postPasswordForgot(requestParameters: AuthApiPostPasswordForgotRequest, options?: AxiosRequestConfig): AxiosPromise<void> {
+            return localVarFp.postPasswordForgot(requestParameters.authForgotPasswordDto, requestParameters.xCustomLang, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -847,27 +847,6 @@ export interface AuthApiPostEmailRegisterRequest {
 }
 
 /**
- * Request parameters for postForgotPassword operation in AuthApi.
- * @export
- * @interface AuthApiPostForgotPasswordRequest
- */
-export interface AuthApiPostForgotPasswordRequest {
-    /**
-     * 
-     * @type {AuthForgotPasswordDto}
-     * @memberof AuthApiPostForgotPassword
-     */
-    readonly authForgotPasswordDto: AuthForgotPasswordDto
-
-    /**
-     * 
-     * @type {any}
-     * @memberof AuthApiPostForgotPassword
-     */
-    readonly xCustomLang?: any
-}
-
-/**
  * Request parameters for postLoginApple operation in AuthApi.
  * @export
  * @interface AuthApiPostLoginAppleRequest
@@ -905,6 +884,27 @@ export interface AuthApiPostLoginGoogleRequest {
      * 
      * @type {any}
      * @memberof AuthApiPostLoginGoogle
+     */
+    readonly xCustomLang?: any
+}
+
+/**
+ * Request parameters for postPasswordForgot operation in AuthApi.
+ * @export
+ * @interface AuthApiPostPasswordForgotRequest
+ */
+export interface AuthApiPostPasswordForgotRequest {
+    /**
+     * 
+     * @type {AuthForgotPasswordDto}
+     * @memberof AuthApiPostPasswordForgot
+     */
+    readonly authForgotPasswordDto: AuthForgotPasswordDto
+
+    /**
+     * 
+     * @type {any}
+     * @memberof AuthApiPostPasswordForgot
      */
     readonly xCustomLang?: any
 }
@@ -1013,18 +1013,6 @@ export class AuthApi extends BaseAPI {
 
     /**
      * 
-     * @summary Forgot password
-     * @param {AuthApiPostForgotPasswordRequest} requestParameters Request parameters.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof AuthApi
-     */
-    public postForgotPassword(requestParameters: AuthApiPostForgotPasswordRequest, options?: AxiosRequestConfig) {
-        return AuthApiFp(this.configuration).postForgotPassword(requestParameters.authForgotPasswordDto, requestParameters.xCustomLang, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
      * @summary Apple login
      * @param {AuthApiPostLoginAppleRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
@@ -1045,6 +1033,18 @@ export class AuthApi extends BaseAPI {
      */
     public postLoginGoogle(requestParameters: AuthApiPostLoginGoogleRequest, options?: AxiosRequestConfig) {
         return AuthApiFp(this.configuration).postLoginGoogle(requestParameters.authGoogleLoginDto, requestParameters.xCustomLang, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Forgot password
+     * @param {AuthApiPostPasswordForgotRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AuthApi
+     */
+    public postPasswordForgot(requestParameters: AuthApiPostPasswordForgotRequest, options?: AxiosRequestConfig) {
+        return AuthApiFp(this.configuration).postPasswordForgot(requestParameters.authForgotPasswordDto, requestParameters.xCustomLang, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

@@ -34,6 +34,12 @@ export interface AppConfig {
     'blockingMessage'?: string | null;
     /**
      * 
+     * @type {boolean}
+     * @memberof AppConfig
+     */
+    'enabled'?: boolean | null;
+    /**
+     * 
      * @type {string}
      * @memberof AppConfig
      */

@@ -18,10 +18,7 @@
 import { AppConfig } from './app-config';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MerchantAppStoreStatusEnum } from './merchant-app-store-status-enum';
-// May contain unused imports in some cases
-// @ts-ignore
-import { MerchantTierEnum } from './merchant-tier-enum';
+import { Catalog } from './catalog';
 // May contain unused imports in some cases
 // @ts-ignore
 import { User } from './user';
@@ -34,28 +31,22 @@ import { User } from './user';
 export interface Merchant {
     /**
      * 
-     * @type {MerchantAppStoreStatusEnum}
-     * @memberof Merchant
-     */
-    'androidStatus'?: MerchantAppStoreStatusEnum;
-    /**
-     * 
      * @type {AppConfig}
      * @memberof Merchant
      */
     'appConfig'?: AppConfig | null;
     /**
      * 
+     * @type {Catalog}
+     * @memberof Merchant
+     */
+    'catalog'?: Catalog | null;
+    /**
+     * 
      * @type {string}
      * @memberof Merchant
      */
     'id'?: string | null;
-    /**
-     * 
-     * @type {MerchantAppStoreStatusEnum}
-     * @memberof Merchant
-     */
-    'iosStatus'?: MerchantAppStoreStatusEnum;
     /**
      * 
      * @type {string}
@@ -70,10 +61,10 @@ export interface Merchant {
     'stripeId'?: string | null;
     /**
      * 
-     * @type {MerchantTierEnum}
+     * @type {number}
      * @memberof Merchant
      */
-    'tier'?: MerchantTierEnum;
+    'tier'?: number | null;
     /**
      * 
      * @type {User}
@@ -81,6 +72,4 @@ export interface Merchant {
      */
     'user'?: User | null;
 }
-
-
 

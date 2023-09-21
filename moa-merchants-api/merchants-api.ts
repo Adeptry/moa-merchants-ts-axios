@@ -45,11 +45,12 @@ export const MerchantsApiAxiosParamCreator = function (configuration?: Configura
          * @param {boolean} [user] 
          * @param {boolean} [appConfig] 
          * @param {boolean} [locations] 
+         * @param {boolean} [catalog] 
          * @param {any} [xCustomLang] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMeMerchant: async (user?: boolean, appConfig?: boolean, locations?: boolean, xCustomLang?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getMeMerchant: async (user?: boolean, appConfig?: boolean, locations?: boolean, catalog?: boolean, xCustomLang?: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/v2/merchants/me`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -79,6 +80,10 @@ export const MerchantsApiAxiosParamCreator = function (configuration?: Configura
 
             if (locations !== undefined) {
                 localVarQueryParameter['locations'] = locations;
+            }
+
+            if (catalog !== undefined) {
+                localVarQueryParameter['catalog'] = catalog;
             }
 
             if (xCustomLang != null) {
@@ -353,12 +358,13 @@ export const MerchantsApiFp = function(configuration?: Configuration) {
          * @param {boolean} [user] 
          * @param {boolean} [appConfig] 
          * @param {boolean} [locations] 
+         * @param {boolean} [catalog] 
          * @param {any} [xCustomLang] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMeMerchant(user?: boolean, appConfig?: boolean, locations?: boolean, xCustomLang?: any, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Merchant>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getMeMerchant(user, appConfig, locations, xCustomLang, options);
+        async getMeMerchant(user?: boolean, appConfig?: boolean, locations?: boolean, catalog?: boolean, xCustomLang?: any, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Merchant>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getMeMerchant(user, appConfig, locations, catalog, xCustomLang, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -437,7 +443,7 @@ export const MerchantsApiFactory = function (configuration?: Configuration, base
          * @throws {RequiredError}
          */
         getMeMerchant(requestParameters: MerchantsApiGetMeMerchantRequest = {}, options?: AxiosRequestConfig): AxiosPromise<Merchant> {
-            return localVarFp.getMeMerchant(requestParameters.user, requestParameters.appConfig, requestParameters.locations, requestParameters.xCustomLang, options).then((request) => request(axios, basePath));
+            return localVarFp.getMeMerchant(requestParameters.user, requestParameters.appConfig, requestParameters.locations, requestParameters.catalog, requestParameters.xCustomLang, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -518,6 +524,13 @@ export interface MerchantsApiGetMeMerchantRequest {
      * @memberof MerchantsApiGetMeMerchant
      */
     readonly locations?: boolean
+
+    /**
+     * 
+     * @type {boolean}
+     * @memberof MerchantsApiGetMeMerchant
+     */
+    readonly catalog?: boolean
 
     /**
      * 
@@ -634,7 +647,7 @@ export class MerchantsApi extends BaseAPI {
      * @memberof MerchantsApi
      */
     public getMeMerchant(requestParameters: MerchantsApiGetMeMerchantRequest = {}, options?: AxiosRequestConfig) {
-        return MerchantsApiFp(this.configuration).getMeMerchant(requestParameters.user, requestParameters.appConfig, requestParameters.locations, requestParameters.xCustomLang, options).then((request) => request(this.axios, this.basePath));
+        return MerchantsApiFp(this.configuration).getMeMerchant(requestParameters.user, requestParameters.appConfig, requestParameters.locations, requestParameters.catalog, requestParameters.xCustomLang, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
