@@ -1,6 +1,5 @@
 .gitignore
 .npmignore
-.openapi-generator-ignore
 README.md
 api.ts
 base.ts
@@ -9,7 +8,7 @@ configuration.ts
 git_push.sh
 index.ts
 moa-merchants-api/app-configs-api.ts
-moa-merchants-api/auth-api.ts
+moa-merchants-api/authentication-api.ts
 moa-merchants-api/catalogs-api.ts
 moa-merchants-api/customers-api.ts
 moa-merchants-api/locations-api.ts
