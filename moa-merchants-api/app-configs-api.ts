@@ -26,7 +26,7 @@ import { AppConfig } from '../moa-merchants-models';
 // @ts-ignore
 import { AppConfigUpdateDto } from '../moa-merchants-models';
 // @ts-ignore
-import { NestError } from '../moa-merchants-models';
+import { ErrorResponse } from '../moa-merchants-models';
 /**
  * AppConfigsApi - axios parameter creator
  * @export

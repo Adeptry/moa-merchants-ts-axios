@@ -32,6 +32,8 @@ import { CategoryUpdateAllDto } from '../moa-merchants-models';
 // @ts-ignore
 import { CategoryUpdateDto } from '../moa-merchants-models';
 // @ts-ignore
+import { ErrorResponse } from '../moa-merchants-models';
+// @ts-ignore
 import { Item } from '../moa-merchants-models';
 // @ts-ignore
 import { ItemPaginatedResponse } from '../moa-merchants-models';
@@ -39,8 +41,6 @@ import { ItemPaginatedResponse } from '../moa-merchants-models';
 import { ItemUpdateAllDto } from '../moa-merchants-models';
 // @ts-ignore
 import { ItemUpdateDto } from '../moa-merchants-models';
-// @ts-ignore
-import { NestError } from '../moa-merchants-models';
 // @ts-ignore
 import { Variation } from '../moa-merchants-models';
 // @ts-ignore

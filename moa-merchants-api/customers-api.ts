@@ -30,7 +30,7 @@ import { CustomerUpdateDto } from '../moa-merchants-models';
 // @ts-ignore
 import { CustomersPaginatedResponse } from '../moa-merchants-models';
 // @ts-ignore
-import { NestError } from '../moa-merchants-models';
+import { ErrorResponse } from '../moa-merchants-models';
 /**
  * CustomersApi - axios parameter creator
  * @export

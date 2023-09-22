@@ -22,6 +22,8 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
+import { ErrorResponse } from '../moa-merchants-models';
+// @ts-ignore
 import { Location } from '../moa-merchants-models';
 // @ts-ignore
 import { LocationPaginatedResponse } from '../moa-merchants-models';
@@ -29,8 +31,6 @@ import { LocationPaginatedResponse } from '../moa-merchants-models';
 import { LocationUpdateAllDto } from '../moa-merchants-models';
 // @ts-ignore
 import { LocationUpdateDto } from '../moa-merchants-models';
-// @ts-ignore
-import { NestError } from '../moa-merchants-models';
 /**
  * LocationsApi - axios parameter creator
  * @export

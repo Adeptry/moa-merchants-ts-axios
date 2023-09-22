@@ -22,7 +22,7 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
-import { NestError } from '../moa-merchants-models';
+import { ErrorResponse } from '../moa-merchants-models';
 // @ts-ignore
 import { User } from '../moa-merchants-models';
 // @ts-ignore
@@ -35,7 +35,7 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
     return {
         /**
          * 
-         * @summary Delete your User
+         * @summary 
          * @param {string} [xCustomLang] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -77,7 +77,7 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
         },
         /**
          * 
-         * @summary Get your User
+         * @summary 
          * @param {string} [xCustomLang] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -119,7 +119,7 @@ export const UsersApiAxiosParamCreator = function (configuration?: Configuration
         },
         /**
          * 
-         * @summary Update your User
+         * @summary 
          * @param {UserUpdateDto} userUpdateDto 
          * @param {string} [xCustomLang] 
          * @param {*} [options] Override http request option.
@@ -177,7 +177,7 @@ export const UsersApiFp = function(configuration?: Configuration) {
     return {
         /**
          * 
-         * @summary Delete your User
+         * @summary 
          * @param {string} [xCustomLang] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -188,7 +188,7 @@ export const UsersApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Get your User
+         * @summary 
          * @param {string} [xCustomLang] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -199,7 +199,7 @@ export const UsersApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Update your User
+         * @summary 
          * @param {UserUpdateDto} userUpdateDto 
          * @param {string} [xCustomLang] 
          * @param {*} [options] Override http request option.
@@ -221,7 +221,7 @@ export const UsersApiFactory = function (configuration?: Configuration, basePath
     return {
         /**
          * 
-         * @summary Delete your User
+         * @summary 
          * @param {UsersApiDeleteUserMeRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -231,7 +231,7 @@ export const UsersApiFactory = function (configuration?: Configuration, basePath
         },
         /**
          * 
-         * @summary Get your User
+         * @summary 
          * @param {UsersApiGetUserMeRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -241,7 +241,7 @@ export const UsersApiFactory = function (configuration?: Configuration, basePath
         },
         /**
          * 
-         * @summary Update your User
+         * @summary 
          * @param {UsersApiPatchUserMeRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -310,7 +310,7 @@ export interface UsersApiPatchUserMeRequest {
 export class UsersApi extends BaseAPI {
     /**
      * 
-     * @summary Delete your User
+     * @summary 
      * @param {UsersApiDeleteUserMeRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -322,7 +322,7 @@ export class UsersApi extends BaseAPI {
 
     /**
      * 
-     * @summary Get your User
+     * @summary 
      * @param {UsersApiGetUserMeRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -334,7 +334,7 @@ export class UsersApi extends BaseAPI {
 
     /**
      * 
-     * @summary Update your User
+     * @summary 
      * @param {UsersApiPatchUserMeRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}

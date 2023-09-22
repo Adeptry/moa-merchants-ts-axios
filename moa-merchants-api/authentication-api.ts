@@ -38,6 +38,8 @@ import { AuthResetPasswordDto } from '../moa-merchants-models';
 // @ts-ignore
 import { AuthUpdateDto } from '../moa-merchants-models';
 // @ts-ignore
+import { ErrorResponse } from '../moa-merchants-models';
+// @ts-ignore
 import { LoginResponseType } from '../moa-merchants-models';
 // @ts-ignore
 import { User } from '../moa-merchants-models';
