@@ -28,13 +28,13 @@ export interface LoginResponseType {
      * @type {string}
      * @memberof LoginResponseType
      */
-    'token': string;
+    'refreshToken': string;
     /**
      * 
      * @type {string}
      * @memberof LoginResponseType
      */
-    'refreshToken': string;
+    'token': string;
     /**
      * 
      * @type {number}

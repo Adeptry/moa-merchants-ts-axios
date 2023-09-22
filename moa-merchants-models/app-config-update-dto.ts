@@ -25,6 +25,12 @@ export interface AppConfigUpdateDto {
      * @type {string}
      * @memberof AppConfigUpdateDto
      */
+    'fontFamily'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof AppConfigUpdateDto
+     */
     'name'?: string | null;
     /**
      * 
@@ -37,19 +43,13 @@ export interface AppConfigUpdateDto {
      * @type {string}
      * @memberof AppConfigUpdateDto
      */
-    'fontFamily'?: string | null;
+    'themeMode'?: AppConfigUpdateDtoThemeModeEnum;
     /**
      * 
      * @type {boolean}
      * @memberof AppConfigUpdateDto
      */
     'useMaterial3'?: boolean | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof AppConfigUpdateDto
-     */
-    'themeMode'?: AppConfigUpdateDtoThemeModeEnum;
 }
 
 export const AppConfigUpdateDtoThemeModeEnum = {

@@ -28,12 +28,6 @@ export interface Variation {
     'id'?: string | null;
     /**
      * 
-     * @type {number}
-     * @memberof Variation
-     */
-    'ordinal'?: number | null;
-    /**
-     * 
      * @type {boolean}
      * @memberof Variation
      */
@@ -44,6 +38,12 @@ export interface Variation {
      * @memberof Variation
      */
     'name'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof Variation
+     */
+    'ordinal'?: number | null;
     /**
      * 
      * @type {number}

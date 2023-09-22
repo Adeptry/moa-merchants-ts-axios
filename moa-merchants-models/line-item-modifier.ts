@@ -22,6 +22,18 @@
 export interface LineItemModifier {
     /**
      * 
+     * @type {number}
+     * @memberof LineItemModifier
+     */
+    'baseMoneyAmount'?: number | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof LineItemModifier
+     */
+    'currency'?: string | null;
+    /**
+     * 
      * @type {string}
      * @memberof LineItemModifier
      */
@@ -38,18 +50,6 @@ export interface LineItemModifier {
      * @memberof LineItemModifier
      */
     'quantity'?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof LineItemModifier
-     */
-    'currency'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof LineItemModifier
-     */
-    'baseMoneyAmount'?: number | null;
     /**
      * 
      * @type {number}

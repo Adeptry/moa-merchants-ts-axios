@@ -34,6 +34,12 @@ export interface ModifierList {
     'id'?: string | null;
     /**
      * 
+     * @type {Array<Modifier>}
+     * @memberof ModifierList
+     */
+    'modifiers'?: Array<Modifier> | null;
+    /**
+     * 
      * @type {string}
      * @memberof ModifierList
      */
@@ -50,12 +56,6 @@ export interface ModifierList {
      * @memberof ModifierList
      */
     'selectionType'?: MoaSelectionType;
-    /**
-     * 
-     * @type {Array<Modifier>}
-     * @memberof ModifierList
-     */
-    'modifiers'?: Array<Modifier> | null;
 }
 
 

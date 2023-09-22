@@ -25,13 +25,13 @@ export interface CatalogImage {
      * @type {string}
      * @memberof CatalogImage
      */
-    'id'?: string | null;
+    'caption'?: string | null;
     /**
      * 
      * @type {string}
      * @memberof CatalogImage
      */
-    'squareId'?: string | null;
+    'id'?: string | null;
     /**
      * 
      * @type {string}
@@ -43,12 +43,12 @@ export interface CatalogImage {
      * @type {string}
      * @memberof CatalogImage
      */
-    'url'?: string | null;
+    'squareId'?: string | null;
     /**
      * 
      * @type {string}
      * @memberof CatalogImage
      */
-    'caption'?: string | null;
+    'url'?: string | null;
 }
 

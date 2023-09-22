@@ -25,12 +25,12 @@ export interface AuthUpdateDto {
      * @type {string}
      * @memberof AuthUpdateDto
      */
-    'password': string;
+    'oldPassword': string;
     /**
      * 
      * @type {string}
      * @memberof AuthUpdateDto
      */
-    'oldPassword': string;
+    'password': string;
 }
 

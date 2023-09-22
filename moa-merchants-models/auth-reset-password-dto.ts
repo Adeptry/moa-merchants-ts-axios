@@ -25,12 +25,12 @@ export interface AuthResetPasswordDto {
      * @type {string}
      * @memberof AuthResetPasswordDto
      */
-    'password': string;
+    'hash': string;
     /**
      * 
      * @type {string}
      * @memberof AuthResetPasswordDto
      */
-    'hash': string;
+    'password': string;
 }
 

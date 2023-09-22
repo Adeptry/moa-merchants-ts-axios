@@ -238,7 +238,7 @@ export const AppConfigsApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        postMeIconUpload: async (xCustomLang?: string, file?: File, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        postIconUploadMe: async (xCustomLang?: string, file?: File, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/v2/app-config/me/icon/upload`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -348,8 +348,8 @@ export const AppConfigsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async postMeIconUpload(xCustomLang?: string, file?: File, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.postMeIconUpload(xCustomLang, file, options);
+        async postIconUploadMe(xCustomLang?: string, file?: File, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.postIconUploadMe(xCustomLang, file, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -405,12 +405,12 @@ export const AppConfigsApiFactory = function (configuration?: Configuration, bas
         /**
          * 
          * @summary Upload icon
-         * @param {AppConfigsApiPostMeIconUploadRequest} requestParameters Request parameters.
+         * @param {AppConfigsApiPostIconUploadMeRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        postMeIconUpload(requestParameters: AppConfigsApiPostMeIconUploadRequest = {}, options?: AxiosRequestConfig): AxiosPromise<void> {
-            return localVarFp.postMeIconUpload(requestParameters.xCustomLang, requestParameters.file, options).then((request) => request(axios, basePath));
+        postIconUploadMe(requestParameters: AppConfigsApiPostIconUploadMeRequest = {}, options?: AxiosRequestConfig): AxiosPromise<void> {
+            return localVarFp.postIconUploadMe(requestParameters.xCustomLang, requestParameters.file, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -507,22 +507,22 @@ export interface AppConfigsApiPostAppConfigMeRequest {
 }
 
 /**
- * Request parameters for postMeIconUpload operation in AppConfigsApi.
+ * Request parameters for postIconUploadMe operation in AppConfigsApi.
  * @export
- * @interface AppConfigsApiPostMeIconUploadRequest
+ * @interface AppConfigsApiPostIconUploadMeRequest
  */
-export interface AppConfigsApiPostMeIconUploadRequest {
+export interface AppConfigsApiPostIconUploadMeRequest {
     /**
      * 
      * @type {string}
-     * @memberof AppConfigsApiPostMeIconUpload
+     * @memberof AppConfigsApiPostIconUploadMe
      */
     readonly xCustomLang?: string
 
     /**
      * 
      * @type {File}
-     * @memberof AppConfigsApiPostMeIconUpload
+     * @memberof AppConfigsApiPostIconUploadMe
      */
     readonly file?: File
 }
@@ -585,13 +585,13 @@ export class AppConfigsApi extends BaseAPI {
     /**
      * 
      * @summary Upload icon
-     * @param {AppConfigsApiPostMeIconUploadRequest} requestParameters Request parameters.
+     * @param {AppConfigsApiPostIconUploadMeRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AppConfigsApi
      */
-    public postMeIconUpload(requestParameters: AppConfigsApiPostMeIconUploadRequest = {}, options?: AxiosRequestConfig) {
-        return AppConfigsApiFp(this.configuration).postMeIconUpload(requestParameters.xCustomLang, requestParameters.file, options).then((request) => request(this.axios, this.basePath));
+    public postIconUploadMe(requestParameters: AppConfigsApiPostIconUploadMeRequest = {}, options?: AxiosRequestConfig) {
+        return AppConfigsApiFp(this.configuration).postIconUploadMe(requestParameters.xCustomLang, requestParameters.file, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

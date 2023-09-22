@@ -22,15 +22,15 @@
 export interface ItemUpdateDto {
     /**
      * 
-     * @type {number}
-     * @memberof ItemUpdateDto
-     */
-    'moaOrdinal'?: number | null;
-    /**
-     * 
      * @type {boolean}
      * @memberof ItemUpdateDto
      */
     'moaEnabled'?: boolean | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ItemUpdateDto
+     */
+    'moaOrdinal'?: number | null;
 }
 

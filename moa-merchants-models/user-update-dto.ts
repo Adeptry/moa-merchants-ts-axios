@@ -37,12 +37,12 @@ export interface UserUpdateDto {
      * @type {string}
      * @memberof UserUpdateDto
      */
-    'lastName'?: string | null;
+    'language'?: string | null;
     /**
      * 
      * @type {string}
      * @memberof UserUpdateDto
      */
-    'language'?: string | null;
+    'lastName'?: string | null;
 }
 

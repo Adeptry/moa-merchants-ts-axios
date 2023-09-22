@@ -22,10 +22,10 @@
 export interface NestError {
     /**
      * 
-     * @type {number}
+     * @type {string}
      * @memberof NestError
      */
-    'statusCode': number;
+    'error': string;
     /**
      * 
      * @type {string}
@@ -34,9 +34,9 @@ export interface NestError {
     'message': string;
     /**
      * 
-     * @type {string}
+     * @type {number}
      * @memberof NestError
      */
-    'error': string;
+    'statusCode': number;
 }
 

@@ -25,34 +25,10 @@ import { LineItemModifier } from './line-item-modifier';
 export interface LineItem {
     /**
      * 
-     * @type {string}
+     * @type {number}
      * @memberof LineItem
      */
-    'id'?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof LineItem
-     */
-    'name'?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof LineItem
-     */
-    'quantity'?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof LineItem
-     */
-    'note'?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof LineItem
-     */
-    'variationName'?: string | null;
+    'basePriceMoney'?: number | null;
     /**
      * 
      * @type {string}
@@ -64,25 +40,37 @@ export interface LineItem {
      * @type {number}
      * @memberof LineItem
      */
-    'basePriceMoney'?: number | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof LineItem
-     */
-    'variationTotalMoneyAmount'?: number | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof LineItem
-     */
     'grossSalesMoneyAmount'?: number | null;
     /**
      * 
-     * @type {number}
+     * @type {string}
      * @memberof LineItem
      */
-    'totalTaxMoneyAmount'?: number | null;
+    'id'?: string | null;
+    /**
+     * 
+     * @type {Array<LineItemModifier>}
+     * @memberof LineItem
+     */
+    'modifiers'?: Array<LineItemModifier> | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof LineItem
+     */
+    'name'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof LineItem
+     */
+    'note'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof LineItem
+     */
+    'quantity'?: string | null;
     /**
      * 
      * @type {number}
@@ -103,9 +91,21 @@ export interface LineItem {
     'totalServiceChargeMoneyAmount'?: number | null;
     /**
      * 
-     * @type {Array<LineItemModifier>}
+     * @type {number}
      * @memberof LineItem
      */
-    'modifiers'?: Array<LineItemModifier> | null;
+    'totalTaxMoneyAmount'?: number | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof LineItem
+     */
+    'variationName'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof LineItem
+     */
+    'variationTotalMoneyAmount'?: number | null;
 }
 

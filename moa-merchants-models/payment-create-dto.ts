@@ -21,18 +21,6 @@
  */
 export interface PaymentCreateDto {
     /**
-     * The timestamp that represents the start of the pickup window. Must be in RFC 3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\".
-     * @type {string}
-     * @memberof PaymentCreateDto
-     */
-    'pickupAt': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof PaymentCreateDto
-     */
-    'paymentSquareId': string;
-    /**
      * 
      * @type {string}
      * @memberof PaymentCreateDto
@@ -44,5 +32,17 @@ export interface PaymentCreateDto {
      * @memberof PaymentCreateDto
      */
     'orderTipMoney': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof PaymentCreateDto
+     */
+    'paymentSquareId': string;
+    /**
+     * The timestamp that represents the start of the pickup window. Must be in RFC 3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\".
+     * @type {string}
+     * @memberof PaymentCreateDto
+     */
+    'pickupAt': string;
 }
 

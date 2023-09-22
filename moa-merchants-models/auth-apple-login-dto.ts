@@ -25,13 +25,13 @@ export interface AuthAppleLoginDto {
      * @type {string}
      * @memberof AuthAppleLoginDto
      */
-    'idToken': string;
+    'firstName'?: string | null;
     /**
      * 
      * @type {string}
      * @memberof AuthAppleLoginDto
      */
-    'firstName'?: string | null;
+    'idToken': string;
     /**
      * 
      * @type {string}

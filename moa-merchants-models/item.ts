@@ -34,31 +34,13 @@ export interface Item {
      * @type {string}
      * @memberof Item
      */
-    'id'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof Item
-     */
-    'moaOrdinal'?: number | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof Item
-     */
-    'moaEnabled'?: boolean | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof Item
-     */
-    'name'?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof Item
-     */
     'description'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof Item
+     */
+    'id'?: string | null;
     /**
      * 
      * @type {Array<CatalogImage>}
@@ -71,6 +53,24 @@ export interface Item {
      * @memberof Item
      */
     'itemModifierLists'?: Array<ItemModifierList> | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof Item
+     */
+    'moaEnabled'?: boolean | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof Item
+     */
+    'moaOrdinal'?: number | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof Item
+     */
+    'name'?: string | null;
     /**
      * 
      * @type {Array<Variation>}

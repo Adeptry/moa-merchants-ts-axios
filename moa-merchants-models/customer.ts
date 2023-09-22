@@ -31,16 +31,10 @@ export interface Customer {
     'id'?: string | null;
     /**
      * 
-     * @type {object}
+     * @type {Location}
      * @memberof Customer
      */
-    'user'?: object | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof Customer
-     */
-    'squareId'?: string | null;
+    'preferredLocation'?: Location | null;
     /**
      * 
      * @type {string}
@@ -49,9 +43,15 @@ export interface Customer {
     'preferredLocationId'?: string | null;
     /**
      * 
-     * @type {Location}
+     * @type {string}
      * @memberof Customer
      */
-    'preferredLocation'?: Location | null;
+    'squareId'?: string | null;
+    /**
+     * 
+     * @type {object}
+     * @memberof Customer
+     */
+    'user'?: object | null;
 }
 

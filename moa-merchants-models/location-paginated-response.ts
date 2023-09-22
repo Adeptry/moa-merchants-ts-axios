@@ -25,6 +25,12 @@ import { Location } from './location';
 export interface LocationPaginatedResponse {
     /**
      * 
+     * @type {number}
+     * @memberof LocationPaginatedResponse
+     */
+    'count': number;
+    /**
+     * 
      * @type {Array<Location>}
      * @memberof LocationPaginatedResponse
      */
@@ -35,11 +41,5 @@ export interface LocationPaginatedResponse {
      * @memberof LocationPaginatedResponse
      */
     'pages': number;
-    /**
-     * 
-     * @type {number}
-     * @memberof LocationPaginatedResponse
-     */
-    'count': number;
 }
 

@@ -25,10 +25,10 @@ import { VariationAddDto } from './variation-add-dto';
 export interface OrderCreateDto {
     /**
      * 
-     * @type {Array<VariationAddDto>}
+     * @type {string}
      * @memberof OrderCreateDto
      */
-    'variations'?: Array<VariationAddDto> | null;
+    'idempotencyKey'?: string | null;
     /**
      * 
      * @type {string}
@@ -37,9 +37,9 @@ export interface OrderCreateDto {
     'locationId'?: string | null;
     /**
      * 
-     * @type {string}
+     * @type {Array<VariationAddDto>}
      * @memberof OrderCreateDto
      */
-    'idempotencyKey'?: string | null;
+    'variations'?: Array<VariationAddDto> | null;
 }
 

@@ -25,6 +25,12 @@ import { Item } from './item';
 export interface ItemPaginatedResponse {
     /**
      * 
+     * @type {number}
+     * @memberof ItemPaginatedResponse
+     */
+    'count': number;
+    /**
+     * 
      * @type {Array<Item>}
      * @memberof ItemPaginatedResponse
      */
@@ -35,11 +41,5 @@ export interface ItemPaginatedResponse {
      * @memberof ItemPaginatedResponse
      */
     'pages': number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ItemPaginatedResponse
-     */
-    'count': number;
 }
 

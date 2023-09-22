@@ -25,6 +25,12 @@ import { Order } from './order';
 export interface OrdersPaginatedReponse {
     /**
      * 
+     * @type {number}
+     * @memberof OrdersPaginatedReponse
+     */
+    'count': number;
+    /**
+     * 
      * @type {Array<Order>}
      * @memberof OrdersPaginatedReponse
      */
@@ -35,11 +41,5 @@ export interface OrdersPaginatedReponse {
      * @memberof OrdersPaginatedReponse
      */
     'pages': number;
-    /**
-     * 
-     * @type {number}
-     * @memberof OrdersPaginatedReponse
-     */
-    'count': number;
 }
 

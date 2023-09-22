@@ -28,15 +28,15 @@ export interface LocationUpdateAllDto {
     'id': string;
     /**
      * 
-     * @type {number}
-     * @memberof LocationUpdateAllDto
-     */
-    'moaOrdinal'?: number | null;
-    /**
-     * 
      * @type {boolean}
      * @memberof LocationUpdateAllDto
      */
     'moaEnabled'?: boolean | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof LocationUpdateAllDto
+     */
+    'moaOrdinal'?: number | null;
 }
 

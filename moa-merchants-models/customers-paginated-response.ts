@@ -25,6 +25,12 @@ import { Customer } from './customer';
 export interface CustomersPaginatedResponse {
     /**
      * 
+     * @type {number}
+     * @memberof CustomersPaginatedResponse
+     */
+    'count': number;
+    /**
+     * 
      * @type {Array<Customer>}
      * @memberof CustomersPaginatedResponse
      */
@@ -35,11 +41,5 @@ export interface CustomersPaginatedResponse {
      * @memberof CustomersPaginatedResponse
      */
     'pages': number;
-    /**
-     * 
-     * @type {number}
-     * @memberof CustomersPaginatedResponse
-     */
-    'count': number;
 }
 

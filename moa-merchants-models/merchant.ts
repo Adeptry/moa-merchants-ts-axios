@@ -31,28 +31,22 @@ import { User } from './user';
 export interface Merchant {
     /**
      * 
-     * @type {string}
-     * @memberof Merchant
-     */
-    'id'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof Merchant
-     */
-    'tier'?: number | null;
-    /**
-     * 
-     * @type {User}
-     * @memberof Merchant
-     */
-    'user'?: User | null;
-    /**
-     * 
      * @type {AppConfig}
      * @memberof Merchant
      */
     'appConfig'?: AppConfig | null;
+    /**
+     * 
+     * @type {Catalog}
+     * @memberof Merchant
+     */
+    'catalog'?: Catalog | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof Merchant
+     */
+    'id'?: string | null;
     /**
      * 
      * @type {string}
@@ -67,9 +61,15 @@ export interface Merchant {
     'stripeId'?: string | null;
     /**
      * 
-     * @type {Catalog}
+     * @type {number}
      * @memberof Merchant
      */
-    'catalog'?: Catalog | null;
+    'tier'?: number | null;
+    /**
+     * 
+     * @type {User}
+     * @memberof Merchant
+     */
+    'user'?: User | null;
 }
 

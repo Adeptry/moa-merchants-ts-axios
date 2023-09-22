@@ -25,13 +25,31 @@ export interface User {
      * @type {string}
      * @memberof User
      */
+    'email'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof User
+     */
+    'firstName'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof User
+     */
     'id': string;
     /**
      * 
      * @type {string}
      * @memberof User
      */
-    'email'?: string | null;
+    'language'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof User
+     */
+    'lastName'?: string | null;
     /**
      * 
      * @type {string}
@@ -44,24 +62,6 @@ export interface User {
      * @memberof User
      */
     'socialId'?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof User
-     */
-    'firstName'?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof User
-     */
-    'lastName'?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof User
-     */
-    'language'?: string | null;
 }
 
 export const UserProviderEnum = {

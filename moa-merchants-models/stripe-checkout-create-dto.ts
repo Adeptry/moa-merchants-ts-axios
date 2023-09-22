@@ -25,12 +25,6 @@ export interface StripeCheckoutCreateDto {
      * @type {string}
      * @memberof StripeCheckoutCreateDto
      */
-    'successUrl': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof StripeCheckoutCreateDto
-     */
     'cancelUrl': string;
     /**
      * 
@@ -38,5 +32,11 @@ export interface StripeCheckoutCreateDto {
      * @memberof StripeCheckoutCreateDto
      */
     'stripePriceId': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof StripeCheckoutCreateDto
+     */
+    'successUrl': string;
 }
 

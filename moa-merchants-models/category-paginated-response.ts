@@ -25,6 +25,12 @@ import { Category } from './category';
 export interface CategoryPaginatedResponse {
     /**
      * 
+     * @type {number}
+     * @memberof CategoryPaginatedResponse
+     */
+    'count': number;
+    /**
+     * 
      * @type {Array<Category>}
      * @memberof CategoryPaginatedResponse
      */
@@ -35,11 +41,5 @@ export interface CategoryPaginatedResponse {
      * @memberof CategoryPaginatedResponse
      */
     'pages': number;
-    /**
-     * 
-     * @type {number}
-     * @memberof CategoryPaginatedResponse
-     */
-    'count': number;
 }
 

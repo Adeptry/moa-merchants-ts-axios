@@ -28,15 +28,15 @@ export interface CategoryUpdateAllDto {
     'id': string;
     /**
      * 
-     * @type {number}
-     * @memberof CategoryUpdateAllDto
-     */
-    'moaOrdinal'?: number | null;
-    /**
-     * 
      * @type {boolean}
      * @memberof CategoryUpdateAllDto
      */
     'moaEnabled'?: boolean | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof CategoryUpdateAllDto
+     */
+    'moaOrdinal'?: number | null;
 }
 

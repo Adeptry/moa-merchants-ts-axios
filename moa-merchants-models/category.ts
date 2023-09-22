@@ -31,10 +31,10 @@ export interface Category {
     'id'?: string | null;
     /**
      * 
-     * @type {number}
+     * @type {Array<Item>}
      * @memberof Category
      */
-    'moaOrdinal'?: number | null;
+    'items'?: Array<Item> | null;
     /**
      * 
      * @type {boolean}
@@ -43,15 +43,15 @@ export interface Category {
     'moaEnabled'?: boolean | null;
     /**
      * 
+     * @type {number}
+     * @memberof Category
+     */
+    'moaOrdinal'?: number | null;
+    /**
+     * 
      * @type {string}
      * @memberof Category
      */
     'name'?: string | null;
-    /**
-     * 
-     * @type {Array<Item>}
-     * @memberof Category
-     */
-    'items'?: Array<Item> | null;
 }
 

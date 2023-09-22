@@ -25,16 +25,16 @@ import { Category } from './category';
 export interface Catalog {
     /**
      * 
-     * @type {string}
-     * @memberof Catalog
-     */
-    'id'?: string | null;
-    /**
-     * 
      * @type {Array<Category>}
      * @memberof Catalog
      */
     'categories'?: Array<Category> | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof Catalog
+     */
+    'id'?: string | null;
     /**
      * 
      * @type {string}

@@ -34,7 +34,13 @@ export interface Order {
      * @type {string}
      * @memberof Order
      */
-    'id'?: string | null;
+    'closedAt'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof Order
+     */
+    'currency'?: string | null;
     /**
      * 
      * @type {Customer}
@@ -43,10 +49,10 @@ export interface Order {
     'customer'?: Customer | null;
     /**
      * 
-     * @type {Location}
+     * @type {string}
      * @memberof Order
      */
-    'location'?: Location | null;
+    'id'?: string | null;
     /**
      * 
      * @type {Array<LineItem>}
@@ -55,16 +61,10 @@ export interface Order {
     'lineItems'?: Array<LineItem> | null;
     /**
      * 
-     * @type {string}
+     * @type {Location}
      * @memberof Order
      */
-    'closedAt'?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof Order
-     */
-    'currency'?: string | null;
+    'location'?: Location | null;
     /**
      * 
      * @type {number}
@@ -76,24 +76,24 @@ export interface Order {
      * @type {number}
      * @memberof Order
      */
-    'totalMoneyTaxAmount'?: number | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof Order
-     */
     'totalMoneyDiscountAmount'?: number | null;
     /**
      * 
      * @type {number}
      * @memberof Order
      */
-    'totalMoneyTipAmount'?: number | null;
+    'totalMoneyServiceChargeAmount'?: number | null;
     /**
      * 
      * @type {number}
      * @memberof Order
      */
-    'totalMoneyServiceChargeAmount'?: number | null;
+    'totalMoneyTaxAmount'?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof Order
+     */
+    'totalMoneyTipAmount'?: number | null;
 }
 

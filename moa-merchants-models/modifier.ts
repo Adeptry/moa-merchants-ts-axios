@@ -37,6 +37,12 @@ export interface Modifier {
      * @type {number}
      * @memberof Modifier
      */
+    'ordinal'?: number | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof Modifier
+     */
     'priceAmount'?: number | null;
     /**
      * 
@@ -44,11 +50,5 @@ export interface Modifier {
      * @memberof Modifier
      */
     'priceCurrency'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof Modifier
-     */
-    'ordinal'?: number | null;
 }
 

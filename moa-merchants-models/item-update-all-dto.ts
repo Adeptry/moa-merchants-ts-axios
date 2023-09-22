@@ -28,15 +28,15 @@ export interface ItemUpdateAllDto {
     'id': string;
     /**
      * 
-     * @type {number}
-     * @memberof ItemUpdateAllDto
-     */
-    'moaOrdinal'?: number | null;
-    /**
-     * 
      * @type {boolean}
      * @memberof ItemUpdateAllDto
      */
     'moaEnabled'?: boolean | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof ItemUpdateAllDto
+     */
+    'moaOrdinal'?: number | null;
 }
 

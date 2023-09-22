@@ -28,16 +28,22 @@ import { ModifierList } from './modifier-list';
 export interface ItemModifierList {
     /**
      * 
+     * @type {boolean}
+     * @memberof ItemModifierList
+     */
+    'enabled'?: boolean | null;
+    /**
+     * 
      * @type {string}
      * @memberof ItemModifierList
      */
     'id'?: string | null;
     /**
      * 
-     * @type {number}
+     * @type {Item}
      * @memberof ItemModifierList
      */
-    'minSelectedModifiers'?: number | null;
+    'item'?: Item | null;
     /**
      * 
      * @type {number}
@@ -46,16 +52,10 @@ export interface ItemModifierList {
     'maxSelectedModifiers'?: number | null;
     /**
      * 
-     * @type {boolean}
+     * @type {number}
      * @memberof ItemModifierList
      */
-    'enabled'?: boolean | null;
-    /**
-     * 
-     * @type {Item}
-     * @memberof ItemModifierList
-     */
-    'item'?: Item | null;
+    'minSelectedModifiers'?: number | null;
     /**
      * 
      * @type {ModifierList}

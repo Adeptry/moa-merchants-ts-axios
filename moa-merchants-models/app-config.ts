@@ -31,13 +31,7 @@ export interface AppConfig {
      * @type {string}
      * @memberof AppConfig
      */
-    'name'?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof AppConfig
-     */
-    'path'?: string | null;
+    'blockingMessage'?: string | null;
     /**
      * 
      * @type {boolean}
@@ -49,25 +43,13 @@ export interface AppConfig {
      * @type {string}
      * @memberof AppConfig
      */
-    'seedColor'?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof AppConfig
-     */
     'fontFamily'?: string | null;
     /**
      * 
-     * @type {boolean}
+     * @type {FileEntity}
      * @memberof AppConfig
      */
-    'useMaterial3'?: boolean | null;
-    /**
-     * 
-     * @type {ThemeModeEnum}
-     * @memberof AppConfig
-     */
-    'themeMode'?: ThemeModeEnum;
+    'iconFile'?: FileEntity | null;
     /**
      * 
      * @type {string}
@@ -79,19 +61,37 @@ export interface AppConfig {
      * @type {string}
      * @memberof AppConfig
      */
-    'blockingMessage'?: string | null;
+    'minimumVersion'?: string | null;
     /**
      * 
      * @type {string}
      * @memberof AppConfig
      */
-    'minimumVersion'?: string | null;
+    'name'?: string | null;
     /**
      * 
-     * @type {FileEntity}
+     * @type {string}
      * @memberof AppConfig
      */
-    'iconFile'?: FileEntity | null;
+    'path'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof AppConfig
+     */
+    'seedColor'?: string | null;
+    /**
+     * 
+     * @type {ThemeModeEnum}
+     * @memberof AppConfig
+     */
+    'themeMode'?: ThemeModeEnum;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof AppConfig
+     */
+    'useMaterial3'?: boolean | null;
 }
 
 

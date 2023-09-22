@@ -25,12 +25,12 @@ export interface AppInstallUpdateDto {
      * @type {string}
      * @memberof AppInstallUpdateDto
      */
-    'firebaseInstallationId'?: string | null;
+    'firebaseCloudMessagingToken'?: string | null;
     /**
      * 
      * @type {string}
      * @memberof AppInstallUpdateDto
      */
-    'firebaseCloudMessagingToken'?: string | null;
+    'firebaseInstallationId'?: string | null;
 }
 

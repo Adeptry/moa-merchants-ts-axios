@@ -22,15 +22,15 @@
 export interface CategoryUpdateDto {
     /**
      * 
-     * @type {number}
-     * @memberof CategoryUpdateDto
-     */
-    'moaOrdinal'?: number | null;
-    /**
-     * 
      * @type {boolean}
      * @memberof CategoryUpdateDto
      */
     'moaEnabled'?: boolean | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof CategoryUpdateDto
+     */
+    'moaOrdinal'?: number | null;
 }
 

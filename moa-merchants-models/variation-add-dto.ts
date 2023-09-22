@@ -28,12 +28,6 @@ export interface VariationAddDto {
     'id': string;
     /**
      * 
-     * @type {number}
-     * @memberof VariationAddDto
-     */
-    'quantity': number;
-    /**
-     * 
      * @type {Array<string>}
      * @memberof VariationAddDto
      */
@@ -44,5 +38,11 @@ export interface VariationAddDto {
      * @memberof VariationAddDto
      */
     'note'?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof VariationAddDto
+     */
+    'quantity': number;
 }
 

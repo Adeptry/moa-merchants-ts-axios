@@ -22,15 +22,15 @@
 export interface LocationUpdateDto {
     /**
      * 
-     * @type {number}
-     * @memberof LocationUpdateDto
-     */
-    'moaOrdinal'?: number | null;
-    /**
-     * 
      * @type {boolean}
      * @memberof LocationUpdateDto
      */
     'moaEnabled'?: boolean | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof LocationUpdateDto
+     */
+    'moaOrdinal'?: number | null;
 }
 
