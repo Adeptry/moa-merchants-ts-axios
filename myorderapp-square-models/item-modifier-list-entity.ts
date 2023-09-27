@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Item } from './item';
+import { ItemEntity } from './item-entity';
 // May contain unused imports in some cases
 // @ts-ignore
 import { ModifierListEntity } from './modifier-list-entity';
@@ -40,10 +40,10 @@ export interface ItemModifierListEntity {
     'id'?: string | null;
     /**
      * 
-     * @type {Item}
+     * @type {ItemEntity}
      * @memberof ItemModifierListEntity
      */
-    'item'?: Item | null;
+    'item'?: ItemEntity | null;
     /**
      * 
      * @type {number}

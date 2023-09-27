@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Customer } from './customer';
+import { CustomerEntity } from './customer-entity';
 // May contain unused imports in some cases
 // @ts-ignore
 import { LineItemEntity } from './line-item-entity';
 // May contain unused imports in some cases
 // @ts-ignore
-import { Location } from './location';
+import { LocationEntity } from './location-entity';
 
 /**
  * 
@@ -43,10 +43,10 @@ export interface OrderEntity {
     'currency'?: string | null;
     /**
      * 
-     * @type {Customer}
+     * @type {CustomerEntity}
      * @memberof OrderEntity
      */
-    'customer'?: Customer | null;
+    'customer'?: CustomerEntity | null;
     /**
      * 
      * @type {string}
@@ -61,10 +61,10 @@ export interface OrderEntity {
     'lineItems'?: Array<LineItemEntity> | null;
     /**
      * 
-     * @type {Location}
+     * @type {LocationEntity}
      * @memberof OrderEntity
      */
-    'location'?: Location | null;
+    'location'?: LocationEntity | null;
     /**
      * 
      * @type {number}
