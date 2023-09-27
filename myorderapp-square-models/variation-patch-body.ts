@@ -13,6 +13,18 @@
  */
 
 
-export * from "./api";
-export * from "./configuration";
-export * from "./myorderapp-square-models";
+
+/**
+ * 
+ * @export
+ * @interface VariationPatchBody
+ */
+export interface VariationPatchBody {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof VariationPatchBody
+     */
+    'moaEnabled': boolean;
+}
+

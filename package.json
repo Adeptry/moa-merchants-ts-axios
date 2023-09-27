@@ -1,7 +1,7 @@
 {
-  "name": "moa-merchants-ts-axios",
-  "version": "2.1.1",
-  "description": "OpenAPI client for moa-merchants-ts-axios",
+  "name": "myorderapp-square",
+  "version": "2.2.0",
+  "description": "OpenAPI client for myorderapp-square",
   "author": "OpenAPI-Generator Contributors",
   "repository": {
     "type": "git",
@@ -12,7 +12,7 @@
     "typescript",
     "openapi-client",
     "openapi-generator",
-    "moa-merchants-ts-axios"
+    "myorderapp-square"
   ],
   "license": "Unlicense",
   "main": "./dist/index.js",

@@ -13,6 +13,18 @@
  */
 
 
-export * from "./api";
-export * from "./configuration";
-export * from "./myorderapp-square-models";
+
+/**
+ * 
+ * @export
+ * @interface StripePostCheckoutResponse
+ */
+export interface StripePostCheckoutResponse {
+    /**
+     * 
+     * @type {string}
+     * @memberof StripePostCheckoutResponse
+     */
+    'checkoutSessionId': string;
+}
+

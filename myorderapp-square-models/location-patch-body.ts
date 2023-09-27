@@ -13,6 +13,24 @@
  */
 
 
-export * from "./api";
-export * from "./configuration";
-export * from "./myorderapp-square-models";
+
+/**
+ * 
+ * @export
+ * @interface LocationPatchBody
+ */
+export interface LocationPatchBody {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof LocationPatchBody
+     */
+    'moaEnabled'?: boolean | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof LocationPatchBody
+     */
+    'moaOrdinal'?: number | null;
+}
+

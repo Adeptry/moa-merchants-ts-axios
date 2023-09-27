@@ -13,6 +13,24 @@
  */
 
 
-export * from "./api";
-export * from "./configuration";
-export * from "./myorderapp-square-models";
+
+/**
+ * 
+ * @export
+ * @interface CategoryPatchBody
+ */
+export interface CategoryPatchBody {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof CategoryPatchBody
+     */
+    'moaEnabled'?: boolean | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof CategoryPatchBody
+     */
+    'moaOrdinal'?: number | null;
+}
+

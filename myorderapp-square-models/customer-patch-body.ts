@@ -13,6 +13,24 @@
  */
 
 
-export * from "./api";
-export * from "./configuration";
-export * from "./myorderapp-square-models";
+
+/**
+ * 
+ * @export
+ * @interface CustomerPatchBody
+ */
+export interface CustomerPatchBody {
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomerPatchBody
+     */
+    'preferredLocationId'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomerPatchBody
+     */
+    'preferredSquareCardId'?: string | null;
+}
+

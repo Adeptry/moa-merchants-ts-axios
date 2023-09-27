@@ -13,6 +13,19 @@
  */
 
 
-export * from "./api";
-export * from "./configuration";
-export * from "./myorderapp-square-models";
+
+/**
+ * 
+ * @export
+ * @enum {string}
+ */
+
+export const MoaSelectionType = {
+    Single: 'SINGLE',
+    Multiple: 'MULTIPLE'
+} as const;
+
+export type MoaSelectionType = typeof MoaSelectionType[keyof typeof MoaSelectionType];
+
+
+

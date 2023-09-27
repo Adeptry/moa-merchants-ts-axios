@@ -13,6 +13,18 @@
  */
 
 
-export * from "./api";
-export * from "./configuration";
-export * from "./myorderapp-square-models";
+
+/**
+ * 
+ * @export
+ * @interface AuthenticationEmailConfirmRequestBody
+ */
+export interface AuthenticationEmailConfirmRequestBody {
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthenticationEmailConfirmRequestBody
+     */
+    'hash': string;
+}
+

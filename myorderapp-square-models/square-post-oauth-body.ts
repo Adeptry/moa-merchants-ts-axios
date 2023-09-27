@@ -13,6 +13,18 @@
  */
 
 
-export * from "./api";
-export * from "./configuration";
-export * from "./myorderapp-square-models";
+
+/**
+ * 
+ * @export
+ * @interface SquarePostOauthBody
+ */
+export interface SquarePostOauthBody {
+    /**
+     * 
+     * @type {string}
+     * @memberof SquarePostOauthBody
+     */
+    'oauthAccessCode': string;
+}
+

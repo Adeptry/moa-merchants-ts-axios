@@ -13,6 +13,18 @@
  */
 
 
-export * from "./api";
-export * from "./configuration";
-export * from "./myorderapp-square-models";
+
+/**
+ * 
+ * @export
+ * @interface OrderPatchBody
+ */
+export interface OrderPatchBody {
+    /**
+     * 
+     * @type {string}
+     * @memberof OrderPatchBody
+     */
+    'locationId'?: string | null;
+}
+

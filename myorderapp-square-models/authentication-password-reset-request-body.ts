@@ -13,6 +13,24 @@
  */
 
 
-export * from "./api";
-export * from "./configuration";
-export * from "./myorderapp-square-models";
+
+/**
+ * 
+ * @export
+ * @interface AuthenticationPasswordResetRequestBody
+ */
+export interface AuthenticationPasswordResetRequestBody {
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthenticationPasswordResetRequestBody
+     */
+    'hash': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthenticationPasswordResetRequestBody
+     */
+    'password': string;
+}
+

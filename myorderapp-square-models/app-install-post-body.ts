@@ -13,6 +13,24 @@
  */
 
 
-export * from "./api";
-export * from "./configuration";
-export * from "./myorderapp-square-models";
+
+/**
+ * 
+ * @export
+ * @interface AppInstallPostBody
+ */
+export interface AppInstallPostBody {
+    /**
+     * 
+     * @type {string}
+     * @memberof AppInstallPostBody
+     */
+    'firebaseCloudMessagingToken'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof AppInstallPostBody
+     */
+    'firebaseInstallationId'?: string | null;
+}
+

@@ -13,6 +13,18 @@
  */
 
 
-export * from "./api";
-export * from "./configuration";
-export * from "./myorderapp-square-models";
+
+/**
+ * 
+ * @export
+ * @interface StripeBillingSessionResponse
+ */
+export interface StripeBillingSessionResponse {
+    /**
+     * 
+     * @type {string}
+     * @memberof StripeBillingSessionResponse
+     */
+    'url': string;
+}
+
