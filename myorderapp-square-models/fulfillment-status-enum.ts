@@ -17,14 +17,19 @@
 /**
  * 
  * @export
- * @interface AuthenticationEmailConfirmRequestBody
+ * @enum {string}
  */
-export interface AuthenticationEmailConfirmRequestBody {
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthenticationEmailConfirmRequestBody
-     */
-    'hash': string;
-}
+
+export const FulfillmentStatusEnum = {
+    Proposed: 'PROPOSED',
+    Reserved: 'RESERVED',
+    Prepared: 'PREPARED',
+    Completed: 'COMPLETED',
+    Canceled: 'CANCELED',
+    Failed: 'FAILED'
+} as const;
+
+export type FulfillmentStatusEnum = typeof FulfillmentStatusEnum[keyof typeof FulfillmentStatusEnum];
+
+
 

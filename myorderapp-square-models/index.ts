@@ -22,6 +22,7 @@ export * from './customer-patch-body';
 export * from './customers-paginated-response';
 export * from './error-response';
 export * from './fulfillment-recipient-input';
+export * from './fulfillment-status-enum';
 export * from './item-entity';
 export * from './item-modifier-list-entity';
 export * from './item-paginated-response';

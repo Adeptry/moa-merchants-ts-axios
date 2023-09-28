@@ -40,6 +40,7 @@ myorderapp-square-models/customer-patch-body.ts
 myorderapp-square-models/customers-paginated-response.ts
 myorderapp-square-models/error-response.ts
 myorderapp-square-models/fulfillment-recipient-input.ts
+myorderapp-square-models/fulfillment-status-enum.ts
 myorderapp-square-models/index.ts
 myorderapp-square-models/item-entity.ts
 myorderapp-square-models/item-modifier-list-entity.ts
