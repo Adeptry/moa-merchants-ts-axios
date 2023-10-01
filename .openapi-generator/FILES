@@ -72,6 +72,7 @@ myorderapp-square-models/square-post-oauth-body.ts
 myorderapp-square-models/stripe-billing-session-response.ts
 myorderapp-square-models/stripe-post-checkout-body.ts
 myorderapp-square-models/stripe-post-checkout-response.ts
+myorderapp-square-models/support-request-post-body.ts
 myorderapp-square-models/theme-mode-enum.ts
 myorderapp-square-models/user-entity.ts
 myorderapp-square-models/user-patch-body.ts

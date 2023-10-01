@@ -17,32 +17,20 @@
 /**
  * 
  * @export
- * @interface OrdersVariationLineItemInput
+ * @interface SupportRequestPostBody
  */
-export interface OrdersVariationLineItemInput {
+export interface SupportRequestPostBody {
     /**
      * 
      * @type {string}
-     * @memberof OrdersVariationLineItemInput
+     * @memberof SupportRequestPostBody
      */
-    'id': string;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof OrdersVariationLineItemInput
-     */
-    'modifierIds'?: Array<string> | null;
+    'subject': string;
     /**
      * 
      * @type {string}
-     * @memberof OrdersVariationLineItemInput
+     * @memberof SupportRequestPostBody
      */
-    'note'?: string | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof OrdersVariationLineItemInput
-     */
-    'quantity': number;
+    'text': string;
 }
 
