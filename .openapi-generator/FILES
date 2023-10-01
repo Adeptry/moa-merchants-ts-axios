@@ -63,6 +63,7 @@ myorderapp-square-models/order-post-body.ts
 myorderapp-square-models/order-post-current-body.ts
 myorderapp-square-models/orders-paginated-reponse.ts
 myorderapp-square-models/orders-post-payment-body.ts
+myorderapp-square-models/orders-statistics-response.ts
 myorderapp-square-models/orders-variation-line-item-input.ts
 myorderapp-square-models/square-card.ts
 myorderapp-square-models/square-disable-card-response.ts

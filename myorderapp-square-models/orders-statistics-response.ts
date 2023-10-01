@@ -17,38 +17,38 @@
 /**
  * 
  * @export
- * @interface ModifierEntity
+ * @interface OrdersStatisticsResponse
  */
-export interface ModifierEntity {
-    /**
-     * 
-     * @type {string}
-     * @memberof ModifierEntity
-     */
-    'id'?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof ModifierEntity
-     */
-    'name'?: string | null;
+export interface OrdersStatisticsResponse {
     /**
      * 
      * @type {number}
-     * @memberof ModifierEntity
+     * @memberof OrdersStatisticsResponse
      */
-    'ordinal'?: number | null;
+    'moneyAmountSum': number;
     /**
      * 
      * @type {number}
-     * @memberof ModifierEntity
+     * @memberof OrdersStatisticsResponse
      */
-    'priceAmount'?: number | null;
+    'moneyAppFeeAmountSum': number;
     /**
      * 
-     * @type {string}
-     * @memberof ModifierEntity
+     * @type {number}
+     * @memberof OrdersStatisticsResponse
      */
-    'priceCurrency'?: string | null;
+    'moneyServiceChargeAmountSum': number;
+    /**
+     * 
+     * @type {number}
+     * @memberof OrdersStatisticsResponse
+     */
+    'moneyTaxAmountSum': number;
+    /**
+     * 
+     * @type {number}
+     * @memberof OrdersStatisticsResponse
+     */
+    'moneyTipAmountSum': number;
 }
 

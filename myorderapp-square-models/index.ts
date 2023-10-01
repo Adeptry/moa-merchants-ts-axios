@@ -44,6 +44,7 @@ export * from './order-post-body';
 export * from './order-post-current-body';
 export * from './orders-paginated-reponse';
 export * from './orders-post-payment-body';
+export * from './orders-statistics-response';
 export * from './orders-variation-line-item-input';
 export * from './square-card';
 export * from './square-disable-card-response';
