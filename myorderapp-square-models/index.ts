@@ -51,6 +51,7 @@ export * from './square-disable-card-response';
 export * from './square-error';
 export * from './square-list-cards-response';
 export * from './square-post-oauth-body';
+export * from './statistics-output';
 export * from './stripe-billing-session-response';
 export * from './stripe-post-checkout-body';
 export * from './stripe-post-checkout-response';

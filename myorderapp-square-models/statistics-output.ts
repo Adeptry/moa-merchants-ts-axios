@@ -13,33 +13,36 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import { LocationEntity } from './location-entity';
 
 /**
  * 
  * @export
- * @interface LocationPaginatedResponse
+ * @interface StatisticsOutput
  */
-export interface LocationPaginatedResponse {
+export interface StatisticsOutput {
     /**
      * 
      * @type {number}
-     * @memberof LocationPaginatedResponse
+     * @memberof StatisticsOutput
      */
-    'count': number;
-    /**
-     * 
-     * @type {Array<LocationEntity>}
-     * @memberof LocationPaginatedResponse
-     */
-    'data'?: Array<LocationEntity> | null;
+    'average': number;
     /**
      * 
      * @type {number}
-     * @memberof LocationPaginatedResponse
+     * @memberof StatisticsOutput
      */
-    'pages': number;
+    'maximum': number;
+    /**
+     * 
+     * @type {number}
+     * @memberof StatisticsOutput
+     */
+    'minimum': number;
+    /**
+     * 
+     * @type {number}
+     * @memberof StatisticsOutput
+     */
+    'sum': number;
 }
 

@@ -70,6 +70,7 @@ myorderapp-square-models/square-disable-card-response.ts
 myorderapp-square-models/square-error.ts
 myorderapp-square-models/square-list-cards-response.ts
 myorderapp-square-models/square-post-oauth-body.ts
+myorderapp-square-models/statistics-output.ts
 myorderapp-square-models/stripe-billing-session-response.ts
 myorderapp-square-models/stripe-post-checkout-body.ts
 myorderapp-square-models/stripe-post-checkout-response.ts
