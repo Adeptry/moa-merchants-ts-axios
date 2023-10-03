@@ -42,7 +42,7 @@ export * from './order-entity';
 export * from './order-patch-body';
 export * from './order-post-body';
 export * from './order-post-current-body';
-export * from './orders-paginated-reponse';
+export * from './orders-paginated-response';
 export * from './orders-post-payment-body';
 export * from './orders-statistics-response';
 export * from './orders-variation-line-item-input';

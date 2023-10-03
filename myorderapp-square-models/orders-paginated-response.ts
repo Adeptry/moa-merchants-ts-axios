@@ -13,36 +13,33 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { OrderEntity } from './order-entity';
 
 /**
  * 
  * @export
- * @interface StatisticsOutput
+ * @interface OrdersPaginatedResponse
  */
-export interface StatisticsOutput {
+export interface OrdersPaginatedResponse {
     /**
      * 
      * @type {number}
-     * @memberof StatisticsOutput
+     * @memberof OrdersPaginatedResponse
      */
-    'average'?: number | null;
+    'count': number;
+    /**
+     * 
+     * @type {Array<OrderEntity>}
+     * @memberof OrdersPaginatedResponse
+     */
+    'data'?: Array<OrderEntity> | null;
     /**
      * 
      * @type {number}
-     * @memberof StatisticsOutput
+     * @memberof OrdersPaginatedResponse
      */
-    'maximum'?: number | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof StatisticsOutput
-     */
-    'minimum'?: number | null;
-    /**
-     * 
-     * @type {number}
-     * @memberof StatisticsOutput
-     */
-    'sum'?: number | null;
+    'pages': number;
 }
 
