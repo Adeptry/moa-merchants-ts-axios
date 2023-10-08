@@ -17,6 +17,7 @@ export * from './categories-patch-body';
 export * from './category-entity';
 export * from './category-paginated-response';
 export * from './category-patch-body';
+export * from './contact-post-body';
 export * from './customer-entity';
 export * from './customer-patch-body';
 export * from './customers-paginated-response';

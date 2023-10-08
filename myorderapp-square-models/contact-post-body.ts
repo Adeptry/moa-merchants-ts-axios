@@ -17,14 +17,20 @@
 /**
  * 
  * @export
- * @interface SquarePostOauthBody
+ * @interface ContactPostBody
  */
-export interface SquarePostOauthBody {
+export interface ContactPostBody {
     /**
      * 
      * @type {string}
-     * @memberof SquarePostOauthBody
+     * @memberof ContactPostBody
      */
-    'oauthAccessCode': string;
+    'subject'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ContactPostBody
+     */
+    'text'?: string | null;
 }
 

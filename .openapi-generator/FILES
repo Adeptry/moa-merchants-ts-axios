@@ -13,6 +13,7 @@ myorderapp-square-api/cards-api.ts
 myorderapp-square-api/catalogs-api.ts
 myorderapp-square-api/customers-api.ts
 myorderapp-square-api/locations-api.ts
+myorderapp-square-api/mail-api.ts
 myorderapp-square-api/merchants-api.ts
 myorderapp-square-api/orders-api.ts
 myorderapp-square-api/users-api.ts
@@ -35,6 +36,7 @@ myorderapp-square-models/categories-patch-body.ts
 myorderapp-square-models/category-entity.ts
 myorderapp-square-models/category-paginated-response.ts
 myorderapp-square-models/category-patch-body.ts
+myorderapp-square-models/contact-post-body.ts
 myorderapp-square-models/customer-entity.ts
 myorderapp-square-models/customer-patch-body.ts
 myorderapp-square-models/customers-paginated-response.ts
