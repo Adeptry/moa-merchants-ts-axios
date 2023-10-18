@@ -17,20 +17,26 @@
 /**
  * 
  * @export
- * @interface AuthenticationPasswordResetRequestBody
+ * @interface AuthAppleLoginDto
  */
-export interface AuthenticationPasswordResetRequestBody {
+export interface AuthAppleLoginDto {
     /**
      * 
      * @type {string}
-     * @memberof AuthenticationPasswordResetRequestBody
+     * @memberof AuthAppleLoginDto
      */
-    'hash': string;
+    'firstName'?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof AuthenticationPasswordResetRequestBody
+     * @memberof AuthAppleLoginDto
      */
-    'password': string;
+    'idToken': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthAppleLoginDto
+     */
+    'lastName'?: string | null;
 }
 

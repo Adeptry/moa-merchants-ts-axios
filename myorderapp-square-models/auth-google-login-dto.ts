@@ -17,20 +17,14 @@
 /**
  * 
  * @export
- * @interface AuthenticationPasswordResetRequestBody
+ * @interface AuthGoogleLoginDto
  */
-export interface AuthenticationPasswordResetRequestBody {
+export interface AuthGoogleLoginDto {
     /**
      * 
      * @type {string}
-     * @memberof AuthenticationPasswordResetRequestBody
+     * @memberof AuthGoogleLoginDto
      */
-    'hash': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthenticationPasswordResetRequestBody
-     */
-    'password': string;
+    'idToken': string;
 }
 

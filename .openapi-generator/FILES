@@ -21,6 +21,8 @@ myorderapp-square-models/address-entity.ts
 myorderapp-square-models/app-config-entity.ts
 myorderapp-square-models/app-config-update-body.ts
 myorderapp-square-models/app-install-post-body.ts
+myorderapp-square-models/auth-apple-login-dto.ts
+myorderapp-square-models/auth-google-login-dto.ts
 myorderapp-square-models/authentication-email-confirm-request-body.ts
 myorderapp-square-models/authentication-email-login-request-body.ts
 myorderapp-square-models/authentication-email-register-request-body.ts

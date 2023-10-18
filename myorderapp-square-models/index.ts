@@ -2,6 +2,8 @@ export * from './address-entity';
 export * from './app-config-entity';
 export * from './app-config-update-body';
 export * from './app-install-post-body';
+export * from './auth-apple-login-dto';
+export * from './auth-google-login-dto';
 export * from './authentication-email-confirm-request-body';
 export * from './authentication-email-login-request-body';
 export * from './authentication-email-register-request-body';
