@@ -73,10 +73,10 @@ export interface MerchantEntity {
     'pickupLeadDurationMinutes'?: number | null;
     /**
      * The name of the merchant\'s overall business.
-     * @type {object}
+     * @type {string}
      * @memberof MerchantEntity
      */
-    'squareBusinessName'?: object | null;
+    'squareBusinessName'?: string | null;
     /**
      * 
      * @type {boolean}

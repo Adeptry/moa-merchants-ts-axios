@@ -83,6 +83,48 @@ export const MerchantsApiAxiosParamCreator = function (configuration?: Configura
         },
         /**
          * 
+         * @summary Delete Square Oauth
+         * @param {string} [xCustomLang] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getMeSquareLogout: async (xCustomLang?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/v2/merchants/me/square/logout`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearer required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            // authentication Api-Key required
+            await setApiKeyToObject(localVarHeaderParameter, "Api-Key", configuration)
+
+            if (xCustomLang != null) {
+                localVarHeaderParameter['x-custom-lang'] = String(xCustomLang);
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Get Merchant
          * @param {string} idOrPath 
          * @param {string} [xCustomLang] 
@@ -441,6 +483,17 @@ export const MerchantsApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Delete Square Oauth
+         * @param {string} [xCustomLang] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getMeSquareLogout(xCustomLang?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getMeSquareLogout(xCustomLang, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
          * @summary Get Merchant
          * @param {string} idOrPath 
          * @param {string} [xCustomLang] 
@@ -546,6 +599,16 @@ export const MerchantsApiFactory = function (configuration?: Configuration, base
         },
         /**
          * 
+         * @summary Delete Square Oauth
+         * @param {MerchantsApiGetMeSquareLogoutRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getMeSquareLogout(requestParameters: MerchantsApiGetMeSquareLogoutRequest = {}, options?: AxiosRequestConfig): AxiosPromise<void> {
+            return localVarFp.getMeSquareLogout(requestParameters.xCustomLang, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Get Merchant
          * @param {MerchantsApiGetMerchantRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
@@ -627,6 +690,20 @@ export interface MerchantsApiDeleteMerchantMeRequest {
      * 
      * @type {string}
      * @memberof MerchantsApiDeleteMerchantMe
+     */
+    readonly xCustomLang?: string
+}
+
+/**
+ * Request parameters for getMeSquareLogout operation in MerchantsApi.
+ * @export
+ * @interface MerchantsApiGetMeSquareLogoutRequest
+ */
+export interface MerchantsApiGetMeSquareLogoutRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof MerchantsApiGetMeSquareLogout
      */
     readonly xCustomLang?: string
 }
@@ -802,6 +879,18 @@ export class MerchantsApi extends BaseAPI {
      */
     public deleteMerchantMe(requestParameters: MerchantsApiDeleteMerchantMeRequest = {}, options?: AxiosRequestConfig) {
         return MerchantsApiFp(this.configuration).deleteMerchantMe(requestParameters.xCustomLang, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Delete Square Oauth
+     * @param {MerchantsApiGetMeSquareLogoutRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof MerchantsApi
+     */
+    public getMeSquareLogout(requestParameters: MerchantsApiGetMeSquareLogoutRequest = {}, options?: AxiosRequestConfig) {
+        return MerchantsApiFp(this.configuration).getMeSquareLogout(requestParameters.xCustomLang, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
