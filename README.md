@@ -1,4 +1,4 @@
-## myorderapp-square@2.5.17
+## myorderapp-square@2.5.19
 
 This generator creates TypeScript/JavaScript client that utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
 
@@ -36,7 +36,7 @@ navigate to the folder of your consuming project and run one of the following co
 _published:_
 
 ```
-npm install myorderapp-square@2.5.17 --save
+npm install myorderapp-square@2.5.19 --save
 ```
 
 _unPublished (not recommended):_
